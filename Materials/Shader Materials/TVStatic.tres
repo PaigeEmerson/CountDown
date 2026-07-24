@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c3183w1xanbga"]
+
+[ext_resource type="Shader" uid="uid://w8djti5uhb0i" path="res://Materials/Shader Materials/TVStatic.gdshader" id="1_pih8s"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pih8s")
+shader_parameter/brightness_divisor = 1.0
+shader_parameter/emission_strength = 2.1430001017925

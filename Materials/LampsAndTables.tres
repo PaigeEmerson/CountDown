@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bn7qvowmmoq8c"]
+
+[ext_resource type="Texture2D" uid="uid://b7qcpmab4ey4t" path="res://Materials/Textures/LampsAndTables/truemesh_baseColor.png" id="1_knc4d"]
+[ext_resource type="Texture2D" uid="uid://dahstyodledig" path="res://Materials/Textures/LampsAndTables/truemesh_occlusionRoughnessMetallic.png" id="2_if6fb"]
+[ext_resource type="Texture2D" uid="uid://cyd8odxvdidxc" path="res://Materials/Textures/LampsAndTables/truemesh_emissive.png" id="3_s6730"]
+[ext_resource type="Texture2D" uid="uid://bgw22rwa0owue" path="res://Materials/Textures/LampsAndTables/truemesh_normal.png" id="4_npyd7"]
+
+[resource]
+albedo_texture = ExtResource("1_knc4d")
+metallic = 1.0
+metallic_texture = ExtResource("2_if6fb")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_if6fb")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("3_s6730")
+normal_enabled = true
+normal_texture = ExtResource("4_npyd7")
+ao_enabled = true
+ao_texture = ExtResource("2_if6fb")

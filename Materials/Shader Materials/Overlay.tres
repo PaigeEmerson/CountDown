@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dg3ax1fan7o3b"]
+
+[ext_resource type="Shader" uid="uid://ev3u44snjhrv" path="res://Materials/Shader Materials/overlay.gdshader" id="1_83tmw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_83tmw")
+shader_parameter/pixel_size = 1.0
+shader_parameter/levels = 32.0
+shader_parameter/gamma = Vector2(0.375, 3.17)

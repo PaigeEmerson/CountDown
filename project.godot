@@ -78,6 +78,7 @@ release_mouse={
 
 [layer_names]
 
+3d_render/layer_6="NO SHADOW"
 3d_physics/layer_2="Interactable"
 3d_physics/layer_20="GenerationBounds"
 

@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dk50mdu0vmymg"]
+
+[ext_resource type="Texture2D" uid="uid://sqq1ol8rvos5" path="res://Materials/Textures/Ceiling/DefaultMaterial_baseColor.png" id="1_fnckv"]
+[ext_resource type="Texture2D" uid="uid://mrdpr0x8hst4" path="res://Materials/Textures/Ceiling/DefaultMaterial_occlusionRoughnessMetallic.png" id="2_vtp7s"]
+[ext_resource type="Texture2D" uid="uid://8hddpt3k3l6g" path="res://Materials/Textures/Ceiling/DefaultMaterial_normal.png" id="3_asq5r"]
+
+[resource]
+albedo_texture = ExtResource("1_fnckv")
+metallic = 1.0
+metallic_texture = ExtResource("2_vtp7s")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_vtp7s")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 5.75
+normal_texture = ExtResource("3_asq5r")
+ao_enabled = true
+ao_texture = ExtResource("2_vtp7s")
+uv1_scale = Vector3(-0.505, -0.505, -0.505)
+uv1_triplanar = true
+uv1_world_triplanar = true

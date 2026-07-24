@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://byyi3px73435k"]
+
+[ext_resource type="Texture2D" uid="uid://djumb4qjrhyub" path="res://Materials/Textures/WindowAndRadiator/main.001_baseColor.png" id="1_w2m3j"]
+[ext_resource type="Texture2D" uid="uid://ca88jg0rb6fm8" path="res://Materials/Textures/WindowAndRadiator/main.001_occlusionRoughnessMetallic.png" id="2_ggumn"]
+[ext_resource type="Texture2D" uid="uid://rpxjj1w3kb77" path="res://Materials/Textures/WindowAndRadiator/main.001_normal.png" id="3_idrjw"]
+
+[resource]
+albedo_texture = ExtResource("1_w2m3j")
+metallic = 1.0
+metallic_texture = ExtResource("2_ggumn")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ggumn")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_idrjw")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_ggumn")

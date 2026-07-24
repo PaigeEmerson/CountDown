@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cafak3ao524t7"]
+
+[ext_resource type="Texture2D" uid="uid://dfijd0xmx0vwb" path="res://Materials/Textures/Computer/computer1_baseColor.png" id="1_ej63t"]
+[ext_resource type="Texture2D" uid="uid://5n00qre81els" path="res://Materials/Textures/Computer/computer1_occlusionRoughnessMetallic.png" id="2_vfj7g"]
+[ext_resource type="Texture2D" uid="uid://bbbmv4wv2f8fs" path="res://Materials/Textures/Computer/computer1_normal.png" id="3_g75a0"]
+
+[resource]
+albedo_texture = ExtResource("1_ej63t")
+metallic = 1.0
+metallic_texture = ExtResource("2_vfj7g")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_vfj7g")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_g75a0")
+ao_enabled = true
+ao_texture = ExtResource("2_vfj7g")

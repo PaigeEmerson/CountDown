@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bdtsa3qqipnxc"]
+
+[ext_resource type="Shader" uid="uid://bwalahpnsb08t" path="res://Materials/Shader Materials/CanvasOverlay.gdshader" id="1_yp7ou"]
+
+[resource]
+shader = ExtResource("1_yp7ou")
+shader_parameter/pixel_size = 1.0
+shader_parameter/levels = 32.0
+shader_parameter/gamma = Vector2(0.375, 3.17)

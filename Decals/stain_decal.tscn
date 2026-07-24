@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ch2bofael1cy6"]
+
+[ext_resource type="Texture2D" uid="uid://6ew0j4erngii" path="res://Materials/Textures/WallStainDecal/DefaultMaterial_baseColor.png" id="1_gqry4"]
+[ext_resource type="Texture2D" uid="uid://dqkcyjl2c1isy" path="res://Materials/Textures/WallStainDecal/DefaultMaterial_normal.png" id="2_50pni"]
+[ext_resource type="Texture2D" uid="uid://dsa47sgto4cbc" path="res://Materials/Textures/WallStainDecal/DefaultMaterial_occlusionRoughnessMetallic.png" id="3_1ig4m"]
+
+[node name="StainDecal" type="Decal" unique_id=422961019]
+transform = Transform3D(2.8090198, 0, 0, 0, -1.2278616e-07, -2.8090198, 0, 2.8090198, -1.2278616e-07, 0, 0, 0)
+texture_albedo = ExtResource("1_gqry4")
+texture_normal = ExtResource("2_50pni")
+texture_orm = ExtResource("3_1ig4m")
+normal_fade = 0.999
