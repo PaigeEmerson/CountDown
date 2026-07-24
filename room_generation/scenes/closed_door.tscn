@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://df40nhbg5hp63"]
 
 [ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="1_e650p"]
-[ext_resource type="PackedScene" uid="uid://cqdnb0joph8wc" path="res://room_generation/scenes/door_geometry.tscn" id="2_l5nsr"]
+[ext_resource type="PackedScene" uid="uid://khkp8lsy0n8r" path="res://GLB/Door.glb" id="1_l5nsr"]
+[ext_resource type="PackedScene" uid="uid://b8del25248a0f" path="res://GLB/Hinge1.glb" id="3_d83t2"]
+[ext_resource type="PackedScene" uid="uid://nq32bsqyuo0g" path="res://room_generation/meshes/Blank_Wall_Filler.glb" id="4_d83t2"]
 
 [node name="ClosedDoor" type="Node3D" unique_id=1184947700]
 
-[node name="DoorFrame" parent="." unique_id=1878720624 instance=ExtResource("1_e650p")]
+[node name="Door" parent="." unique_id=1816557618 instance=ExtResource("1_l5nsr")]
 
-[node name="Door" parent="." unique_id=462331047 instance=ExtResource("2_l5nsr")]
+[node name="DoorFrame" parent="." unique_id=1878720624 instance=ExtResource("1_e650p")]
+transform = Transform3D(1.0345972, 0, 0, 0, 1.0191952, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Hinge1" parent="." unique_id=1356626513 instance=ExtResource("3_d83t2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0127821425, 1.0240217, 0.021562267)
+
+[node name="Blank_Wall_Filler2" parent="." unique_id=2086373835 instance=ExtResource("4_d83t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46458253, 0, 0)

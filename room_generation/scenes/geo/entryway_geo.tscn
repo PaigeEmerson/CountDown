@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cmco5ov7tkyi5"]
+
+[ext_resource type="PackedScene" uid="uid://be22rpykb5fqh" path="res://room_generation/meshes/rooms/Entryway.glb" id="1_pefmb"]
+
+[node name="Entryway" unique_id=1716665590 instance=ExtResource("1_pefmb")]
+
+[node name="Entryway_Bounds" parent="Entryway" parent_id_path=PackedInt32Array(1527945607) index="0" unique_id=1763348146]
+collision_layer = 0
+collision_mask = 0

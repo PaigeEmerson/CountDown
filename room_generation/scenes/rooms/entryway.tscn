@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://3xbtu8f1vv0k"]
 
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_xhj16"]
-[ext_resource type="PackedScene" uid="uid://blorjm8tmogho" path="res://room_generation/scenes/geo/entryway_geometry.tscn" id="2_agvxd"]
-[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_ovf38"]
-[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_y31uk"]
-[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_72210"]
+[ext_resource type="PackedScene" uid="uid://cmco5ov7tkyi5" path="res://room_generation/scenes/geo/entryway_geo.tscn" id="2_pmuow"]
+[ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_4epms"]
+[ext_resource type="PackedScene" uid="uid://cveh3bg24apg1" path="res://GLB/SideTable.glb" id="5_2lpxp"]
+[ext_resource type="PackedScene" uid="uid://cdooj4iwe465h" path="res://GLB/Radiator.glb" id="6_f3stv"]
 [ext_resource type="PackedScene" uid="uid://cahgp0w43v2lg" path="res://player/scenes/player.tscn" id="7_agvxd"]
 [ext_resource type="PackedScene" uid="uid://cjdx4y75e7l8y" path="res://room_generation/scenes/apartment_exit.tscn" id="8_ovf38"]
+[ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="10_xcwoh"]
+[ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="11_t2m2k"]
+[ext_resource type="PackedScene" uid="uid://krqwhucyx0us" path="res://GLB/CielingBulb.glb" id="12_2u16x"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="13_aftbx"]
+[ext_resource type="LightmapGIData" uid="uid://ccht4ihunjrb2" path="res://Lightmaps/rooms/entryway.lmbake" id="18_2lpxp"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x048n"]
 data = PackedVector3Array(-1.7490673, -0.07620001, 4.181566, -1.7490673, 2.5146, 0.014663622, -1.7490673, 2.5146, 4.181566, -1.7490673, -0.07620001, 4.181566, -1.7490673, -0.07620001, 0.014663622, -1.7490673, 2.5146, 0.014663622, -1.7490673, -0.07620001, 0.014663622, 1.750637, 2.5146, 0.014663622, -1.7490673, 2.5146, 0.014663622, -1.7490673, -0.07620001, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, 2.5146, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, 2.5146, 4.181566, 1.750637, 2.5146, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, -0.07620001, 4.181566, 1.750637, 2.5146, 4.181566, 1.750637, -0.07620001, 4.181566, -1.7490673, 2.5146, 4.181566, 1.750637, 2.5146, 4.181566, 1.750637, -0.07620001, 4.181566, -1.7490673, -0.07620001, 4.181566, -1.7490673, 2.5146, 4.181566, -1.7490673, -0.07620001, 0.014663622, 1.750637, -0.07620001, 4.181566, 1.750637, -0.07620001, 0.014663622, -1.7490673, -0.07620001, 0.014663622, -1.7490673, -0.07620001, 4.181566, 1.750637, -0.07620001, 4.181566, 1.750637, 2.5146, 0.014663622, -1.7490673, 2.5146, 4.181566, -1.7490673, 2.5146, 0.014663622, 1.750637, 2.5146, 0.014663622, 1.750637, 2.5146, 4.181566, -1.7490673, 2.5146, 4.181566)
@@ -20,25 +25,49 @@ maximum_crimes = 0
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
-[node name="Entryway" parent="Geometry" unique_id=437288642 instance=ExtResource("2_agvxd")]
+[node name="Entryway" parent="Geometry" unique_id=1716665590 instance=ExtResource("2_pmuow")]
+
+[node name="Trim" parent="Geometry" unique_id=1335839211 instance=ExtResource("13_aftbx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8.679647, -1.7013999, 0, 2.0974529)
+
+[node name="Trim2" parent="Geometry" unique_id=901212227 instance=ExtResource("13_aftbx")]
+transform = Transform3D(-1, 0, -7.587989e-07, 0, 1, 0, 8.742278e-08, 0, -8.679647, 1.6997073, 0, 2.0974526)
+
+[node name="Trim3" parent="Geometry" unique_id=726754594 instance=ExtResource("13_aftbx")]
+transform = Transform3D(-4.371139e-08, 0, -2.5343242, 0, 1, 0, 1, 0, -1.1077883e-07, 1.1100833, 1.1920929e-07, 0.06195952)
+
+[node name="Trim4" parent="Geometry" unique_id=390154643 instance=ExtResource("13_aftbx")]
+transform = Transform3D(-4.371139e-08, 0, -2.7000537, 0, 1, 0, 1, 0, -1.1802309e-07, -1.1391257, 1.1920929e-07, 0.061959423)
+
+[node name="Trim5" parent="Geometry" unique_id=922413489 instance=ExtResource("13_aftbx")]
+transform = Transform3D(1.3113416e-07, 0, 2.5343242, 0, 1, 0, -1, 0, 3.3233647e-07, 1.1100829, 1.1920929e-07, 4.132983)
+
+[node name="Trim6" parent="Geometry" unique_id=148038490 instance=ExtResource("13_aftbx")]
+transform = Transform3D(1.3113416e-07, 0, 2.7431881, 0, 1, 0, -1, 0, 3.5972565e-07, -1.1391262, 1.1920929e-07, 4.132983)
+
+[node name="SideTable" parent="Geometry" unique_id=431535539 instance=ExtResource("5_2lpxp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2597921, 2.3841858e-07, 0.45038164)
+
+[node name="Radiator" parent="Geometry" unique_id=1384230828 instance=ExtResource("6_f3stv")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 1.5719305, 0.0036599012, 2.0128071)
+
+[node name="Trash1" parent="Geometry" unique_id=161554204 instance=ExtResource("10_xcwoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3749639, 0.0137524605, 3.1153011)
+
+[node name="Trash2" parent="Geometry" unique_id=1073746274 instance=ExtResource("11_t2m2k")]
+transform = Transform3D(0.95510775, 0, 0.29625866, 0, 1, 0, -0.29625866, 0, 0.95510775, 0.94609225, 0.010972828, 3.6618445)
+
+[node name="CielingBulb" parent="Geometry" unique_id=1400018487 instance=ExtResource("12_2u16x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011989772, 2.8865974, 2.444831)
 
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
-[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.003)
-script = ExtResource("3_ovf38")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
+[node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_4epms")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.008000016, 0, 0.025400043)
 
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
-
-[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_y31uk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
-
-[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_72210")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector2" parent="Connections" unique_id=1594464291 instance=ExtResource("3_4epms")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -1.7382998, 1.1920929e-07, 2.0766)
+window_only = true
 
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 
@@ -63,7 +92,30 @@ collision_mask = 524288
 shape = SubResource("ConcavePolygonShape3D_x048n")
 
 [node name="Player" parent="." unique_id=1916206784 instance=ExtResource("7_agvxd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.326029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.648886)
 
 [node name="ApartmentExit" parent="." unique_id=1225873522 instance=ExtResource("8_ovf38")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46241826, 0, 4.149105)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4927305, 0, 4.149105)
+
+[node name="Lighting" type="Node3D" parent="." unique_id=1700594176]
+
+[node name="LightmapGI" type="LightmapGI" parent="Lighting" unique_id=1552073363]
+bounces = 2
+light_data = ExtResource("18_2lpxp")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting/LightmapGI" unique_id=2007725637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1224686, 1.83576)
+size = Vector3(5, 5, 5)
+box_projection = true
+interior = true
+enable_shadows = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lighting" unique_id=1819994541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011989772, 1.1501884, 2.444831)
+light_color = Color(1, 0.75, 0.39999998, 1)
+light_energy = 2.0
+light_indirect_energy = 0.25
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 2.44
+omni_attenuation = 2.0

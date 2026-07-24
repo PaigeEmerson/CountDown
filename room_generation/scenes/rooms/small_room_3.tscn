@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_b73qv"]
 [ext_resource type="PackedScene" uid="uid://dnqksoq34b0ul" path="res://room_generation/scenes/geo/small_room_3_geo.tscn" id="2_b73qv"]
-[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_exknu"]
-[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_olhj5"]
-[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_h8ncs"]
+[ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_fec5t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dl4e4"]
 size = Vector3(4.820923, 2.5310364, 4.4677124)
@@ -21,21 +19,8 @@ room_role = 4
 
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
-[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 0, 0, 0.003)
-script = ExtResource("3_exknu")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
-
-[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_olhj5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
-
-[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_h8ncs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_fec5t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.007900059, 0, 0.025399953)
 
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 

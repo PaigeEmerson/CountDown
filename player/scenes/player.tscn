@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://cahgp0w43v2lg"]
 
 [ext_resource type="Script" uid="uid://icp4swwk6ojr" path="res://player/scripts/player_controller.gd" id="1_apn28"]
+[ext_resource type="Texture2D" uid="uid://dnym6wp4baeps" path="res://2D/cookie_4.jpg" id="2_8h4do"]
 [ext_resource type="Script" uid="uid://1qm13t4xymfo" path="res://player/scripts/player_interaction_controller.gd" id="2_t0cpu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmpk6"]
-radius = 0.4
+radius = 0.25
 height = 1.8
 
 [node name="Player" type="CharacterBody3D" unique_id=1916206784 groups=["player"]]
 floor_snap_length = 0.3
 script = ExtResource("1_apn28")
+mouse_sensitivity = 0.005
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=197368464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
@@ -26,6 +28,12 @@ target_position = Vector3(0, 0, -3)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=1974735590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43166924, -0.59528625, -0.2718678)
+light_energy = 10.003
+light_projector = ExtResource("2_8h4do")
+shadow_enabled = true
 
 [node name="InteractionController" type="Node" parent="." unique_id=1915549538 node_paths=PackedStringArray("interaction_ray", "prompt_label")]
 script = ExtResource("2_t0cpu")

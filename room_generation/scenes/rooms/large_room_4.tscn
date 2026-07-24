@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_soljo"]
 [ext_resource type="PackedScene" uid="uid://drglmer1yg4gg" path="res://room_generation/scenes/geo/large_room_4_geo.tscn" id="2_soljo"]
-[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_y2kr4"]
-[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_wkyqb"]
-[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_i1bml"]
+[ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_h8ieg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m0jc6"]
 size = Vector3(17.891449, 2.4950562, 11.972656)
@@ -21,149 +19,32 @@ room_role = 1
 
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
-[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.003)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
+[node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008100092, 0, -0.0254)
 
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
+[node name="Connector2" parent="Connections" unique_id=872748753 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1696, 0, -0.0254)
 
-[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector3" parent="Connections" unique_id=1713450777 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3190002, 0, -0.0254)
 
-[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
+[node name="Connector4" parent="Connections" unique_id=2065997411 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.8757, 0, -2.0649)
 
-[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector5" parent="Connections" unique_id=1965489022 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.8757, 0, -8.4516)
 
-[node name="Connector2" type="Marker3D" parent="Connections" unique_id=1244426819 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.3029003, 0, -12.101746)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
+[node name="Connector6" parent="Connections" unique_id=830204459 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.3108997, 0, -12.0524)
 
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector2" unique_id=253945643]
+[node name="Connector7" parent="Connections" unique_id=221399212 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.1425, 0, -12.0524)
 
-[node name="ClosedDoor" parent="Connections/Connector2/ClosedSection" unique_id=2083520267 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector8" parent="Connections" unique_id=64032728 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.0336, 0, -8.4604)
 
-[node name="OpenSection" type="Node3D" parent="Connections/Connector2" unique_id=202424619]
-
-[node name="DoorFrame" parent="Connections/Connector2/OpenSection" unique_id=2056524657 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector3" type="Marker3D" parent="Connections" unique_id=2113581546 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, 8.923318, 0, -2.0729)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector3" unique_id=1796943478]
-
-[node name="ClosedDoor" parent="Connections/Connector3/ClosedSection" unique_id=3082208 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector3" unique_id=157938654]
-
-[node name="DoorFrame" parent="Connections/Connector3/OpenSection" unique_id=1072347309 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector4" type="Marker3D" parent="Connections" unique_id=1148508962 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.076448, 0, -2.0769997)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector4" unique_id=1848475923]
-
-[node name="ClosedDoor" parent="Connections/Connector4/ClosedSection" unique_id=524001745 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector4" unique_id=948923916]
-
-[node name="DoorFrame" parent="Connections/Connector4/OpenSection" unique_id=1465319731 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector5" type="Marker3D" parent="Connections" unique_id=469483720 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, 8.944108, 0, -8.4596)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector5" unique_id=1942105108]
-
-[node name="ClosedDoor" parent="Connections/Connector5/ClosedSection" unique_id=221647612 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector5" unique_id=1246070413]
-
-[node name="DoorFrame" parent="Connections/Connector5/OpenSection" unique_id=1904085460 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector6" type="Marker3D" parent="Connections" unique_id=234889740 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.086412, 0, -8.4524)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector6" unique_id=1465924088]
-
-[node name="ClosedDoor" parent="Connections/Connector6/ClosedSection" unique_id=1536144052 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector6" unique_id=2093171435]
-
-[node name="DoorFrame" parent="Connections/Connector6/OpenSection" unique_id=1127852525 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector7" type="Marker3D" parent="Connections" unique_id=1471437880 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.2177002, 0, -12.109057)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector7" unique_id=897467680]
-
-[node name="ClosedDoor" parent="Connections/Connector7/ClosedSection" unique_id=1701136923 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector7" unique_id=1752639973]
-
-[node name="DoorFrame" parent="Connections/Connector7/OpenSection" unique_id=1684482360 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector8" type="Marker3D" parent="Connections" unique_id=1237582572 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1617, -0.009000063, 0.021016449)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector8" unique_id=1082567721]
-
-[node name="ClosedDoor" parent="Connections/Connector8/ClosedSection" unique_id=90480018 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector8" unique_id=537580507]
-
-[node name="DoorFrame" parent="Connections/Connector8/OpenSection" unique_id=728033141 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="Connector9" type="Marker3D" parent="Connections" unique_id=7571698 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.327, 0, 0.024294645)
-script = ExtResource("3_y2kr4")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector9" unique_id=697431862]
-
-[node name="ClosedDoor" parent="Connections/Connector9/ClosedSection" unique_id=2070714861 instance=ExtResource("4_wkyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector9" unique_id=645072417]
-
-[node name="DoorFrame" parent="Connections/Connector9/OpenSection" unique_id=1348488321 instance=ExtResource("5_i1bml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector9" parent="Connections" unique_id=761066923 instance=ExtResource("3_h8ieg")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.0336, 0, -2.1358)
 
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 

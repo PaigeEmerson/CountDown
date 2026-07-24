@@ -60,6 +60,8 @@ func generate_apartment() -> bool:
 				blocked_connectors.append(target_connector)
 
 		if layout_meets_requirements():
+			await finalize_unused_connectors()
+
 			print("Generated valid apartment with ", generated_rooms.size(), " rooms.")
 			generation_completed.emit(generated_rooms)
 			return true
@@ -403,6 +405,16 @@ func shuffle_connectors(values: Array[RoomConnector]) -> void:
 		var temporary := values[index]
 		values[index] = values[random_index]
 		values[random_index] = temporary
+		
+		
+func finalize_unused_connectors() -> void:
+	await get_tree().physics_frame
+
+	for room in generated_rooms:
+		for connector in room.get_connectors():
+			connector.finalize_unused_connector(random)
+
+	await get_tree().physics_frame
 
 
 func clear_generated_rooms() -> void:

@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_yeqks"]
 [ext_resource type="PackedScene" uid="uid://rmoubhcbmodj" path="res://room_generation/scenes/geo/medium_room_1_geo.tscn" id="2_phs1f"]
-[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_gaslh"]
-[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_mdh3o"]
-[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_hi7wf"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="3_8p6f4"]
+[ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_177ku"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k8tps"]
 size = Vector3(7.7334595, 2.5651855, 5.998535)
@@ -18,23 +17,25 @@ room_role = 4
 
 [node name="Medium_Room_1" parent="Geometry" unique_id=922861251 instance=ExtResource("2_phs1f")]
 
+[node name="Trim" parent="Geometry" unique_id=1335839211 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.629444, -0.81007975, 0, 3.0165873)
+
+[node name="Trim2" parent="Geometry" unique_id=1373969600 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(-1, 0, 1.1041011e-06, 0, 1, 0, -8.742278e-08, 0, -12.629444, 6.849604, 0, 3.0165877)
+
+[node name="Trim3" parent="Geometry" unique_id=927635539 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(1.3113416e-07, 0, 16.249004, 0, 1, 0, -1, 0, 2.1307997e-06, 3.0455482, 0, 5.9631166)
+
+[node name="Trim4" parent="Geometry" unique_id=498278843 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(-4.371138e-08, 0, -13.579126, 0, 1, 0, 1, 0, -5.935625e-07, 3.7097652, 0, 0.06696677)
+
+[node name="Trim5" parent="Geometry" unique_id=1794176622 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(-4.371138e-08, 0, -0.72917277, 0, 1, 0, 1, 0, -3.1873157e-08, -0.6684854, 0, 0.06696658)
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
-[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.003)
-script = ExtResource("3_gaslh")
-closed_section = NodePath("ClosedSection")
-open_section = NodePath("OpenSection")
-
-[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
-
-[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_mdh3o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
-
-[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
-
-[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_hi7wf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+[node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_177ku")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.008000016, 0, 0.025399953)
 
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 
