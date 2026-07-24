@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="11_t2m2k"]
 [ext_resource type="PackedScene" uid="uid://krqwhucyx0us" path="res://GLB/CielingBulb.glb" id="12_2u16x"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="13_aftbx"]
-[ext_resource type="LightmapGIData" uid="uid://ccht4ihunjrb2" path="res://Lightmaps/rooms/entryway.lmbake" id="18_2lpxp"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x048n"]
 data = PackedVector3Array(-1.7490673, -0.07620001, 4.181566, -1.7490673, 2.5146, 0.014663622, -1.7490673, 2.5146, 4.181566, -1.7490673, -0.07620001, 4.181566, -1.7490673, -0.07620001, 0.014663622, -1.7490673, 2.5146, 0.014663622, -1.7490673, -0.07620001, 0.014663622, 1.750637, 2.5146, 0.014663622, -1.7490673, 2.5146, 0.014663622, -1.7490673, -0.07620001, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, 2.5146, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, 2.5146, 4.181566, 1.750637, 2.5146, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, -0.07620001, 4.181566, 1.750637, 2.5146, 4.181566, 1.750637, -0.07620001, 4.181566, -1.7490673, 2.5146, 4.181566, 1.750637, 2.5146, 4.181566, 1.750637, -0.07620001, 4.181566, -1.7490673, -0.07620001, 4.181566, -1.7490673, 2.5146, 4.181566, -1.7490673, -0.07620001, 0.014663622, 1.750637, -0.07620001, 4.181566, 1.750637, -0.07620001, 0.014663622, -1.7490673, -0.07620001, 0.014663622, -1.7490673, -0.07620001, 4.181566, 1.750637, -0.07620001, 4.181566, 1.750637, 2.5146, 0.014663622, -1.7490673, 2.5146, 4.181566, -1.7490673, 2.5146, 0.014663622, 1.750637, 2.5146, 0.014663622, 1.750637, 2.5146, 4.181566, -1.7490673, 2.5146, 4.181566)
@@ -99,11 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4927305, 0, 4.149105)
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1700594176]
 
-[node name="LightmapGI" type="LightmapGI" parent="Lighting" unique_id=1552073363]
-bounces = 2
-light_data = ExtResource("18_2lpxp")
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting/LightmapGI" unique_id=2007725637]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Lighting" unique_id=2007725637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1224686, 1.83576)
 size = Vector3(5, 5, 5)
 box_projection = true

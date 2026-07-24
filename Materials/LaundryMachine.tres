@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://un67ltkyxdtn"]
+
+[ext_resource type="Texture2D" uid="uid://bcxb8yohx4jf8" path="res://Materials/Textures/LaundryMachine/laundryWMoney_sp_0.png" id="1_cgx6i"]
+[ext_resource type="Texture2D" uid="uid://dbf4qwwg4dy88" path="res://Materials/Textures/LaundryMachine/laundryWMoney_sp_1.png" id="2_is0ar"]
+[ext_resource type="Texture2D" uid="uid://brayu1k44wf47" path="res://Materials/Textures/LaundryMachine/laundryWMoney_sp_2.png" id="3_4mqtw"]
+
+[resource]
+albedo_texture = ExtResource("1_cgx6i")
+metallic = 1.0
+metallic_texture = ExtResource("2_is0ar")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_is0ar")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_4mqtw")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_is0ar")

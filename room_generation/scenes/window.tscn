@@ -162,13 +162,16 @@ size = Vector2(0.955, 1.13)
 [sub_resource type="BoxMesh" id="BoxMesh_3xsqf"]
 size = Vector3(0.12231445, 2.0767822, 0.03704834)
 
+[sub_resource type="BoxMesh" id="BoxMesh_kxcff"]
+size = Vector3(0.77389526, 0.10266113, 0.020019531)
+
 [sub_resource type="BoxMesh" id="BoxMesh_ggiu2"]
-size = Vector3(0.77389526, 0.3100586, 0.020019531)
+size = Vector3(0.77389526, 0.5031738, 0.020019531)
 
 [node name="Window" type="Node3D" unique_id=215327719]
 
 [node name="WindowObjects" type="Node3D" parent="." unique_id=284166364]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5074645, 1.0582044, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5074645, 1.2400562, 0.027716458)
 
 [node name="EMISSION CITY_002" type="MeshInstance3D" parent="WindowObjects" unique_id=1932851718]
 transform = Transform3D(-1, 1.947072e-07, -1.9477437e-07, -1.947072e-07, 0.00034493208, 0.99999994, 1.9477437e-07, 0.99999994, -0.00034487247, 0, 0, 0)
@@ -183,12 +186,12 @@ transform = Transform3D(-1, 1.947072e-07, -1.9477437e-07, -1.947072e-07, 0.00034
 mesh = SubResource("ArrayMesh_heg1d")
 
 [node name="TopPane" type="MeshInstance3D" parent="WindowObjects" unique_id=400365306]
-transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.013518214, 0.21630979, 0.034289837)
+transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.013518214, 0.21630979, -0.0156107545)
 material_override = ExtResource("3_d31ik")
 mesh = SubResource("QuadMesh_hjpsd")
 
 [node name="LowerPane" type="MeshInstance3D" parent="WindowObjects" unique_id=896532535]
-transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.015058994, -0.5592711, 0.055649996)
+transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.015058994, -0.5592711, 0.04137507)
 material_override = ExtResource("3_d31ik")
 mesh = SubResource("QuadMesh_hjpsd")
 
@@ -217,11 +220,11 @@ material_override = ExtResource("6_kxcff")
 mesh = SubResource("BoxMesh_3xsqf")
 
 [node name="WindowBorder3" type="MeshInstance3D" parent="Wall" unique_id=1369874128]
-transform = Transform3D(0.99998325, 0, 0, 0, 0.99998325, 0, 0, 0, 0.99998325, 0.507931, 1.9188244, -0.015400171)
+transform = Transform3D(0.99998325, 0, 0, 0, 0.99998325, 0, 0, 0, 0.99998325, 0.507931, 2.0225215, -0.015400171)
 material_override = ExtResource("6_kxcff")
-mesh = SubResource("BoxMesh_ggiu2")
+mesh = SubResource("BoxMesh_kxcff")
 
 [node name="WindowBorder4" type="MeshInstance3D" parent="Wall" unique_id=301138448]
-transform = Transform3D(0.99998325, 0, 0, 0, 0.99998325, 0, 0, 0, 0.99998325, 0.5080429, 0.15213674, -0.015400168)
+transform = Transform3D(0.99998325, 0, 0, 0, 0.99998325, 0, 0, 0, 0.99998325, 0.5080429, 0.24869275, -0.015400168)
 material_override = ExtResource("6_kxcff")
 mesh = SubResource("BoxMesh_ggiu2")

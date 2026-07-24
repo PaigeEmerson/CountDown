@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_sh5wi"]
 [ext_resource type="PackedScene" uid="uid://dca6gtuav5nkj" path="res://room_generation/scenes/geo/hallway_3_geo.tscn" id="2_sh5wi"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_kt4dn"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_bojuh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dbni8"]
 size = Vector3(2.9194336, 2.5150146, 4.180664)
@@ -53,3 +54,27 @@ collision_mask = 524288
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=2020695258]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016357422, 1.2179565, -2.1098633)
 shape = SubResource("BoxShape3D_dbni8")
+
+[node name="Trim" parent="." unique_id=725508036 instance=ExtResource("4_bojuh")]
+transform = Transform3D(-4.3711385e-08, 0, 2.0962243, 0, 1, 0, -0.99999994, 0, -9.162888e-08, 0.9506284, 2.3841858e-07, -0.062118888)
+
+[node name="Trim2" parent="." unique_id=1644837571 instance=ExtResource("4_bojuh")]
+transform = Transform3D(-4.3711385e-08, 0, 2.0962243, 0, 1, 0, -0.99999994, 0, -9.162888e-08, -0.96481204, 2.3841858e-07, -0.062118888)
+
+[node name="Trim7" parent="." unique_id=2123519775 instance=ExtResource("4_bojuh")]
+transform = Transform3D(1.3113416e-07, 0, -2.0962245, 0, 1, 0, 0.99999994, 0, 2.7488665e-07, -0.96481204, 2.3841858e-07, -4.1709213)
+
+[node name="Trim8" parent="." unique_id=1421274645 instance=ExtResource("4_bojuh")]
+transform = Transform3D(1.3113416e-07, 0, -2.0962245, 0, 1, 0, 0.99999994, 0, 2.7488665e-07, 0.9506284, 2.3841858e-07, -4.1709213)
+
+[node name="Trim3" parent="." unique_id=1896121129 instance=ExtResource("4_bojuh")]
+transform = Transform3D(-0.99999994, 0, -3.1082564e-07, 0, 1, 0, 8.742276e-08, 0, -3.5554304, 1.4041739, 2.3841858e-07, -3.3949466)
+
+[node name="Trim4" parent="." unique_id=1172394785 instance=ExtResource("4_bojuh")]
+transform = Transform3D(-0.99999994, 0, -2.9536363e-07, 0, 1, 0, 8.742276e-08, 0, -3.3785658, 1.404174, 2.3841858e-07, -0.77842486)
+
+[node name="Trim5" parent="." unique_id=72323644 instance=ExtResource("4_bojuh")]
+transform = Transform3D(0.99999994, 0, 6.216512e-07, 0, 1, 0, -1.7484552e-07, 0, 3.5554304, -1.420844, 2.3841858e-07, -0.77842474)
+
+[node name="Trim6" parent="." unique_id=1146047452 instance=ExtResource("4_bojuh")]
+transform = Transform3D(0.99999994, 0, 5.907272e-07, 0, 1, 0, -1.7484552e-07, 0, 3.3785658, -1.4208443, 2.3841858e-07, -3.3949466)

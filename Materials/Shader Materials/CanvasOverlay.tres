@@ -4,6 +4,6 @@
 
 [resource]
 shader = ExtResource("1_yp7ou")
-shader_parameter/pixel_size = 3.0
+shader_parameter/pixel_size = 1.0
 shader_parameter/levels = 32.0
 shader_parameter/gamma = Vector2(0.375, 3.17)

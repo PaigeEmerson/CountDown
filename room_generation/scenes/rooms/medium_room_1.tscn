@@ -24,13 +24,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 12.629444, -0.81007975, 0, 3.016
 transform = Transform3D(-1, 0, 1.1041011e-06, 0, 1, 0, -8.742278e-08, 0, -12.629444, 6.849604, 0, 3.0165877)
 
 [node name="Trim3" parent="Geometry" unique_id=927635539 instance=ExtResource("3_8p6f4")]
-transform = Transform3D(1.3113416e-07, 0, 16.249004, 0, 1, 0, -1, 0, 2.1307997e-06, 3.0455482, 0, 5.9631166)
+transform = Transform3D(1.3113416e-07, 0, 16.519833, 0, 1, 0, -1, 0, 2.1663145e-06, 3.0455482, 0, 5.9631166)
 
 [node name="Trim4" parent="Geometry" unique_id=498278843 instance=ExtResource("3_8p6f4")]
 transform = Transform3D(-4.371138e-08, 0, -13.579126, 0, 1, 0, 1, 0, -5.935625e-07, 3.7097652, 0, 0.06696677)
 
 [node name="Trim5" parent="Geometry" unique_id=1794176622 instance=ExtResource("3_8p6f4")]
-transform = Transform3D(-4.371138e-08, 0, -0.72917277, 0, 1, 0, 1, 0, -3.1873157e-08, -0.6684854, 0, 0.06696658)
+transform = Transform3D(-4.371138e-08, 0, -0.9914255, 0, 1, 0, 1, 0, -4.3336588e-08, -0.6684854, 0, 0.06696658)
 
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 

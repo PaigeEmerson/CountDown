@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c01jfs25icy4x" path="res://room_generation/scenes/window.tscn" id="3_24toh"]
 [ext_resource type="PackedScene" uid="uid://khkp8lsy0n8r" path="res://GLB/Door.glb" id="4_24toh"]
 [ext_resource type="Script" uid="uid://dvfbmc35pmyiw" path="res://room_generation/scripts/window_lightning_receiver.gd" id="6_dmw2y"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="7_bpyqd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmpk6"]
 size = Vector3(3.0532227, 2.6368408, 1.6498413)
@@ -25,6 +26,9 @@ visible = false
 
 [node name="Blank_Wall_Filler2" parent="ClosedSection" unique_id=2086373835 instance=ExtResource("1_r5eov")]
 
+[node name="Trim" parent="ClosedSection" unique_id=725508036 instance=ExtResource("7_bpyqd")]
+transform = Transform3D(-4.3711385e-08, 0, 2.7181418, 0, 1, 0, -0.99999994, 0, -1.1881375e-07, 0.44266748, 5.9604645e-08, -0.037075758)
+
 [node name="OpenSection" type="Node3D" parent="." unique_id=1376371104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 
@@ -35,7 +39,6 @@ transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25
 
 [node name="WindowSection" type="Node3D" parent="." unique_id=983365411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
-visible = false
 
 [node name="Window" parent="WindowSection" unique_id=215327719 instance=ExtResource("3_24toh")]
 
@@ -53,6 +56,9 @@ shadow_bias = 0.01
 shadow_normal_bias = 0.03
 spot_range = 7.0
 spot_angle_attenuation = 0.5
+
+[node name="Trim" parent="WindowSection" unique_id=1024251150 instance=ExtResource("7_bpyqd")]
+transform = Transform3D(-4.3711385e-08, 0, 2.7181418, 0, 1, 0, -0.99999994, 0, -1.1881375e-07, 0.44266748, 5.9604645e-08, -0.037075758)
 
 [node name="WindowClearance" type="Area3D" parent="." unique_id=1565518853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.2286202, 0.49536753)

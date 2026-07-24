@@ -79,7 +79,7 @@ shadow_enabled = true
 shadow_caster_mask = 4294967263
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=339757979]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014160156, 1.1609443, 0.28435135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014160156, 1.1387157, 0.28435135)
 blend_distance = 0.1
 size = Vector3(9.075195, 20, 9.068687)
 box_projection = true
@@ -89,6 +89,7 @@ interior = true
 transform = Transform3D(-0.98072696, 0, 0.19538292, 0, 1, 0, -0.19538292, 0, -0.98072696, -1.986584, 1.9225358, 3.163639)
 
 [node name="PixelViewportTestLayer" type="MeshInstance3D" parent="Camera3D" unique_id=1951958668]
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_x7mdl")
 

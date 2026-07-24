@@ -21,6 +21,7 @@ shape = SubResource("CapsuleShape3D_gmpk6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5166351, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=980802832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18312788, 0)
 current = true
 
 [node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" unique_id=243044338]
@@ -30,10 +31,16 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=1974735590]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43166924, -0.59528625, -0.2718678)
-light_energy = 10.003
+transform = Transform3D(0.9915858, 1.3669029e-09, 0.12945078, 0.01308361, 0.9948792, -0.10021972, -0.12878792, 0.101070166, 0.9865083, 0.43166924, -0.55880535, -0.32661605)
+light_energy = 10.455
 light_projector = ExtResource("2_8h4do")
 shadow_enabled = true
+spot_range = 128.279
+spot_angle = 25.949818
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Head/Camera3D/SpotLight3D" unique_id=1114097020]
+light_energy = 3.498
+omni_range = 3.2917998
 
 [node name="InteractionController" type="Node" parent="." unique_id=1915549538 node_paths=PackedStringArray("interaction_ray", "prompt_label")]
 script = ExtResource("2_t0cpu")

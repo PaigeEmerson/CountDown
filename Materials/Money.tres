@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyhrq18uvij7l"]
+
+[ext_resource type="Texture2D" uid="uid://bjbvoug4lc5h5" path="res://Materials/Textures/Money/money_0.png" id="1_jx36w"]
+[ext_resource type="Texture2D" uid="uid://c4ykcbft8y6ei" path="res://Materials/Textures/Money/money_1.png" id="2_miuh5"]
+[ext_resource type="Texture2D" uid="uid://d0ud7ug8iwaqo" path="res://Materials/Textures/Money/money_2.png" id="3_446cc"]
+
+[resource]
+albedo_texture = ExtResource("1_jx36w")
+metallic = 1.0
+metallic_texture = ExtResource("2_miuh5")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_miuh5")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_446cc")
+ao_enabled = true
+ao_light_affect = 1.0
+ao_texture = ExtResource("2_miuh5")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_7k6ty"]
 [ext_resource type="PackedScene" uid="uid://8t2068rggj6u" path="res://room_generation/scenes/geo/medium_room_2_geo.tscn" id="2_7k6ty"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_xxlt7"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_fqkhl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wpuxm"]
 size = Vector3(7.815796, 2.5043945, 5.963745)
@@ -45,3 +46,21 @@ collision_mask = 524288
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=1042608694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8009644, 1.2224121, 3.0082397)
 shape = SubResource("BoxShape3D_wpuxm")
+
+[node name="Trim" parent="." unique_id=725508036 instance=ExtResource("4_fqkhl")]
+transform = Transform3D(-1.0000007, 0, 1.1197794e-06, 0, 1, 0, -8.742284e-08, 0, -12.808784, 1.0735114, 1.1920929e-07, 2.9507031)
+
+[node name="Trim4" parent="." unique_id=1858818555 instance=ExtResource("4_fqkhl")]
+transform = Transform3D(1.3113426e-07, 0, 13.002083, 0, 1, 0, -1.0000006, 0, 1.7050171e-06, -1.9813492, 1.1920929e-07, 5.9645667)
+
+[node name="Trim5" parent="." unique_id=1290399490 instance=ExtResource("4_fqkhl")]
+transform = Transform3D(1.3113424e-07, 0, 1.8071665, 0, 1, 0, -1.0000005, 0, 2.3698125e-07, -6.375977, 1.1920929e-07, 5.9645667)
+
+[node name="Trim2" parent="." unique_id=1216152274 instance=ExtResource("4_fqkhl")]
+transform = Transform3D(-4.37114e-08, 0, -13.129367, 0, 1, 0, 1.0000002, 0, -5.739029e-07, -3.5847487, 1.1920929e-07, 0.0619829)
+
+[node name="Trim6" parent="." unique_id=1591557331 instance=ExtResource("4_fqkhl")]
+transform = Transform3D(1.0000001, 0, -5.5137518e-14, 0, 1, 0, -3.5527137e-15, 0, 12.735348, -6.673557, 1.1920929e-07, 3.0331151)
+
+[node name="Trim3" parent="." unique_id=1537325663 instance=ExtResource("4_fqkhl")]
+transform = Transform3D(-4.3711395e-08, 0, -1.5744066, 0, 1, 0, 1.0000001, 0, -6.88195e-08, 0.8291707, 1.1920929e-07, 0.0619829)

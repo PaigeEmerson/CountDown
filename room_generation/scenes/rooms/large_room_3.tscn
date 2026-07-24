@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_y30fl"]
 [ext_resource type="PackedScene" uid="uid://bkm7ift77m5ty" path="res://room_generation/scenes/geo/large_room_3_geo.tscn" id="2_y30fl"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_p4sr8"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="3_y30fl"]
+[ext_resource type="PackedScene" uid="uid://871pw7gp3etg" path="res://GLB/TrimCorner.glb" id="4_m0jc6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4i8dc"]
 size = Vector3(7.688904, 2.507782, 6.095581)
@@ -20,6 +22,42 @@ room_role = 1
 
 [node name="Large_Room_3" parent="Geometry" unique_id=1331096823 instance=ExtResource("2_y30fl")]
 
+[node name="Trim" parent="Geometry" unique_id=725508036 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-4.3711378e-08, 0, 7.3205223, 0, 1, 0, -0.99999976, 0, -3.199902e-07, 2.1972785, 1.1920929e-07, -0.06407088)
+
+[node name="Trim2" parent="Geometry" unique_id=1536853142 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-4.3711378e-08, 0, 7.098687, 0, 1, 0, -0.99999976, 0, -3.1029347e-07, -2.135193, 1.1920929e-07, -0.06407088)
+
+[node name="Trim3" parent="Geometry" unique_id=1797005390 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-1.0000007, 0, 7.1456685e-07, 0, 1, 0, -8.742284e-08, 0, -8.173693, 3.9018145, 2.3841858e-07, -1.9159681)
+
+[node name="Trim4" parent="Geometry" unique_id=1787765825 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-1.0000006, 0, 1.7146179e-07, 0, 1, 0, -8.742283e-08, 0, -1.9612945, 3.9018145, 2.3841858e-07, -5.2230716)
+
+[node name="TrimCorner" parent="Geometry" unique_id=141342974 instance=ExtResource("4_m0jc6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.90233, 1.1920929e-07, -6.103317)
+
+[node name="Trim5" parent="Geometry" unique_id=1299197473 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-4.3711356e-08, 0, 11.409818, 0, 1, 0, -0.9999993, 0, -4.98739e-07, 6.970762, 1.1920929e-07, -6.1024613)
+
+[node name="Trim6" parent="Geometry" unique_id=25971193 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-1.000001, 0, 1.1290609e-06, 0, 1, 0, -8.742286e-08, 0, -12.914951, 9.581998, 0, -9.078113)
+
+[node name="Trim7" parent="Geometry" unique_id=563914100 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-4.3711402e-08, 0, -12.835349, 0, 1, 0, 1.0000004, 0, -5.610509e-07, -0.82908463, 0.00019873679, -12.015043)
+
+[node name="Trim8" parent="Geometry" unique_id=463904843 instance=ExtResource("3_y30fl")]
+transform = Transform3D(-4.3711402e-08, 0, -13.909202, 0, 1, 0, 1.0000004, 0, -6.079905e-07, 6.3863344, 0.00019873679, -12.015043)
+
+[node name="Trim9" parent="Geometry" unique_id=1935921048 instance=ExtResource("3_y30fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.500553, -3.7591903, 1.7881393e-07, -0.8217734)
+
+[node name="Trim10" parent="Geometry" unique_id=1351270742 instance=ExtResource("3_y30fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 14.5248995, -3.7591903, 1.7881393e-07, -6.0098305)
+
+[node name="Trim11" parent="Geometry" unique_id=1564286228 instance=ExtResource("3_y30fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.592982, -3.7591903, 1.7881393e-07, -11.197037)
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
 [node name="Connector" parent="." unique_id=272012754 instance=ExtResource("3_p4sr8")]
@@ -36,6 +74,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.65
 
 [node name="Connector5" parent="." unique_id=1072421882 instance=ExtResource("3_p4sr8")]
 transform = Transform3D(7.4505806e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 7.4505806e-08, 3.9399998, 0, -4.2948003)
+allow_window = false
 
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 

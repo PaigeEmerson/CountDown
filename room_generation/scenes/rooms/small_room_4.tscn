@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_4i8dc"]
 [ext_resource type="PackedScene" uid="uid://x2l322f0e53s" path="res://room_generation/scenes/geo/small_room_4_geo.tscn" id="2_4i8dc"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_yet71"]
+[ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_ofl6o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b73qv"]
 size = Vector3(4.807892, 2.4520874, 4.476593)
@@ -46,3 +47,18 @@ collision_mask = 524288
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=608466770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8640773, 1.2047291, 2.2569733)
 shape = SubResource("BoxShape3D_b73qv")
+
+[node name="Trim" parent="." unique_id=725508036 instance=ExtResource("4_ofl6o")]
+transform = Transform3D(-1.0000005, 0, 8.419289e-07, 0, 1, 0, -8.742282e-08, 0, -9.630545, 0.52097017, 1.1920929e-07, 2.2819474)
+
+[node name="Trim4" parent="." unique_id=58186456 instance=ExtResource("4_ofl6o")]
+transform = Transform3D(1.0000005, 0, -1.6838578e-06, 0, 1, 0, 1.7484564e-07, 0, 9.630545, -4.228436, 1.1920929e-07, 2.2819474)
+
+[node name="Trim2" parent="." unique_id=1223994047 instance=ExtResource("4_ofl6o")]
+transform = Transform3D(-4.3711378e-08, 0, 6.659087, 0, 1, 0, -0.99999976, 0, -2.9107795e-07, -2.7536223, 0.0031006634, 4.4559574)
+
+[node name="Trim3" parent="." unique_id=2122275554 instance=ExtResource("4_ofl6o")]
+transform = Transform3D(-4.3711378e-08, 0, 1.860024, 0, 1, 0, -0.99999976, 0, -8.130423e-08, 0.18733954, 0.0031006634, 4.4559574)
+
+[node name="Trim5" parent="." unique_id=1205634839 instance=ExtResource("4_ofl6o")]
+transform = Transform3D(-4.3711402e-08, 0, -8.060284, 0, 1, 0, 1.0000004, 0, -3.523262e-07, -2.3574162, 2.3841858e-07, 0.06240259)
