@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://dfd1xpf0xkcti"]
+
+[ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_3pd5f"]
+[ext_resource type="PackedScene" uid="uid://cwdgdp6qywpvr" path="res://room_generation/scenes/geo/large_room_1_geo.tscn" id="2_3pd5f"]
+[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_caiko"]
+[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_xk42a"]
+[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_g8ofo"]
+[ext_resource type="PackedScene" uid="uid://cqdnb0joph8wc" path="res://room_generation/scenes/door_geometry.tscn" id="6_04qm2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlyld"]
+size = Vector3(8.338806, 2.5405273, 6.0407715)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3pd5f"]
+size = Vector3(4.1223373, 2.5405273, 3.3275146)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0wbp"]
+size = Vector3(6.028964, 2.5405273, 6.356735)
+
+[node name="LargeRoom1" type="Node3D" unique_id=687311094]
+script = ExtResource("1_3pd5f")
+
+[node name="Geometry" type="Node3D" parent="." unique_id=868621653]
+
+[node name="Large_Room_1" parent="Geometry" unique_id=2012181457 instance=ExtResource("2_3pd5f")]
+
+[node name="Connections" type="Node3D" parent="." unique_id=1110784071]
+
+[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0.003)
+script = ExtResource("3_caiko")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
+
+[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_xk42a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
+
+[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_g8ofo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="Door" parent="Connections/Connector1/OpenSection" unique_id=462331047 instance=ExtResource("6_04qm2")]
+transform = Transform3D(-0.93584436, 0, -0.3524135, 0, 1, 0, 0.3524135, 0, -0.93584436, -0.45720002, 0, 0.045053363)
+
+[node name="Connector2" type="Marker3D" parent="Connections" unique_id=1340408826 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 6.0572, 0, 5.9864745)
+script = ExtResource("3_caiko")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector2" unique_id=1042665941]
+
+[node name="ClosedDoor" parent="Connections/Connector2/ClosedSection" unique_id=804304705 instance=ExtResource("4_xk42a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector2" unique_id=15124802]
+
+[node name="DoorFrame" parent="Connections/Connector2/OpenSection" unique_id=2054883451 instance=ExtResource("5_g8ofo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="Door" parent="Connections/Connector2/OpenSection" unique_id=728170991 instance=ExtResource("6_04qm2")]
+transform = Transform3D(-0.93584436, 0, -0.3524135, 0, 1, 0, 0.3524135, 0, -0.93584436, -0.45720002, 0, 0.045053363)
+
+[node name="Connector3" type="Marker3D" parent="Connections" unique_id=1948904602 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.2764997, 0, 5.982044)
+script = ExtResource("3_caiko")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector3" unique_id=2035284705]
+
+[node name="ClosedDoor" parent="Connections/Connector3/ClosedSection" unique_id=924605288 instance=ExtResource("4_xk42a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector3" unique_id=277403506]
+
+[node name="DoorFrame" parent="Connections/Connector3/OpenSection" unique_id=1318260991 instance=ExtResource("5_g8ofo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="Door" parent="Connections/Connector3/OpenSection" unique_id=1322549792 instance=ExtResource("6_04qm2")]
+transform = Transform3D(-0.11831483, 0, -0.99297607, 0, 1, 0, 0.99297607, 0, -0.11831483, -0.45720002, 0, 0.045053363)
+
+[node name="Connector4" type="Marker3D" parent="Connections" unique_id=1237629475 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 8.814899, 0, -0.03795576)
+script = ExtResource("3_caiko")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector4" unique_id=1218804595]
+
+[node name="ClosedDoor" parent="Connections/Connector4/ClosedSection" unique_id=1702792634 instance=ExtResource("4_xk42a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector4" unique_id=317818443]
+
+[node name="DoorFrame" parent="Connections/Connector4/OpenSection" unique_id=103149670 instance=ExtResource("5_g8ofo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="Door" parent="Connections/Connector4/OpenSection" unique_id=76939192 instance=ExtResource("6_04qm2")]
+transform = Transform3D(-0.36672238, 0, -0.9303304, 0, 1, 0, 0.9303304, 0, -0.36672238, -0.45720002, 0, 0.045053363)
+
+[node name="Connector5" type="Marker3D" parent="Connections" unique_id=1528041137 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.8740997, 0, -3.3987098)
+script = ExtResource("3_caiko")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector5" unique_id=1938620343]
+
+[node name="ClosedDoor" parent="Connections/Connector5/ClosedSection" unique_id=1600452877 instance=ExtResource("4_xk42a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector5" unique_id=1355828585]
+
+[node name="DoorFrame" parent="Connections/Connector5/OpenSection" unique_id=1453991607 instance=ExtResource("5_g8ofo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="Door" parent="Connections/Connector5/OpenSection" unique_id=376740668 instance=ExtResource("6_04qm2")]
+transform = Transform3D(-0.93584436, 0, -0.3524135, 0, 1, 0, 0.3524135, 0, -0.93584436, -0.45720002, 0, 0.045053363)
+
+[node name="Connector6" type="Marker3D" parent="Connections" unique_id=1822786059 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.712642, 0, -0.8591)
+script = ExtResource("3_caiko")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector6" unique_id=1625282626]
+
+[node name="ClosedDoor" parent="Connections/Connector6/ClosedSection" unique_id=1697793969 instance=ExtResource("4_xk42a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector6" unique_id=1298657406]
+
+[node name="DoorFrame" parent="Connections/Connector6/OpenSection" unique_id=1494599905 instance=ExtResource("5_g8ofo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="Door" parent="Connections/Connector6/OpenSection" unique_id=124679082 instance=ExtResource("6_04qm2")]
+transform = Transform3D(-0.93584436, 0, -0.3524135, 0, 1, 0, 0.3524135, 0, -0.93584436, -0.45720002, 0, 0.045053363)
+
+[node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
+
+[node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
+
+[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+
+[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+
+[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+
+[node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
+
+[node name="MainBound" type="Area3D" parent="GenerationBounds" unique_id=264368544]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=992283946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4325867, 1.2219238, -3.062378)
+shape = SubResource("BoxShape3D_wlyld")
+
+[node name="MainBound2" type="Area3D" parent="GenerationBounds" unique_id=291049187]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound2" unique_id=1727674913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.660824, 1.2219238, -1.7057495)
+shape = SubResource("BoxShape3D_3pd5f")
+
+[node name="MainBound3" type="Area3D" parent="GenerationBounds" unique_id=1362252265]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound3" unique_id=1586640095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8347964, 1.2219238, 2.8257523)
+shape = SubResource("BoxShape3D_a0wbp")

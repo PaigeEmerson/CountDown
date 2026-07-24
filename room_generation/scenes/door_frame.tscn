@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d0rpfkf37ltsu"]
+
+[ext_resource type="PackedScene" uid="uid://bb7510exwefm8" path="res://room_generation/meshes/DoorFrame.glb" id="1_6d71g"]
+
+[node name="DoorFrame" unique_id=1878720624 instance=ExtResource("1_6d71g")]

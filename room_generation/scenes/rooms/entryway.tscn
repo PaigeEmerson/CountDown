@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://3xbtu8f1vv0k"]
+
+[ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_xhj16"]
+[ext_resource type="PackedScene" uid="uid://blorjm8tmogho" path="res://room_generation/scenes/geo/entryway_geometry.tscn" id="2_agvxd"]
+[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_ovf38"]
+[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_y31uk"]
+[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_72210"]
+[ext_resource type="PackedScene" uid="uid://cahgp0w43v2lg" path="res://player/scenes/player.tscn" id="7_agvxd"]
+[ext_resource type="PackedScene" uid="uid://cjdx4y75e7l8y" path="res://room_generation/scenes/apartment_exit.tscn" id="8_ovf38"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x048n"]
+data = PackedVector3Array(-1.7490673, -0.07620001, 4.181566, -1.7490673, 2.5146, 0.014663622, -1.7490673, 2.5146, 4.181566, -1.7490673, -0.07620001, 4.181566, -1.7490673, -0.07620001, 0.014663622, -1.7490673, 2.5146, 0.014663622, -1.7490673, -0.07620001, 0.014663622, 1.750637, 2.5146, 0.014663622, -1.7490673, 2.5146, 0.014663622, -1.7490673, -0.07620001, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, 2.5146, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, 2.5146, 4.181566, 1.750637, 2.5146, 0.014663622, 1.750637, -0.07620001, 0.014663622, 1.750637, -0.07620001, 4.181566, 1.750637, 2.5146, 4.181566, 1.750637, -0.07620001, 4.181566, -1.7490673, 2.5146, 4.181566, 1.750637, 2.5146, 4.181566, 1.750637, -0.07620001, 4.181566, -1.7490673, -0.07620001, 4.181566, -1.7490673, 2.5146, 4.181566, -1.7490673, -0.07620001, 0.014663622, 1.750637, -0.07620001, 4.181566, 1.750637, -0.07620001, 0.014663622, -1.7490673, -0.07620001, 0.014663622, -1.7490673, -0.07620001, 4.181566, 1.750637, -0.07620001, 4.181566, 1.750637, 2.5146, 0.014663622, -1.7490673, 2.5146, 4.181566, -1.7490673, 2.5146, 0.014663622, 1.750637, 2.5146, 0.014663622, 1.750637, 2.5146, 4.181566, -1.7490673, 2.5146, 4.181566)
+
+[node name="EntryWay" type="Node3D" unique_id=687311094]
+script = ExtResource("1_xhj16")
+room_name = "Entry"
+room_size = 0
+room_role = 0
+maximum_crimes = 0
+
+[node name="Geometry" type="Node3D" parent="." unique_id=868621653]
+
+[node name="Entryway" parent="Geometry" unique_id=437288642 instance=ExtResource("2_agvxd")]
+
+[node name="Connections" type="Node3D" parent="." unique_id=1110784071]
+
+[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.003)
+script = ExtResource("3_ovf38")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
+
+[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_y31uk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
+
+[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_72210")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
+
+[node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
+
+[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+
+[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+
+[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+
+[node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
+
+[node name="MainBound" type="Area3D" parent="GenerationBounds" unique_id=264368544]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=1469955602]
+shape = SubResource("ConcavePolygonShape3D_x048n")
+
+[node name="Player" parent="." unique_id=1916206784 instance=ExtResource("7_agvxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.326029)
+
+[node name="ApartmentExit" parent="." unique_id=1225873522 instance=ExtResource("8_ovf38")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46241826, 0, 4.149105)

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dnqksoq34b0ul"]
+
+[ext_resource type="PackedScene" uid="uid://br3lffqm0djck" path="res://room_generation/meshes/rooms/Small_Room_3.glb" id="1_vroxe"]
+
+[node name="Small_Room_3" unique_id=1091295880 instance=ExtResource("1_vroxe")]
+
+[node name="Small_Room_3_Bounds" parent="Small_Room_3" parent_id_path=PackedInt32Array(1917722536) index="0" unique_id=2020170148]
+collision_layer = 0
+collision_mask = 0

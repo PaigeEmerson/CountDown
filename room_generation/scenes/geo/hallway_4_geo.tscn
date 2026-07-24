@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dmpgruwviskm1"]
+
+[ext_resource type="PackedScene" uid="uid://bp23yufics1rp" path="res://room_generation/meshes/rooms/Hallway_4.glb" id="1_1p15h"]
+
+[node name="Hallway_4" unique_id=1166991284 instance=ExtResource("1_1p15h")]
+
+[node name="Hallway_4_Bounds" parent="Hallway_4" parent_id_path=PackedInt32Array(2006631840) index="0" unique_id=1745175977]
+collision_layer = 0
+collision_mask = 0

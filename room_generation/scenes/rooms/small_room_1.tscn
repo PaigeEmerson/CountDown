@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://c265symyrbfs3"]
+
+[ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_0s4nv"]
+[ext_resource type="PackedScene" uid="uid://bnf65kaeenm3" path="res://room_generation/scenes/geo/small_room_1_geo.tscn" id="2_0s4nv"]
+[ext_resource type="Script" uid="uid://btbl2bdjc563h" path="res://room_generation/scripts/room_connector.gd" id="3_5ibx3"]
+[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="4_wkvrt"]
+[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="5_1cvwf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6x0q"]
+size = Vector3(3.8861694, 2.5535278, 2.752411)
+
+[node name="SmallRoom1" type="Node3D" unique_id=687311094]
+script = ExtResource("1_0s4nv")
+room_name = "Small Room 1"
+room_size = 0
+room_role = 4
+
+[node name="Geometry" type="Node3D" parent="." unique_id=868621653]
+
+[node name="Small_Room_1" parent="Geometry" unique_id=1081067689 instance=ExtResource("2_0s4nv")]
+
+[node name="Connections" type="Node3D" parent="." unique_id=1110784071]
+
+[node name="Connector1" type="Marker3D" parent="Connections" unique_id=1505680532 node_paths=PackedStringArray("closed_section", "open_section")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.003)
+script = ExtResource("3_5ibx3")
+closed_section = NodePath("ClosedSection")
+open_section = NodePath("OpenSection")
+
+[node name="ClosedSection" type="Node3D" parent="Connections/Connector1" unique_id=1977294306]
+
+[node name="ClosedDoor" parent="Connections/Connector1/ClosedSection" unique_id=1184947700 instance=ExtResource("4_wkvrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="OpenSection" type="Node3D" parent="Connections/Connector1" unique_id=1836499804]
+
+[node name="DoorFrame" parent="Connections/Connector1/OpenSection" unique_id=1878720624 instance=ExtResource("5_1cvwf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45720023, 0, 0.006106749)
+
+[node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
+
+[node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
+
+[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+
+[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+
+[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+
+[node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
+
+[node name="MainBound" type="Area3D" parent="GenerationBounds" unique_id=264368544]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=464136080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66708374, 1.22109, 1.3952484)
+shape = SubResource("BoxShape3D_y6x0q")

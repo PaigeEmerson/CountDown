@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df40nhbg5hp63"]
+
+[ext_resource type="PackedScene" uid="uid://d0rpfkf37ltsu" path="res://room_generation/scenes/door_frame.tscn" id="1_e650p"]
+[ext_resource type="PackedScene" uid="uid://cqdnb0joph8wc" path="res://room_generation/scenes/door_geometry.tscn" id="2_l5nsr"]
+
+[node name="ClosedDoor" type="Node3D" unique_id=1184947700]
+
+[node name="DoorFrame" parent="." unique_id=1878720624 instance=ExtResource("1_e650p")]
+
+[node name="Door" parent="." unique_id=462331047 instance=ExtResource("2_l5nsr")]

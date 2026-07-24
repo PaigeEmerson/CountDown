@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://btsx1yk8coofb"]
+
+[ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_3oer3"]
+[ext_resource type="PackedScene" uid="uid://b4d0kd5khwr6w" path="res://cleanup_tasks/scenes/test_cleanup_task.tscn" id="2_14iul"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmpk6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmpk6"]
+
+[node name="Evidence" type="Area3D" unique_id=487633448]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_3oer3")
+cleanup_task_scene = ExtResource("2_14iul")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=877001008]
+mesh = SubResource("BoxMesh_gmpk6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=974700696]
+shape = SubResource("BoxShape3D_gmpk6")

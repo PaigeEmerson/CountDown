@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dhcv2yeqgnx7p"]
+
+[ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_kjbqm"]
+[ext_resource type="PackedScene" uid="uid://bglhy2ufynr2d" path="res://cleanup_tasks/scenes/blood_srub_task.tscn" id="2_jk7hm"]
+[ext_resource type="Texture2D" uid="uid://ds7rnan55lq1d" path="res://cleanup_tasks/materials/textures/blood_splatter_1.webp" id="3_2on2e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_owbvp"]
+size = Vector3(1.5, 0.1, 1)
+
+[node name="BloodEvidence" type="Area3D" unique_id=1274024004]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_kjbqm")
+evidence_name = "Blood Stain"
+cleanup_task_scene = ExtResource("2_jk7hm")
+
+[node name="StainSurface" type="Decal" parent="." unique_id=669078734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05908817, 0)
+size = Vector3(1.5, 1, 1)
+texture_albedo = ExtResource("3_2on2e")
+upper_fade = 0.0
+lower_fade = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=967652706]
+shape = SubResource("BoxShape3D_owbvp")
+
+[node name="CleanupView" type="Marker3D" parent="." unique_id=1389172555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 1)

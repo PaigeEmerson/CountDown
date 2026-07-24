@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bkm7ift77m5ty"]
+
+[ext_resource type="PackedScene" uid="uid://c084sqs76a8o8" path="res://room_generation/meshes/rooms/Large_Room_3.glb" id="1_gox13"]
+
+[node name="Large_Room_3" unique_id=1331096823 instance=ExtResource("1_gox13")]
+
+[node name="Large_Room_3_Bounds" parent="Large_Room_3" parent_id_path=PackedInt32Array(2123095297) index="0" unique_id=1305050000]
+collision_layer = 0
+collision_mask = 0

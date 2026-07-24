@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cjdx4y75e7l8y"]
+
+[ext_resource type="Script" uid="uid://bku2ypafmstms" path="res://game/scripts/apartment_exit.gd" id="1_qc4we"]
+[ext_resource type="PackedScene" uid="uid://df40nhbg5hp63" path="res://room_generation/scenes/closed_door.tscn" id="2_qcqqc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0r8uf"]
+size = Vector3(1, 2.1965332, 0.93566895)
+
+[node name="ApartmentExit" type="Area3D" unique_id=1225873522]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_qc4we")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1786376602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47115174, 1.1219664, 0.0016487241)
+shape = SubResource("BoxShape3D_0r8uf")
+
+[node name="ClosedDoor" parent="." unique_id=1184947700 instance=ExtResource("2_qcqqc")]

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dttutxuv8ryyl"]
+
+[ext_resource type="Script" uid="uid://brsjxsulf2jop" path="res://game/scripts/run_results_ui.gd" id="1_42oab"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=760183893]
+layer = 50
+script = ExtResource("1_42oab")
+
+[node name="Background" type="ColorRect" parent="." unique_id=134815410]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54509807)
+
+[node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=211541240]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultsPanel" type="PanelContainer" parent="Background/CenterContainer" unique_id=1114434657]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/CenterContainer/ResultsPanel" unique_id=1732004622]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer/ResultsPanel/MarginContainer" unique_id=824897579]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Background/CenterContainer/ResultsPanel/MarginContainer/VBoxContainer" unique_id=1693981684]
+layout_mode = 2
+text = "Apartment Escaped"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="Background/CenterContainer/ResultsPanel/MarginContainer/VBoxContainer" unique_id=1466618703]
+layout_mode = 2
+text = "Cleanup complete."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CrimeLabel" type="Label" parent="Background/CenterContainer/ResultsPanel/MarginContainer/VBoxContainer" unique_id=219036402]
+layout_mode = 2
+text = "Crimes cleaned: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConvictionLabel" type="Label" parent="Background/CenterContainer/ResultsPanel/MarginContainer/VBoxContainer" unique_id=747019558]
+layout_mode = 2
+text = "Convictions: 0 / 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Background/CenterContainer/ResultsPanel/MarginContainer/VBoxContainer" unique_id=1396513640]
+layout_mode = 2
+text = "Continue"

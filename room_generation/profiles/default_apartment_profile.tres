@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ApartmentGenerationProfile" format=3 uid="uid://kchklk4lto4f"]
+
+[ext_resource type="Script" uid="uid://w6daawcf852n" path="res://room_generation/scripts/apartment_generation_profile.gd" id="1_fpbyq"]
+
+[resource]
+script = ExtResource("1_fpbyq")
+metadata/_custom_type_script = "uid://w6daawcf852n"
