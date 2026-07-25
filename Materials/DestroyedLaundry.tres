@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyw2445dyehfh"]
+
+[ext_resource type="Texture2D" uid="uid://d0310hpvva0p" path="res://GLB/laundryDestroyed_sp_0.png" id="1_mnqno"]
+[ext_resource type="Texture2D" uid="uid://dhrxa2ctmkisl" path="res://GLB/laundryDestroyed_sp_1.png" id="2_0s8no"]
+[ext_resource type="Texture2D" uid="uid://b3ctjg0g7ykxo" path="res://GLB/laundryDestroyed_sp_2.png" id="3_6nub6"]
+
+[resource]
+albedo_texture = ExtResource("1_mnqno")
+metallic = 1.0
+metallic_texture = ExtResource("2_0s8no")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_0s8no")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_6nub6")
+ao_enabled = true
+ao_texture = ExtResource("2_0s8no")

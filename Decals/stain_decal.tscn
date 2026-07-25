@@ -9,4 +9,5 @@ transform = Transform3D(2.8090198, 0, 0, 0, -1.2278616e-07, -2.8090198, 0, 2.809
 texture_albedo = ExtResource("1_gqry4")
 texture_normal = ExtResource("2_50pni")
 texture_orm = ExtResource("3_1ig4m")
+modulate = Color(0, 0, 0, 1)
 normal_fade = 0.999

@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://bxmo2f1mbj350"]
 
+[ext_resource type="PackedScene" uid="uid://tsvvku7ldu42" path="res://Materials/Textures/LaundryMachine/laundryWMoney_sp.gltf" id="1_cs5ax"]
+[ext_resource type="PackedScene" uid="uid://d2lxjk2dp7bx5" path="res://GLB/MoneyPile.glb" id="2_es56d"]
+[ext_resource type="PackedScene" uid="uid://dps0ha687buwn" path="res://GLB/laundryDestroyed_sp.glb" id="3_es56d"]
+
 [node name="Laundry" type="Node3D" unique_id=2130412187]
+
+[node name="laundryWMoney_sp" parent="." unique_id=1122801830 instance=ExtResource("1_cs5ax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45245433, 0)
+
+[node name="Cube2" parent="laundryWMoney_sp/RootNode/Cube" parent_id_path=PackedInt32Array(1122801830, 1941975465) index="0" unique_id=1459748803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5099653e-08)
+
+[node name="MoneyPile" parent="laundryWMoney_sp/RootNode/Cube" parent_id_path=PackedInt32Array(1122801830, 1941975465) index="1" unique_id=160576211 instance=ExtResource("2_es56d")]
+transform = Transform3D(1, 0, 0, 0, -1.192093e-07, -1, 0, 1, -1.192093e-07, -0.0014095306, 0, 9.5930226e-08)
+
+[node name="Cube_0042" parent="laundryWMoney_sp/RootNode/Cube_004" parent_id_path=PackedInt32Array(1122801830, 120005255) index="0" unique_id=2086485167]
+visible = false
+
+[node name="laundryDestroyed_sp" parent="." unique_id=932056549 instance=ExtResource("3_es56d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033288598, 0.45055032, -2.7748644)
+
+[editable path="laundryWMoney_sp"]

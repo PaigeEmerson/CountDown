@@ -4,6 +4,43 @@
 [ext_resource type="PackedScene" uid="uid://rmoubhcbmodj" path="res://room_generation/scenes/geo/medium_room_1_geo.tscn" id="2_phs1f"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="3_8p6f4"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_177ku"]
+[ext_resource type="PackedScene" uid="uid://csoib3f3a1l0f" path="res://GLB/ClosetDoor.glb" id="4_c4u1r"]
+[ext_resource type="Material" uid="uid://dgpp5eirj5yxs" path="res://Materials/Wall.tres" id="4_gaslh"]
+[ext_resource type="PackedScene" uid="uid://b8del25248a0f" path="res://GLB/Hinge1.glb" id="5_6btsg"]
+[ext_resource type="PackedScene" uid="uid://lbpbjj5di703" path="res://GLB/Hinge2.glb" id="6_yeqks"]
+[ext_resource type="PackedScene" uid="uid://bb7510exwefm8" path="res://room_generation/meshes/DoorFrame.glb" id="8_mdh3o"]
+[ext_resource type="PackedScene" uid="uid://871pw7gp3etg" path="res://GLB/TrimCorner.glb" id="9_hi7wf"]
+[ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="10_wphxu"]
+[ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="11_5tryi"]
+[ext_resource type="PackedScene" uid="uid://dtjmaqs4b27y0" path="res://GLB/TallLamp.glb" id="12_x0ole"]
+[ext_resource type="Texture2D" uid="uid://cllb8qk082umn" path="res://2D/cookie.png" id="13_5tryi"]
+[ext_resource type="PackedScene" uid="uid://pc4dfcf2fmlh" path="res://GLB/Table.glb" id="14_a2aui"]
+[ext_resource type="PackedScene" uid="uid://imbapbimh102" path="res://GLB/FilingCabinet.glb" id="15_2cfy6"]
+[ext_resource type="PackedScene" uid="uid://b2emiti55t3av" path="res://GLB/Lightswitch.glb" id="16_2cfy6"]
+[ext_resource type="PackedScene" uid="uid://cq0y74icxn4ed" path="res://Materials/Textures/Rug/rug_sp.glb" id="18_hvqg8"]
+[ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="19_3hqgc"]
+[ext_resource type="PackedScene" uid="uid://cmdrl8f52b5yf" path="res://GLB/ClosetShelf1.glb" id="19_phxpo"]
+[ext_resource type="Texture2D" uid="uid://dtkay5h3d0ke0" path="res://Materials/Textures/Rug/rug_sp_02.png" id="19_vmudj"]
+[ext_resource type="PackedScene" uid="uid://eatpye844pwx" path="res://GLB/ClosetShelf2.glb" id="20_fk72o"]
+[ext_resource type="PackedScene" uid="uid://b4dpf2sc5ovpx" path="res://GLB/PowerOutlet.glb" id="21_fk72o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3xsqf"]
+size = Vector3(0.13275146, 0.37231445, 3.068592)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6btsg"]
+size = Vector3(0.13275146, 2.2979736, 0.70991516)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yeqks"]
+size = Vector3(0.13275146, 2.2979736, 0.70991516)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wphxu"]
+size = Vector3(0.13275146, 2.6035767, 0.9904671)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xsqf"]
+size = Vector3(0.98928833, 2.9500732, 3.074768)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odata"]
+albedo_texture = ExtResource("19_vmudj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k8tps"]
 size = Vector3(7.7334595, 2.5651855, 5.998535)
@@ -32,6 +69,120 @@ transform = Transform3D(-4.371138e-08, 0, -13.579126, 0, 1, 0, 1, 0, -5.935625e-
 [node name="Trim5" parent="Geometry" unique_id=1794176622 instance=ExtResource("3_8p6f4")]
 transform = Transform3D(-4.371138e-08, 0, -0.9914255, 0, 1, 0, 1, 0, -4.3336588e-08, -0.6684854, 0, 0.06696658)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry" unique_id=1213476872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.975079, 2.3322155, 1.5609822)
+material_override = ExtResource("4_gaslh")
+mesh = SubResource("BoxMesh_3xsqf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry" unique_id=228188809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.975079, 1.0713756, 0.38164377)
+material_override = ExtResource("4_gaslh")
+mesh = SubResource("BoxMesh_6btsg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Geometry" unique_id=534897379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.975079, 1.0713756, 2.7404156)
+material_override = ExtResource("4_gaslh")
+mesh = SubResource("BoxMesh_yeqks")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Geometry" unique_id=1856054236]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.4378533, 1.2241771, 3.0286078)
+material_override = ExtResource("4_gaslh")
+mesh = SubResource("BoxMesh_wphxu")
+
+[node name="ClosetDoor" parent="Geometry" unique_id=941873436 instance=ExtResource("4_c4u1r")]
+transform = Transform3D(0.50400114, 0, 0.86370295, 0, 1, 0, -0.86370295, 0, 0.50400114, 5.852052, 1.4759733e-07, 0.9335948)
+
+[node name="ClosetDoor2" parent="Geometry" unique_id=1062106624 instance=ExtResource("4_c4u1r")]
+transform = Transform3D(-0.39140618, 0, 0.92021805, 0, 1, 0, -0.92021805, 0, -0.39140618, 5.824815, 8.799269e-08, 1.336368)
+
+[node name="ClosetDoor3" parent="Geometry" unique_id=257749969 instance=ExtResource("4_c4u1r")]
+transform = Transform3D(0.902137, 0, 0.43144977, 0, 1, 0, -0.43144977, 0, 0.902137, 5.8394985, 1.4759733e-07, 1.9983535)
+
+[node name="ClosetDoor4" parent="Geometry" unique_id=1889577185 instance=ExtResource("4_c4u1r")]
+transform = Transform3D(-0.8276218, 0, 0.5612861, 0, 1, 0, -0.5612861, 0, -0.8276218, 5.8196197, 1.4759733e-07, 2.2486606)
+
+[node name="Hinge1" parent="Geometry" unique_id=1866819997 instance=ExtResource("5_6btsg")]
+transform = Transform3D(0.37635553, 0, -0.92647535, 0, 1, 0, 0.92647535, 0, 0.37635553, 5.759235, 1.0070636, 1.1326416)
+
+[node name="Hinge2" parent="Geometry" unique_id=988271188 instance=ExtResource("6_yeqks")]
+transform = Transform3D(0.88325095, 0, -0.46890056, 0, 1, 0, 0.46890056, 0, 0.88325095, 5.760991, 1.006163, 1.1310207)
+
+[node name="Hinge3" parent="Geometry" unique_id=235547448 instance=ExtResource("5_6btsg")]
+transform = Transform3D(0.8298087, 0, -0.55804753, 0, 1, 0, 0.55804753, 0, 0.8298087, 5.6548314, 1.0070636, 2.1103337)
+
+[node name="Hinge4" parent="Geometry" unique_id=1340994089 instance=ExtResource("6_yeqks")]
+transform = Transform3D(0.45328736, 0, -0.8913646, 0, 1, 0, 0.8913646, 0, 0.45328736, 5.655382, 1.006163, 2.1080084)
+
+[node name="DoorFrame" parent="Geometry" unique_id=1284916520 instance=ExtResource("8_mdh3o")]
+transform = Transform3D(2.3802605e-07, 0, -1.0000001, 0, 1.0560976, 0, 1.8151337, 0, 1.3113417e-07, 5.908094, 3.5762787e-07, 0.64485717)
+
+[node name="TrimCorner" parent="Geometry" unique_id=755052692 instance=ExtResource("9_hi7wf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.902197, 1.7881393e-07, 3.1003914)
+
+[node name="Trim6" parent="Geometry" unique_id=521527037 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.601085, 0.000877887, 3.1001866)
+
+[node name="Trim7" parent="Geometry" unique_id=1589634914 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.902429, 0.0001962781, 2.6710536)
+
+[node name="Trim8" parent="Geometry" unique_id=1694294486 instance=ExtResource("3_8p6f4")]
+transform = Transform3D(-1, 0, 1.3601544e-07, 0, 1, 0, -8.742278e-08, 0, -1.5558352, 5.902429, 0.0001962781, 0.33342838)
+
+[node name="Trash1" parent="Geometry" unique_id=2126842035 instance=ExtResource("10_wphxu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6073494, 0.01375258, 0.43366718)
+
+[node name="Trash3" parent="Geometry" unique_id=371392063 instance=ExtResource("10_wphxu")]
+transform = Transform3D(1, 0, 0, 0, 0.685266, 0, 0, 0, 1, 6.487215, 0.0137524605, 4.125953)
+
+[node name="Trash2" parent="Geometry" unique_id=674108714 instance=ExtResource("11_5tryi")]
+transform = Transform3D(0.7138531, 0, 0, 0, 0.7138531, 0, 0, 0, 0.7138531, 5.0093155, 0.010972708, 0.2562346)
+
+[node name="TallLamp" parent="Geometry" unique_id=89093120 instance=ExtResource("12_x0ole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.553441, 2.439325e-07, 5.711275)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Geometry/TallLamp" unique_id=403821588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5474668, 1.2499915, -2.6919584)
+size = Vector3(9.811684, 4.6116333, 8.1026)
+box_projection = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/TallLamp/ReflectionProbe" unique_id=571655876]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 3.5399265, 0.32116747, 2.6917162)
+light_color = Color(0.9411765, 0.83137256, 0.61960787, 1)
+light_energy = 0.485
+light_projector = ExtResource("13_5tryi")
+shadow_enabled = true
+shadow_caster_mask = 4294967263
+
+[node name="Table" parent="Geometry/TallLamp/ReflectionProbe" unique_id=1610892661 instance=ExtResource("14_a2aui")]
+transform = Transform3D(0.060882162, 0, -0.998145, 0, 1, 0, 0.998145, 0, 0.060882162, 3.3735347, -1.2499915, 1.5829806)
+
+[node name="FilingCabinet" parent="Geometry/TallLamp/ReflectionProbe" unique_id=133718449 instance=ExtResource("15_2cfy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3100305, -1.2499915, 0.3940456)
+
+[node name="Cube_036" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" index="1" unique_id=649465553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0454911, 1.3439387, -0.00016105699)
+
+[node name="Cube_012" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" index="3" unique_id=1788787668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12952316, 0.58315206, -0.00016105699)
+
+[node name="Lightswitch" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" unique_id=1244461544 instance=ExtResource("16_2cfy6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.406859, 1.1461322, -3.3660123)
+
+[node name="SmokeAlarm" parent="Geometry" unique_id=448665216 instance=ExtResource("19_3hqgc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2669048, 2.4407828, 2.8287902)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry" unique_id=497664198]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/StaticBody3D" unique_id=657595300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396215, 0.9750366, 1.5683247)
+shape = SubResource("BoxShape3D_3xsqf")
+
+[node name="rug_sp" parent="Geometry/StaticBody3D/CollisionShape3D" unique_id=865900915 instance=ExtResource("18_hvqg8")]
+transform = Transform3D(0.027453944, -1.5233368e-08, -0.16975579, -8.397329e-09, 0.17196146, -1.6789377e-08, 0.1697558, 1.0970075e-08, 0.027453944, -3.9557374, -0.88960403, 0.7563605)
+
+[node name="Plane_0122" parent="Geometry/StaticBody3D/CollisionShape3D/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1787430695) index="0" unique_id=1726373681]
+material_override = SubResource("StandardMaterial3D_odata")
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
 [node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_177ku")]
@@ -59,3 +210,18 @@ collision_mask = 524288
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=208570312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0171204, 1.2247314, 3.0124512)
 shape = SubResource("BoxShape3D_k8tps")
+
+[node name="ClosetShelf1" parent="." unique_id=1566866847 instance=ExtResource("19_phxpo")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.8671756, 1.4385123, 1.637538)
+
+[node name="ClosetShelf2" parent="." unique_id=1435018094 instance=ExtResource("20_fk72o")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.865628, 2.0453246, 1.6296825)
+
+[node name="PowerOutlet" parent="." unique_id=1544418532 instance=ExtResource("21_fk72o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7190795, 0.37455916, 0.050799374)
+
+[node name="PowerOutlet2" parent="." unique_id=1947803767 instance=ExtResource("21_fk72o")]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0.4346468, 0.36211836, 5.983074)
+
+[editable path="Geometry/TallLamp/ReflectionProbe/FilingCabinet"]
+[editable path="Geometry/StaticBody3D/CollisionShape3D/rug_sp"]

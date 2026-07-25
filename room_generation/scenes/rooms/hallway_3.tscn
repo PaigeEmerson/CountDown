@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dca6gtuav5nkj" path="res://room_generation/scenes/geo/hallway_3_geo.tscn" id="2_sh5wi"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_kt4dn"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_bojuh"]
+[ext_resource type="PackedScene" uid="uid://cdooj4iwe465h" path="res://GLB/Radiator.glb" id="5_sh5wi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dbni8"]
 size = Vector3(2.9194336, 2.5150146, 4.180664)
@@ -78,3 +79,11 @@ transform = Transform3D(0.99999994, 0, 6.216512e-07, 0, 1, 0, -1.7484552e-07, 0,
 
 [node name="Trim6" parent="." unique_id=1146047452 instance=ExtResource("4_bojuh")]
 transform = Transform3D(0.99999994, 0, 5.907272e-07, 0, 1, 0, -1.7484552e-07, 0, 3.3785658, -1.4208443, 2.3841858e-07, -3.3949466)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=758246727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00033569336, 1.2703266, -2.12508)
+size = Vector3(5.0093384, 4.6116333, 6.343384)
+box_projection = true
+
+[node name="Radiator" parent="." unique_id=1421624761 instance=ExtResource("5_sh5wi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.2310079, 0.0036595436, -3.2241526)

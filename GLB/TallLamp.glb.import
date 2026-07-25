@@ -49,7 +49,9 @@ _subresources={
 },
 "nodes": {
 "PATH:Cylinder_181": {
-"mesh_instance/layers": 32
+"generate/physics": true,
+"mesh_instance/layers": 32,
+"physics/shape_type": 1
 }
 }
 }

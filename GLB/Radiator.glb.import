@@ -46,6 +46,12 @@ _subresources={
 "use_external/fallback_path": "res://Materials/WindowsAndRadiator.tres",
 "use_external/path": "uid://byyi3px73435k"
 }
+},
+"nodes": {
+"PATH:Cube_020": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
 }
 }
 gltf/naming_version=2

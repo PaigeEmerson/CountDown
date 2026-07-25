@@ -1,3 +1,13 @@
 [gd_resource type="ORMMaterial3D" format=3 uid="uid://ct2vk3fmphwq8"]
 
+[ext_resource type="Texture2D" uid="uid://drtlh2olxx8eb" path="res://Materials/Textures/Cabinets/cabinets_baseColor_1001.png" id="1_inqrx"]
+[ext_resource type="Texture2D" uid="uid://dsog273roflui" path="res://Materials/Textures/Cabinets/cabinets_normal_1001.png" id="2_vviea"]
+[ext_resource type="Texture2D" uid="uid://mfw8nf5mm3x5" path="res://Materials/Textures/Cabinets/cabinets_occlusionRoughnessMetallic_1001.png" id="3_x1sp0"]
+
 [resource]
+albedo_texture = ExtResource("1_inqrx")
+orm_texture = ExtResource("3_x1sp0")
+normal_enabled = true
+normal_texture = ExtResource("2_vviea")
+ao_enabled = true
+ao_light_affect = 1.0

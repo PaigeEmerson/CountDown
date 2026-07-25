@@ -12,5 +12,5 @@ shader_parameter/layers = 5
 shader_parameter/drop_strength = 20.0
 shader_parameter/trail_strength = 0.45
 shader_parameter/refraction = 0.695
-shader_parameter/blur = 0.0
+shader_parameter/blur = 1.865
 shader_parameter/fade_distance = 0.0

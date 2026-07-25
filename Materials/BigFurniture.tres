@@ -1,3 +1,13 @@
 [gd_resource type="ORMMaterial3D" format=3 uid="uid://dt83igfpi3s6t"]
 
+[ext_resource type="Texture2D" uid="uid://2ro232vpy3jl" path="res://Materials/Textures/BigFurniture/big_furniture_baseColor_1001.png" id="1_lwu64"]
+[ext_resource type="Texture2D" uid="uid://cs1cnjisg2hfx" path="res://Materials/Textures/BigFurniture/big_furniture_normal_1001.png" id="2_cjdtk"]
+[ext_resource type="Texture2D" uid="uid://bvnshyghpmg1d" path="res://Materials/Textures/BigFurniture/big_furniture_occlusionRoughnessMetallic_1001.png" id="3_16ga1"]
+
 [resource]
+albedo_texture = ExtResource("1_lwu64")
+orm_texture = ExtResource("3_16ga1")
+normal_enabled = true
+normal_texture = ExtResource("2_cjdtk")
+ao_enabled = true
+ao_light_affect = 1.0

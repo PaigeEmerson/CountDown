@@ -4,8 +4,8 @@ extends CharacterBody3D
 @export var walk_speed := 5.0
 @export var sprint_speed := 8.0
 @export var acceleration := 20.0
-@export var air_acceleration := 6.0
-@export var jump_velocity := 5.0
+@export var air_acceleration := 5.0
+@export var jump_velocity := 3.0
 
 @export_group("Mouse Look")
 @export var mouse_sensitivity := 0.002

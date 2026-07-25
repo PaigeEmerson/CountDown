@@ -5,6 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_cfp0u"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_ctwjm"]
 [ext_resource type="PackedScene" uid="uid://871pw7gp3etg" path="res://GLB/TrimCorner.glb" id="5_wlyld"]
+[ext_resource type="PackedScene" uid="uid://pc4dfcf2fmlh" path="res://GLB/Table.glb" id="6_ai57n"]
+[ext_resource type="PackedScene" uid="uid://cpl4fmmcush1x" path="res://GLB/Lamp.glb" id="7_ts2yn"]
+[ext_resource type="Texture2D" uid="uid://cllb8qk082umn" path="res://2D/cookie.png" id="8_l2kgq"]
+[ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="8_n6acm"]
+[ext_resource type="PackedScene" uid="uid://cdooj4iwe465h" path="res://GLB/Radiator.glb" id="9_l2kgq"]
+[ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="10_ftgxk"]
+[ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="11_oqtsw"]
+[ext_resource type="PackedScene" uid="uid://cyyf80vhopqhk" path="res://GLB/Paper1.glb" id="12_n6acm"]
+[ext_resource type="PackedScene" uid="uid://rryb5mtgqr7k" path="res://GLB/Paper3.glb" id="13_l2kgq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sh5wi"]
 size = Vector3(2.8920898, 2.5253906, 8.07605)
@@ -123,3 +132,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 5.0302677, -1.4716214, 0.0010108
 
 [node name="Trim13" parent="." unique_id=597680683 instance=ExtResource("4_ctwjm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7838085, -1.4716214, 0.0010108203, -7.740715)
+
+[node name="Table" parent="." unique_id=1610892661 instance=ExtResource("6_ai57n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6484953, 1.1920929e-07, -7.687514)
+
+[node name="Lamp" parent="." unique_id=2094503138 instance=ExtResource("7_ts2yn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.920207, 0.65846187, -7.6952906)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp" unique_id=1670651107]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0.0041457415, 0.5770416, 0.01287508)
+light_color = Color(0.9411765, 0.83137256, 0.61960787, 1)
+light_energy = 0.485
+light_projector = ExtResource("8_l2kgq")
+shadow_enabled = true
+shadow_caster_mask = 4294967263
+
+[node name="SmokeAlarm" parent="." unique_id=448665216 instance=ExtResource("8_n6acm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003156975, 2.4405453, -6.4097333)
+
+[node name="Radiator" parent="." unique_id=1421624761 instance=ExtResource("9_l2kgq")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3376038, 0.003659782, -4.581126)
+
+[node name="Radiator2" parent="." unique_id=1447626013 instance=ExtResource("9_l2kgq")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 5.609525, 0.003659782, -7.9618745)
+
+[node name="Trash1" parent="." unique_id=2126842035 instance=ExtResource("10_ftgxk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.629087, 0.013752699, -7.6624217)
+
+[node name="Trash2" parent="." unique_id=674108714 instance=ExtResource("11_oqtsw")]
+transform = Transform3D(0.68943655, 0, 0, 0, 0.68943655, 0, 0, 0, 0.68943655, 2.0906515, 0.010972708, -7.9083376)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Trash2" unique_id=1799820836]
+transform = Transform3D(1.4504597, 0, 0, 0, 1.4504597, 0, 0, 0, 1.4504597, -3.1219716, 1.7498561, 5.5524015)
+size = Vector3(5.0093384, 4.6116333, 10.304932)
+box_projection = true
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="Trash2" unique_id=1854608669]
+transform = Transform3D(-6.340161e-08, 0, -1.4504597, 0, 1.4504597, 0, 1.4504597, 0, -6.340161e-08, 2.845817, 1.7498561, 1.7299929)
+size = Vector3(5.0093384, 4.6116333, 13.16922)
+box_projection = true
+
+[node name="Paper1" parent="Trash2" unique_id=1893105728 instance=ExtResource("12_n6acm")]
+transform = Transform3D(-1.4491189, 0, 0.06235272, 0, 1.4504597, 0, -0.06235272, 0, -1.4491189, -2.8343267, 0.9690254, 0.24680085)
+
+[node name="Paper3" parent="Trash2" unique_id=570092864 instance=ExtResource("13_l2kgq")]
+transform = Transform3D(-1.424205, 0, 0.27472475, 0, 1.4504597, 0, -0.27472475, 0, -1.424205, -2.2454736, 0.96745193, 0.59702015)

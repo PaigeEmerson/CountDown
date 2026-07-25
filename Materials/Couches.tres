@@ -1,3 +1,12 @@
 [gd_resource type="ORMMaterial3D" format=3 uid="uid://v06r3tptkk1b"]
 
+[ext_resource type="Texture2D" uid="uid://b5tn52k30ip6m" path="res://Materials/Textures/Couches/couches_baseColor_1001.png" id="1_20okt"]
+[ext_resource type="Texture2D" uid="uid://brcx2k8pb0siq" path="res://Materials/Textures/Couches/couches_normal_1001.png" id="2_l5amm"]
+[ext_resource type="Texture2D" uid="uid://cujr2lu7lwhm4" path="res://Materials/Textures/Couches/couches_occlusionRoughnessMetallic_1001.png" id="3_iwy1h"]
+
 [resource]
+albedo_texture = ExtResource("1_20okt")
+orm_texture = ExtResource("3_iwy1h")
+normal_enabled = true
+normal_texture = ExtResource("2_l5amm")
+ao_enabled = true

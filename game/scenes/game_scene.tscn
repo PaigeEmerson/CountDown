@@ -24,7 +24,8 @@
 [ext_resource type="Script" uid="uid://dag8e03nff540" path="res://room_generation/scripts/storm_controller.gd" id="23_75kwt"]
 [ext_resource type="Material" uid="uid://bdtsa3qqipnxc" path="res://Materials/Shader Materials/CanvasOverlay.tres" id="23_tlp5u"]
 [ext_resource type="AudioStream" uid="uid://da8tc4jd26hhe" path="res://audio/universfield-thunder-strike-124463.mp3" id="24_qpo4r"]
-[ext_resource type="AudioStream" uid="uid://5jxjwelwc3wc" path="res://audio/soundreality-rain-sound-550289.mp3" id="25_i7ckm"]
+[ext_resource type="AudioStream" uid="uid://d1ljmd3riew12" path="res://audio/RainMuffled.mp3" id="25_75kwt"]
+[ext_resource type="AudioStream" uid="uid://dfcf5x57rewrn" path="res://audio/ThunderMuffled.mp3" id="25_qpo4r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_gmpk6"]
 
@@ -35,9 +36,8 @@ ssao_radius = 0.54
 ssao_intensity = 2.15
 sdfgi_use_occlusion = true
 glow_normalized = true
-glow_intensity = 0.52
-glow_strength = 1.12
-fog_enabled = true
+glow_intensity = 6.69
+glow_strength = 1.1
 fog_light_color = Color(0.0415072, 0.041507192, 0.041507192, 1)
 fog_density = 0.3
 adjustment_brightness = 1.04
@@ -86,18 +86,23 @@ mouse_filter = 2
 
 [node name="StormController" type="Node" parent="." unique_id=327158441 node_paths=PackedStringArray("thunder_player")]
 script = ExtResource("23_75kwt")
-minimum_flash_interval = 1.0
-maximum_flash_interval = 5.0
+minimum_flash_interval = 3.0
+maximum_flash_interval = 6.0
 flash_attack_duration = 0.04
 flash_hold_duration = 0.25
 flash_fade_duration = 0.45
 thunder_player = NodePath("ThunderPlayer")
 thunder_sounds = Array[AudioStream]([ExtResource("24_qpo4r")])
+minimum_thunder_delay = 0.0
+maximum_thunder_delay = 1.0
+minimum_thunder_volume_db = -15.0
+maximum_thunder_volume_db = -20.0
 
 [node name="ThunderPlayer" type="AudioStreamPlayer" parent="StormController" unique_id=1035686462]
-volume_db = -3.0
+stream = ExtResource("25_qpo4r")
+volume_db = -12.838
 
 [node name="RainAmbience" type="AudioStreamPlayer" parent="StormController" unique_id=1951417595]
-stream = ExtResource("25_i7ckm")
-volume_db = -15.0
+stream = ExtResource("25_75kwt")
+volume_db = -3.054
 autoplay = true

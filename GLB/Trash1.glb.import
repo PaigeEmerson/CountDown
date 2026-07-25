@@ -46,6 +46,12 @@ _subresources={
 "use_external/fallback_path": "res://Materials/TrashAndTV.tres",
 "use_external/path": "uid://bf1wbj52vnt3a"
 }
+},
+"nodes": {
+"PATH:Cube_007": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
 }
 }
 gltf/naming_version=2

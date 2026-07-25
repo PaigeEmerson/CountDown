@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://icp4swwk6ojr" path="res://player/scripts/player_controller.gd" id="1_apn28"]
 [ext_resource type="Texture2D" uid="uid://dnym6wp4baeps" path="res://2D/cookie_4.jpg" id="2_8h4do"]
 [ext_resource type="Script" uid="uid://1qm13t4xymfo" path="res://player/scripts/player_interaction_controller.gd" id="2_t0cpu"]
+[ext_resource type="Script" uid="uid://dlq6s3oeeiym8" path="res://player/scenes/FlashlightToggle.gd" id="3_87uja"]
+[ext_resource type="PackedScene" uid="uid://b1epxsmg7kc61" path="res://Materials/Textures/Flashlight/flashlight_sp.glb" id="4_rclgo"]
+[ext_resource type="Texture2D" uid="uid://bvgnr3axlu0j" path="res://2D/NewspaperUIBackground.png" id="6_tn8gd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmpk6"]
 radius = 0.25
@@ -24,23 +27,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5166351, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18312788, 0)
 current = true
 
+[node name="flashlight_sp" parent="Head/Camera3D" unique_id=1109492437 instance=ExtResource("4_rclgo")]
+transform = Transform3D(0.4733499, 0.14201187, -1.6265831, 1.5579779, 0.4674158, 0.49419373, 0.48851293, -1.6282983, -7.110021e-08, 0.377, -0.28250718, -0.368)
+
 [node name="InteractionRay" type="RayCast3D" parent="Head/Camera3D" unique_id=243044338]
 target_position = Vector3(0, 0, -3)
 collision_mask = 2
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=1974735590]
-transform = Transform3D(0.9915858, 1.3669029e-09, 0.12945078, 0.01308361, 0.9948792, -0.10021972, -0.12878792, 0.101070166, 0.9865083, 0.43166924, -0.55880535, -0.32661605)
-light_energy = 10.455
+[node name="Node3D" type="Node3D" parent="Head/Camera3D" unique_id=244139174]
+script = ExtResource("3_87uja")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Head/Camera3D/Node3D" unique_id=1114097020]
+transform = Transform3D(0.99158585, 6.9078214e-09, 0.12945083, 0.013083611, 0.9948793, -0.10021977, -0.12878793, 0.10107018, 0.9865083, 0.3971513, -0.21754563, -0.6516123)
+light_energy = 0.568
+light_specular = 0.0
+light_cull_mask = 4294967293
+omni_range = 2.0741124
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D/Node3D" unique_id=1974735590]
+transform = Transform3D(0.99904287, 0.0031569307, 0.043628804, -0.0005826232, 0.9982642, -0.05889195, -0.043738995, 0.058810156, 0.9973106, 0.04365623, -0.20449936, -0.23970664)
+light_energy = 5.359
 light_projector = ExtResource("2_8h4do")
 shadow_enabled = true
-spot_range = 128.279
-spot_angle = 25.949818
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Head/Camera3D/SpotLight3D" unique_id=1114097020]
-light_energy = 3.498
-omni_range = 3.2917998
+spot_range = 10.049993
+spot_angle = 34.70695
 
 [node name="InteractionController" type="Node" parent="." unique_id=1915549538 node_paths=PackedStringArray("interaction_ray", "prompt_label")]
 script = ExtResource("2_t0cpu")
@@ -75,3 +87,17 @@ grow_vertical = 2
 text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="InteractionUI" unique_id=795563472]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1140.0
+offset_bottom = 672.5409
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_tn8gd")
+expand_mode = 1

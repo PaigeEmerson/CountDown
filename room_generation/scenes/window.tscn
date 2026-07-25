@@ -5,7 +5,10 @@
 [ext_resource type="Material" uid="uid://bmv8ybpmlp4cn" path="res://Materials/Shader Materials/RainWindow.tres" id="3_d31ik"]
 [ext_resource type="PackedScene" uid="uid://v601fu8x0utj" path="res://GLB/FireEscape.glb" id="4_tn1h3"]
 [ext_resource type="PackedScene" uid="uid://b43jhqqf0waxy" path="res://GLB/FireEscapeStairs.glb" id="5_dbk3f"]
+[ext_resource type="Material" uid="uid://d2ddx0tlggkjv" path="res://Materials/Black.tres" id="5_tn1h3"]
 [ext_resource type="Material" uid="uid://dgpp5eirj5yxs" path="res://Materials/Wall.tres" id="6_kxcff"]
+[ext_resource type="Script" uid="uid://bgxqogcxoppky" path="res://room_generation/scenes/WindowAudioPlayer.gd" id="8_tn1h3"]
+[ext_resource type="Script" uid="uid://bxeicwu8gre1n" path="res://room_generation/scenes/police_lights.gd" id="9_dbk3f"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yg3fg"]
 _surfaces = [{
@@ -159,6 +162,11 @@ shadow_mesh = SubResource("ArrayMesh_umhuo")
 [sub_resource type="QuadMesh" id="QuadMesh_hjpsd"]
 size = Vector2(0.955, 1.13)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3xsqf"]
+size = Vector3(1, 2.081543, 0.10494995)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3xsqf"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_3xsqf"]
 size = Vector3(0.12231445, 2.0767822, 0.03704834)
 
@@ -169,6 +177,7 @@ size = Vector3(0.77389526, 0.10266113, 0.020019531)
 size = Vector3(0.77389526, 0.5031738, 0.020019531)
 
 [node name="Window" type="Node3D" unique_id=215327719]
+script = ExtResource("8_tn1h3")
 
 [node name="WindowObjects" type="Node3D" parent="." unique_id=284166364]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5074645, 1.2400562, 0.027716458)
@@ -186,14 +195,25 @@ transform = Transform3D(-1, 1.947072e-07, -1.9477437e-07, -1.947072e-07, 0.00034
 mesh = SubResource("ArrayMesh_heg1d")
 
 [node name="TopPane" type="MeshInstance3D" parent="WindowObjects" unique_id=400365306]
-transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.013518214, 0.21630979, -0.0156107545)
+transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.013518213, 0.21630979, -0.028105078)
 material_override = ExtResource("3_d31ik")
 mesh = SubResource("QuadMesh_hjpsd")
 
 [node name="LowerPane" type="MeshInstance3D" parent="WindowObjects" unique_id=896532535]
-transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.015058994, -0.5592711, 0.04137507)
+transform = Transform3D(-0.689847, 0, 6.030834e-08, 0, 0.689847, 0, -6.030834e-08, 0, -0.689847, -0.015058994, -0.5592711, 0.038491756)
 material_override = ExtResource("3_d31ik")
 mesh = SubResource("QuadMesh_hjpsd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WindowObjects" unique_id=1276055511]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WindowObjects/StaticBody3D" unique_id=1461696600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16430664, 0.00065612793)
+shape = SubResource("BoxShape3D_3xsqf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WindowObjects" unique_id=1234554089]
+transform = Transform3D(2.9971795, 0, 0, 0, 4.5776024, 0, 0, 0, 0.9999998, -0.53651416, -0.20249093, -1.1528088)
+material_override = ExtResource("5_tn1h3")
+mesh = SubResource("QuadMesh_3xsqf")
 
 [node name="FireEscapeHolder" type="Node3D" parent="." unique_id=1251340678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5074645, 1.0582044, 0)
@@ -205,7 +225,7 @@ transform = Transform3D(0.6898468, 0, 0, 0, 0.6898468, 0, 0, 0, 0.6898468, 0.510
 transform = Transform3D(0.689847, 0, 0, 0, 0.689847, 0, 0, 0, 0.689847, 0.99867857, -1.9324464, 0.649935)
 
 [node name="FireEscapeStairs2" parent="FireEscapeHolder" unique_id=156500100 instance=ExtResource("5_dbk3f")]
-transform = Transform3D(0.6898468, 0, 0, 0, 0.6898468, 0, 0, 0, 0.6898468, 0.6559985, 0.5036324, 0.64993477)
+transform = Transform3D(0.6898468, 0, 0, 0, 0.6898468, 0, 0, 0, 0.6898468, 0.89295685, 0.5036324, 0.64993477)
 
 [node name="Wall" type="Node3D" parent="." unique_id=1559190373]
 
@@ -228,3 +248,23 @@ mesh = SubResource("BoxMesh_kxcff")
 transform = Transform3D(0.99998325, 0, 0, 0, 0.99998325, 0, 0, 0, 0.99998325, 0.5080429, 0.24869275, -0.015400168)
 material_override = ExtResource("6_kxcff")
 mesh = SubResource("BoxMesh_ggiu2")
+
+[node name="PoliceLights" type="Node3D" parent="." unique_id=1882116467]
+visible = false
+script = ExtResource("9_dbk3f")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="PoliceLights" unique_id=2076371283]
+transform = Transform3D(1, 0, 0, 0, 0.9914263, 0.13066722, 0, -0.13066722, 0.9914263, 0, 1.5177563, 1.7128859)
+light_color = Color(0.906949, 0.09389234, 0, 1)
+light_energy = 30.0
+shadow_enabled = true
+spot_range = 9.887
+spot_angle = 42.864986
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="PoliceLights" unique_id=258739928]
+transform = Transform3D(0.9873989, 0.0031467692, -0.1582197, 0.014378775, 0.9938828, 0.109500326, 0.15759638, -0.110395506, 0.9813135, 0.14299387, 1.49518, 1.6854324)
+light_color = Color(0.054349855, 0.44898713, 0.99999994, 1)
+light_energy = 30.0
+shadow_enabled = true
+spot_range = 9.887
+spot_angle = 26.181744

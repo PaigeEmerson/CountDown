@@ -37,7 +37,7 @@ func run_storm() -> void:
 		if not storm_running or not is_inside_tree():
 			return
 
-		await play_lightning_flash()
+		play_lightning_flash()
 
 		var thunder_delay := random.randf_range(minimum_thunder_delay, maximum_thunder_delay)
 		await get_tree().create_timer(thunder_delay).timeout

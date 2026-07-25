@@ -51,6 +51,11 @@ _subresources={
 "use_external/fallback_path": "res://Materials/Shader Materials/TVStatic.tres",
 "use_external/path": "uid://c3183w1xanbga"
 }
+},
+"nodes": {
+"PATH:Cube_004": {
+"generate/physics": true
+}
 }
 }
 gltf/naming_version=2
