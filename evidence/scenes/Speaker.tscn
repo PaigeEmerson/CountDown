@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dcykap7wt0abu"]
+
+[ext_resource type="PackedScene" uid="uid://cvjxec7nllet7" path="res://GLB/speaker.glb" id="1_8pntu"]
+
+[node name="Speaker" type="Node3D" unique_id=1442439071]
+
+[node name="speaker" parent="." unique_id=423342657 instance=ExtResource("1_8pntu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62141836, 1.1920929e-07, -0.54806423)

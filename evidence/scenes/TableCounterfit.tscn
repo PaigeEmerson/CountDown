@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://lglm4r2xemjh"]
+
+[ext_resource type="PackedScene" uid="uid://c84nx66lnbuqo" path="res://GLB/passport_sp.glb" id="1_76nck"]
+[ext_resource type="PackedScene" uid="uid://cv5jbrdy1hg1t" path="res://GLB/Moneystack.glb" id="2_j4hp3"]
+[ext_resource type="PackedScene" uid="uid://dinxs3304shr5" path="res://GLB/DoubleBill.glb" id="3_rppgp"]
+[ext_resource type="PackedScene" uid="uid://chv2rjf7g5sg3" path="res://GLB/SingleBill.glb" id="4_xohvv"]
+
+[node name="TableCounterfit" type="Node3D" unique_id=680182734]
+
+[node name="passport_sp" parent="." unique_id=1362225099 instance=ExtResource("1_76nck")]
+transform = Transform3D(0.3692474, 0, -0.9293311, 0, 1, 0, 0.9293311, 0, 0.3692474, -0.29316133, 0, 0.26120424)
+
+[node name="passport_sp2" parent="." unique_id=1491069300 instance=ExtResource("1_76nck")]
+transform = Transform3D(0.99120677, 0, 0.13232197, 0, 1, 0, -0.13232197, 0, 0.99120677, 0.42585403, 5.9604645e-08, -0.12913823)
+
+[node name="passport_sp3" parent="." unique_id=51927139 instance=ExtResource("1_76nck")]
+transform = Transform3D(0.9418752, 0, -0.33596328, 0, 1, 0, 0.33596328, 0, 0.9418752, 0.36261803, 0.006089717, 0.024074554)
+
+[node name="Moneystack" parent="." unique_id=1977506766 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, -0.19874881, 0, -0.005342139)
+
+[node name="Moneystack2" parent="." unique_id=2013833112 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, -0.1303117, 0, -0.007406421)
+
+[node name="Moneystack3" parent="." unique_id=78586908 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, -0.055450767, 0, -0.00845886)
+
+[node name="Moneystack4" parent="." unique_id=838134367 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, 0.012451276, 0, -0.005342139)
+
+[node name="Moneystack5" parent="." unique_id=1206652726 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, 0.08088839, 0, -0.007406421)
+
+[node name="Moneystack6" parent="." unique_id=484183174 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, 0.15574932, 0, -0.00845886)
+
+[node name="Moneystack7" parent="." unique_id=812135627 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, -0.02664487, 0.04928398, -0.005342139)
+
+[node name="Moneystack8" parent="." unique_id=581704028 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, 0.041792244, 0.04928398, -0.007406421)
+
+[node name="Moneystack10" parent="." unique_id=1313262827 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(-0.13999891, 0, -0.9901517, 0, 1, 0, 0.9901517, 0, -0.13999891, -0.12547223, 0.04928398, -0.005342139)
+
+[node name="Moneystack9" parent="." unique_id=723897425 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.032999203, 0, -0.9994554, 0, 1, 0, 0.9994554, 0, 0.032999203, 0.116653174, 0.04928398, -0.00845886)
+
+[node name="Moneystack11" parent="." unique_id=479969578 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(-0.05715733, 0, -0.9983652, 0, 1, 0, 0.9983652, 0, -0.05715733, -0.010884225, 0.096287996, -0.007406421)
+
+[node name="Moneystack12" parent="." unique_id=38579975 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.107661635, 0, -0.99418765, 0, 1, 0, 0.99418765, 0, 0.107661635, 0.063976705, 0.096287996, -0.00845886)
+
+[node name="Moneystack13" parent="." unique_id=123887166 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.2083257, 0, 0.97805953, 0, 1, 0, -0.97805953, 0, 0.2083257, 0.23735778, 0, 0.18527055)
+
+[node name="DoubleBill" parent="." unique_id=757731680 instance=ExtResource("3_rppgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03161502, 0.004694015, 0.2089606)
+
+[node name="DoubleBill4" parent="." unique_id=775879871 instance=ExtResource("3_rppgp")]
+transform = Transform3D(0.45364857, 0, 0.89118063, 0, 1, 0, -0.89118063, 0, 0.45364857, 0.3817159, 0.0012712479, 0.093161196)
+
+[node name="DoubleBill2" parent="." unique_id=21438151 instance=ExtResource("3_rppgp")]
+transform = Transform3D(-0.5784431, 0, 0.8157227, 0, 1, 0, -0.8157227, 0, -0.5784431, -0.30882478, 0.004694015, 0.08800578)
+
+[node name="DoubleBill3" parent="." unique_id=1065134059 instance=ExtResource("3_rppgp")]
+transform = Transform3D(-0.9764664, 0, 0.21566936, 0, 1, 0, -0.21566936, 0, -0.9764664, 0.23392475, 0.004694015, -0.17716178)
+
+[node name="SingleBill" parent="." unique_id=577946285 instance=ExtResource("4_xohvv")]
+transform = Transform3D(0.2049255, 0, 0.9787776, 0, 1, 0, -0.9787776, 0, 0.2049255, -0.11226988, 0.00508368, 0.21837354)
+
+[node name="SingleBill2" parent="." unique_id=2085365959 instance=ExtResource("4_xohvv")]
+transform = Transform3D(-0.4818449, 0, 0.8762565, 0, 1, 0, -0.8762565, 0, -0.4818449, -0.36348197, 0.00508368, -0.093703836)
+
+[node name="SingleBill5" parent="." unique_id=1337790901 instance=ExtResource("4_xohvv")]
+transform = Transform3D(0.14283162, 0, 0.98974705, 0, 1, 0, -0.98974705, 0, 0.14283162, -0.017335735, 0.064406425, 0.03849569)
+
+[node name="SingleBill7" parent="." unique_id=2019068712 instance=ExtResource("4_xohvv")]
+transform = Transform3D(0.14283162, 0, 0.98974705, 0, 1, 0, -0.98974705, 0, 0.14283162, 0.05662462, 0.12764996, -0.034178197)
+
+[node name="SingleBill8" parent="." unique_id=995720417 instance=ExtResource("4_xohvv")]
+transform = Transform3D(-0.18860547, 0, 0.982053, 0, 1, 0, -0.982053, 0, -0.18860547, -0.048035286, 0.026732147, -0.032744437)
+
+[node name="SingleBill9" parent="." unique_id=1269622868 instance=ExtResource("4_xohvv")]
+transform = Transform3D(0.24158524, 0, 0.9703796, 0, 1, 0, -0.9703796, 0, 0.24158524, 0.06944225, 0.026732147, -0.032744437)
+
+[node name="SingleBill6" parent="." unique_id=916145803 instance=ExtResource("4_xohvv")]
+transform = Transform3D(-0.3919248, 0, 0.91999733, 0, 1, 0, -0.91999733, 0, -0.3919248, 0.09217226, 0.064406425, 0.021712214)
+
+[node name="SingleBill3" parent="." unique_id=1991976997 instance=ExtResource("4_xohvv")]
+transform = Transform3D(0.21930313, 0, 0.97565675, 0, 1, 0, -0.97565675, 0, 0.21930313, -0.4474828, 0.00508368, 0.24202481)
+
+[node name="SingleBill4" parent="." unique_id=1788526736 instance=ExtResource("4_xohvv")]
+transform = Transform3D(0.76756203, 0, 0.6409748, 0, 1, 0, -0.6409748, 0, 0.76756203, -0.46909118, 0.009271443, 0.18197972)
+
+[node name="Moneystack14" parent="." unique_id=1968828306 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.98932374, 0, -0.14573461, 0, 1, 0, 0.14573461, 0, 0.98932374, 0.0049803257, 0, -0.18524343)
+
+[node name="Moneystack15" parent="." unique_id=779912289 instance=ExtResource("2_j4hp3")]
+transform = Transform3D(0.92563534, 0, 0.37841672, 0, 1, 0, -0.37841672, 0, 0.92563534, -0.23189229, 0, -0.17102647)

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://08sjtc5cf4d1"]
+
+[ext_resource type="Texture2D" uid="uid://bhderc3kwht4g" path="res://Materials/Textures/Flashlight/flashlight_sp_0.png" id="1_x4uy1"]
+[ext_resource type="Texture2D" uid="uid://djouigau0v5xw" path="res://Materials/Textures/Flashlight/flashlight_sp_1.png" id="2_y1n7h"]
+[ext_resource type="Texture2D" uid="uid://d2n177lifqa5c" path="res://Materials/Textures/Flashlight/flashlight_sp_2.png" id="3_7fgql"]
+
+[resource]
+albedo_texture = ExtResource("1_x4uy1")
+metallic = 1.0
+metallic_texture = ExtResource("2_y1n7h")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_y1n7h")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_7fgql")
+ao_enabled = true
+ao_texture = ExtResource("2_y1n7h")

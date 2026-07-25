@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://0hxwl4kecyvc"]
+
+[ext_resource type="PackedScene" uid="uid://pc4dfcf2fmlh" path="res://GLB/Table.glb" id="1_m7o08"]
+
+[node name="TableDrugs" type="Node3D" unique_id=1779178178]
+
+[node name="Table" parent="." unique_id=827943456 instance=ExtResource("1_m7o08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03612542, -0.6743356, 0.05431223)

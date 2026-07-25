@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://tyfe35mncurv"]
+
+[ext_resource type="Texture2D" uid="uid://c820h5uwflteo" path="res://Materials/Textures/Passport/passport_sp_0.png" id="1_ielbl"]
+[ext_resource type="Texture2D" uid="uid://bp3dmex38k325" path="res://Materials/Textures/Passport/passport_sp_1.png" id="2_b6m1p"]
+[ext_resource type="Texture2D" uid="uid://chvbgml4di5ql" path="res://Materials/Textures/Passport/passport_sp_2.png" id="3_up0qj"]
+
+[resource]
+albedo_texture = ExtResource("1_ielbl")
+metallic = 1.0
+metallic_texture = ExtResource("2_b6m1p")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_b6m1p")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_up0qj")
+ao_enabled = true
+ao_texture = ExtResource("2_b6m1p")
