@@ -1,29 +1,76 @@
 [gd_scene format=3 uid="uid://lss2p3mh5ssf"]
 
 [ext_resource type="Script" uid="uid://cfnl1e5qqfarb" path="res://game/scripts/hud.gd" id="1_hj2jl"]
+[ext_resource type="PackedScene" uid="uid://b0fgvq7no5vyc" path="res://evidence/scenes/crime_list_entry.tscn" id="2_4edth"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="3_0ymi1"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1042372199]
 script = ExtResource("1_hj2jl")
+crime_entry_scene = ExtResource("2_4edth")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=462175008]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CrimePanel" type="MarginContainer" parent="." unique_id=749413106]
+offset_right = 48.0
+offset_bottom = 48.0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1028300568]
+[node name="CrimeList" type="VBoxContainer" parent="CrimePanel" unique_id=449405771]
 layout_mode = 2
 
-[node name="TimerLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2081487573]
-layout_mode = 2
-text = "Police ETA: 3:00"
+[node name="InventoryPanel" type="MarginContainer" parent="." unique_id=926019298]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -298.0
+offset_right = 145.0
+offset_bottom = -227.0
+grow_vertical = 0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
 
-[node name="EvidenceLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2012433790]
+[node name="InventoryLabel" type="Label" parent="InventoryPanel" unique_id=768432070]
 layout_mode = 2
-text = "Crimes remaining: 0"
+theme_override_fonts/font = ExtResource("3_0ymi1")
+text = "Carrying: 0 / 3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ConvictionLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=252461433]
+[node name="NotificationPanel" type="MarginContainer" parent="." unique_id=1690569407]
+offset_left = 438.0
+offset_top = 49.0
+offset_right = 714.0
+offset_bottom = 120.0
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="NotificationLabel" type="Label" parent="NotificationPanel" unique_id=2091058429]
 layout_mode = 2
-text = "Convictions: 0/10"
+theme_override_fonts/font = ExtResource("3_0ymi1")
+text = "Inventory Full"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UseItemPrompt" type="MarginContainer" parent="." unique_id=214139726]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -298.0
+offset_bottom = -227.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="UseItemLabel" type="Label" parent="UseItemPrompt" unique_id=1708336361]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0ymi1")
+text = "[F] Use Drug"
+horizontal_alignment = 1
+vertical_alignment = 1

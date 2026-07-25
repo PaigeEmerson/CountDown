@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrimeTypeData" format=3 uid="uid://6viwpeaqjm67"]
+
+[ext_resource type="Script" uid="uid://carrdf8llca0h" path="res://evidence/scripts/crime_type_data.gd" id="1_lfw7f"]
+
+[resource]
+script = ExtResource("1_lfw7f")
+crime_id = &"laundering"
+display_name = "Money Laundering"
+legal_charge_name = "Laundering of Criminal Proceeds"
+metadata/_custom_type_script = "uid://carrdf8llca0h"

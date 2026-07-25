@@ -52,12 +52,13 @@ func begin(target_evidence: Evidence) -> void:
 
 
 func move_camera_into_position() -> void:
-	var target_transform := cleanup_view.global_transform.looking_at(stain_surface.global_position, Vector3.UP)
+	var desired_transform := cleanup_view.global_transform.looking_at(stain_surface.global_position, Vector3.UP)
+	var safe_transform := get_safe_camera_transform(player_camera, desired_transform, stain_surface.global_position)
 	var tween := create_tween()
 
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(player_camera, "global_transform", target_transform, camera_move_duration)
+	tween.tween_property(player_camera, "global_transform", safe_transform, camera_move_duration)
 	tween.tween_callback(_on_camera_arrived)
 
 

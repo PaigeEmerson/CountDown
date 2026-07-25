@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bh2dbd1topy4h"]
+
+[ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_lipcx"]
+[ext_resource type="Resource" uid="uid://ovaeds2hic82" path="res://evidence/data/noise.tres" id="2_hpl00"]
+[ext_resource type="PackedScene" uid="uid://54ci1fniv8kl" path="res://cleanup_tasks/scenes/noise_cleanup_task.tscn" id="3_hpl00"]
+[ext_resource type="PackedScene" uid="uid://b50ae7bgonbm4" path="res://evidence/scenes/speaker_geo.tscn" id="3_x8pr8"]
+[ext_resource type="AudioStream" uid="uid://cql7ar5548y04" path="res://audio/policesiren.mp3" id="4_v1ltw"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="5_uej7v"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gmpk6"]
+height = 0.49499512
+
+[sub_resource type="BoxMesh" id="BoxMesh_0r8uf"]
+size = Vector3(0.4099121, 0.29101563, 0.14746094)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmpk6"]
+size = Vector3(1.3865967, 2.562561, 1.3226318)
+
+[node name="NoiseEvidence" type="Area3D" unique_id=926094369]
+collision_layer = 2
+script = ExtResource("1_lipcx")
+evidence_name = "Noise"
+crime_type = ExtResource("2_hpl00")
+cleanup_task_scene = ExtResource("3_hpl00")
+remove_when_cleaned = false
+interaction_prompt = "Turn Off"
+
+[node name="Speaker" parent="." unique_id=243203165 instance=ExtResource("3_x8pr8")]
+transform = Transform3D(-1.5206872e-08, 0, -0.34789267, 0, 0.34789267, 0, 0.34789267, 0, -1.5206872e-08, 0.032931652, 0.03816122, -0.09738684)
+
+[node name="VolumeKnob" type="Node3D" parent="Speaker" unique_id=1815381263]
+transform = Transform3D(1, 0, 0, 0, -0.70710677, 0.70710677, 0, -0.70710677, -0.70710677, 1.2046609, 2.2470036, 0.45668566)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Speaker/VolumeKnob" unique_id=1136283894]
+transform = Transform3D(-8.849247e-09, 0.20244715, -8.881784e-16, -0.20244715, -8.849247e-09, 0, 2.646978e-23, 8.881784e-16, 0.20244715, -0.15234202, 0, 5.9604645e-08)
+mesh = SubResource("CylinderMesh_gmpk6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Speaker/VolumeKnob" unique_id=2022031586]
+transform = Transform3D(-8.849247e-09, 0.20244715, -8.881784e-16, -0.20244715, -8.849247e-09, 0, 2.646978e-23, 8.881784e-16, 0.20244715, -0.11690161, 0.07587803, 5.9604645e-08)
+mesh = SubResource("BoxMesh_0r8uf")
+
+[node name="SpeakerAudio" type="AudioStreamPlayer3D" parent="." unique_id=501304743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48856932, 0.37382388)
+stream = ExtResource("4_v1ltw")
+autoplay = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1080894029]
+transform = Transform3D(-1.5206872e-08, 0, -0.34789267, 0, 0.34789267, 0, 0.34789267, 0, -1.5206872e-08, 0.006028603, 0.4401043, 0.031692743)
+shape = SubResource("BoxShape3D_gmpk6")
+
+[node name="CleanupView" type="Marker3D" parent="." unique_id=42112210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.081524104, 0.85032403, 0.55772394)
+
+[node name="InstructionLabel" type="Label3D" parent="." unique_id=1539623189]
+transform = Transform3D(0.145, 0, 0, 0, 0.145, 0, 0, 0, 0.145, -0.15621652, 0.9449093, 0.2119949)
+visible = false
+outline_modulate = Color(0, 0, 0, 0)
+text = "Hold [LMB] and drag left"
+font = ExtResource("5_uej7v")

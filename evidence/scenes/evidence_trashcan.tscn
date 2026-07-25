@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dsytqva7k65ms"]
+
+[ext_resource type="Script" uid="uid://8efipodywshf" path="res://evidence/scripts/evidence_trashcan.gd" id="1_qcujo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dfp83"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0r8uf"]
+height = 1.0
+
+[node name="EvidenceTrashcan" type="Area3D" unique_id=68159153]
+collision_layer = 2
+script = ExtResource("1_qcujo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=841589423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49804688, 0)
+mesh = SubResource("CylinderMesh_dfp83")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1513276839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5069903, 0)
+shape = SubResource("CylinderShape3D_0r8uf")

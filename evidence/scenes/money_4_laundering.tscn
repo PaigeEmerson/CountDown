@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cjprdsaf2b8m5"]
+
+[ext_resource type="PackedScene" uid="uid://cieyqsw7u38t3" path="res://GLB/money4Laundering.glb" id="1_enhpi"]
+
+[node name="money4Laundering" unique_id=1422699544 instance=ExtResource("1_enhpi")]

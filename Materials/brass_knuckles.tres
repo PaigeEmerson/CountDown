@@ -1,0 +1,11 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://lk5tlkxms0tp"]
+
+[ext_resource type="Texture2D" uid="uid://c5xjx6n2j48lt" path="res://Materials/Textures/BrassKnuckles/brassKnuckles_0.png" id="1_bda5m"]
+[ext_resource type="Texture2D" uid="uid://b6tpiv5vyqx7t" path="res://Materials/Textures/BrassKnuckles/brassKnuckles_2.png" id="2_s1775"]
+[ext_resource type="Texture2D" uid="uid://iwafxupvgxig" path="res://Materials/Textures/BrassKnuckles/brassKnuckles_1.png" id="3_qxwon"]
+
+[resource]
+albedo_texture = ExtResource("1_bda5m")
+orm_texture = ExtResource("3_qxwon")
+normal_enabled = true
+normal_texture = ExtResource("2_s1775")

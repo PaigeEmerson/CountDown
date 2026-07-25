@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrimeTypeData" format=3 uid="uid://dbt2qmamvrdfh"]
+
+[ext_resource type="Script" uid="uid://carrdf8llca0h" path="res://evidence/scripts/crime_type_data.gd" id="1_h3odx"]
+
+[resource]
+script = ExtResource("1_h3odx")
+crime_id = &"blood"
+display_name = "Blood"
+legal_charge_name = "Murder"
+metadata/_custom_type_script = "uid://carrdf8llca0h"

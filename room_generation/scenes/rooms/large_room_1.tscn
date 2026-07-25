@@ -30,10 +30,10 @@
 [ext_resource type="Script" uid="uid://d21g0uxxvxvwe" path="res://spot_light_3dtv_static.gd" id="27_jdq1v"]
 [ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="28_5q6cj"]
 [ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="29_cnctk"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="30_7hhag"]
 [ext_resource type="PackedScene" uid="uid://cq0y74icxn4ed" path="res://Materials/Textures/Rug/rug_sp.glb" id="30_cnctk"]
 [ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="31_vh4y6"]
 [ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="32_0llod"]
-[ext_resource type="PackedScene" uid="uid://lglm4r2xemjh" path="res://evidence/scenes/TableCounterfit.tscn" id="34_qn6uf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wlyld"]
 size = Vector3(8.338806, 2.5405273, 6.0407715)
@@ -46,6 +46,8 @@ size = Vector3(6.028964, 2.5405273, 6.356735)
 
 [node name="LargeRoom1" type="Node3D" unique_id=687311094]
 script = ExtResource("1_3pd5f")
+minimum_crimes = 3
+maximum_crimes = 6
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -289,18 +291,18 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.7
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.8821, 0, -3.406)
 allow_window = false
 
-[node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
-
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("30_7hhag")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.364621, 0.66001123, -4.4626603)
+placement_type = 1
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=70008096 instance=ExtResource("30_7hhag")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1457725, 0.90545744, -4.1853914)
+placement_type = 1
 
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=1940533895 instance=ExtResource("30_7hhag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9732783, 0.003280729, -2.4937208)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -408,6 +410,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.072054, 2.440083, 2.3898547
 
 [node name="SmokeAlarm2" parent="Lighting" unique_id=2010396566 instance=ExtResource("31_vh4y6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5719719, 2.440083, -4.313239)
-
-[node name="TableCounterfit" parent="Lighting" unique_id=680182734 instance=ExtResource("34_qn6uf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4141555, 0.0021006558, -3.8650942)

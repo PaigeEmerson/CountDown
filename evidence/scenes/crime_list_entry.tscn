@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b0fgvq7no5vyc"]
+
+[ext_resource type="Script" uid="uid://7stg15bp0csj" path="res://evidence/scripts/crime_list_entry.gd" id="1_wwadu"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="2_v1nm3"]
+
+[node name="CrimeListEntry" type="Control" unique_id=44465289]
+custom_minimum_size = Vector2(0, 200)
+custom_maximum_size = Vector2(300, 30)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wwadu")
+
+[node name="CrimeName" type="RichTextLabel" parent="." unique_id=1602120581]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_v1nm3")
+bbcode_enabled = true
+text = "Blood Cleaned"
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="CountLabel" type="Label" parent="." unique_id=447345289]
+layout_mode = 0
+offset_left = 122.00001
+offset_top = 1.0000001
+offset_right = 140.0
+offset_bottom = 24.0
+rotation = -0.16580628
+theme_override_fonts/font = ExtResource("2_v1nm3")
+text = "x3"

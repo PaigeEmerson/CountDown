@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrimeTypeData" format=3 uid="uid://ovaeds2hic82"]
+
+[ext_resource type="Script" uid="uid://carrdf8llca0h" path="res://evidence/scripts/crime_type_data.gd" id="1_5de6p"]
+
+[resource]
+script = ExtResource("1_5de6p")
+crime_id = &"noise"
+display_name = "Noise Disruption"
+legal_charge_name = "Disturbing the Peace"
+metadata/_custom_type_script = "uid://carrdf8llca0h"

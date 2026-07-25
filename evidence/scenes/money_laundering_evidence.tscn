@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://diklbqlcjxunu"]
+
+[ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_jolyn"]
+[ext_resource type="Resource" uid="uid://6viwpeaqjm67" path="res://evidence/data/moneylaundering.tres" id="2_ml8pv"]
+[ext_resource type="PackedScene" uid="uid://c4bfwb0i1ig2i" path="res://evidence/scenes/laundry_machine.tscn" id="3_11q3b"]
+[ext_resource type="PackedScene" uid="uid://c8xn6bp7y1m68" path="res://cleanup_tasks/scenes/laundering_cleanup_task.tscn" id="3_ml8pv"]
+[ext_resource type="PackedScene" uid="uid://d2lxjk2dp7bx5" path="res://GLB/MoneyPile.glb" id="4_dx02r"]
+[ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="5_kkip6"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="7_11q3b"]
+[ext_resource type="AudioStream" uid="uid://da8tc4jd26hhe" path="res://audio/universfield-thunder-strike-124463.mp3" id="7_dx02r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmpk6"]
+size = Vector3(0.7595215, 1, 0.68981934)
+
+[node name="MoneyLaunderingEvidence" type="Area3D" unique_id=1690069449]
+collision_layer = 2
+script = ExtResource("1_jolyn")
+evidence_name = "Money Laundering"
+crime_type = ExtResource("2_ml8pv")
+cleanup_task_scene = ExtResource("3_ml8pv")
+remove_when_cleaned = false
+interaction_prompt = "Destroy"
+
+[node name="MachineModel" type="Node3D" parent="." unique_id=848777601]
+
+[node name="laundryMachine" parent="MachineModel" unique_id=2026181004 instance=ExtResource("3_11q3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44905657, 0)
+
+[node name="MoneyMesh" parent="." unique_id=2023141835 instance=ExtResource("4_dx02r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44905657, 0)
+
+[node name="DamageStages" type="Node3D" parent="." unique_id=1620069908]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44905657, 0)
+
+[node name="Damage1" parent="DamageStages" unique_id=1272242019 instance=ExtResource("5_kkip6")]
+transform = Transform3D(0.06954175, 2.106614, 1.0592061e-08, -2.106614, 0.06954175, 4.207097e-08, 5.215406e-08, -1.234352e-08, 2.1077616, 0.3278139, 0.41322702, -0.04825206)
+visible = false
+size = Vector3(0.9738159, 0.068481445, 0.6991577)
+
+[node name="Damage2" parent="DamageStages" unique_id=1276932932 instance=ExtResource("5_kkip6")]
+transform = Transform3D(0.036323126, 2.1066139, -0.059301656, -1.1003287, 0.06954176, 1.7964131, 1.7973917, -1.0172569e-08, 1.100928, 0.16468057, 0.44392705, -0.14153595)
+visible = false
+size = Vector3(0.9738159, 0.222229, 0.8686218)
+
+[node name="Damage3" parent="DamageStages" unique_id=1361209472 instance=ExtResource("5_kkip6")]
+transform = Transform3D(0.044882864, 2.1066139, 0.05311861, -1.3596275, 0.06954176, -1.6091104, -1.609987, -1.1704422e-08, 1.360368, 0.16016877, 0.58060676, 0.18773064)
+visible = false
+size = Vector3(1.4058533, 0.222229, 1.5399094)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1325264916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.044555664, 0.44905657, -0.027160645)
+shape = SubResource("BoxShape3D_gmpk6")
+
+[node name="CleanupView" type="Marker3D" parent="." unique_id=1699324769]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0247167, 0.8939496, 0)
+
+[node name="BatAnchor" type="Marker3D" parent="." unique_id=738113126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7100524, 0.7868951, -0.25914288)
+
+[node name="HitAudio" type="AudioStreamPlayer3D" parent="." unique_id=457243539]
+stream = ExtResource("7_dx02r")
+
+[node name="InstructionLabel" type="Label3D" parent="." unique_id=265143891]
+transform = Transform3D(-1.3454615e-08, 0, 0.30780572, 0, 0.30780572, 0, -0.30780572, 0, -1.3454615e-08, 0.21154162, 0.9661621, 0)
+visible = false
+outline_modulate = Color(0, 0, 0, 0)
+text = "Hold [LMB] and swing up and down"
+font = ExtResource("7_11q3b")

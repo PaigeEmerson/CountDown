@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrimeTypeData" format=3 uid="uid://bakdta0171e2f"]
+
+[ext_resource type="Script" uid="uid://carrdf8llca0h" path="res://evidence/scripts/crime_type_data.gd" id="1_d1v7m"]
+
+[resource]
+script = ExtResource("1_d1v7m")
+crime_id = &"weapon"
+display_name = "Weapon"
+legal_charge_name = "Unlawful Possession of a Weapon"
+metadata/_custom_type_script = "uid://carrdf8llca0h"

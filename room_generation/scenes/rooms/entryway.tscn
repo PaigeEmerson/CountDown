@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdooj4iwe465h" path="res://GLB/Radiator.glb" id="6_f3stv"]
 [ext_resource type="PackedScene" uid="uid://cahgp0w43v2lg" path="res://player/scenes/player.tscn" id="7_agvxd"]
 [ext_resource type="PackedScene" uid="uid://cjdx4y75e7l8y" path="res://room_generation/scenes/apartment_exit.tscn" id="8_ovf38"]
+[ext_resource type="PackedScene" uid="uid://dsytqva7k65ms" path="res://evidence/scenes/evidence_trashcan.tscn" id="10_5f1pu"]
 [ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="10_xcwoh"]
 [ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="11_t2m2k"]
 [ext_resource type="PackedScene" uid="uid://krqwhucyx0us" path="res://GLB/CielingBulb.glb" id="12_2u16x"]
@@ -67,6 +68,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00
 [node name="Connector2" parent="Connections" unique_id=1594464291 instance=ExtResource("3_4epms")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -1.7382998, 1.1920929e-07, 2.0766)
 window_only = true
+
+[node name="EvidenceTrashcan" parent="Connections" unique_id=68159153 instance=ExtResource("10_5f1pu")]
+transform = Transform3D(0.8200487, 0, 0, 0, 0.8200487, 0, 0, 0, 0.8200487, -1.2299031, 0.001953125, 3.6544268)
 
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 

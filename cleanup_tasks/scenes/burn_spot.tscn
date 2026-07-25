@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dmty64rbr4vvp"]
+
+[ext_resource type="Texture2D" uid="uid://cpdvxtkgvq1fd" path="res://2D/flame.png" id="1_vjc4n"]
+
+[sub_resource type="Gradient" id="Gradient_aasq4"]
+offsets = PackedFloat32Array(0, 0.32277226, 0.71089107, 1)
+colors = PackedColorArray(0.96, 0.752, 0, 1, 0.78, 0.34684, 0.015599985, 1, 0.6, 0.036000002, 0.036000002, 0.6666667, 0.35, 0.05600001, 0.05600001, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jlfc7"]
+gradient = SubResource("Gradient_aasq4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjc4n"]
+emission_shape = 1
+emission_sphere_radius = 0.03
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 0.25
+initial_velocity_max = 0.65
+gravity = Vector3(0, 0.15, 0)
+scale_min = 0.5
+scale_max = 1.1999999
+color_ramp = SubResource("GradientTexture1D_jlfc7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bagro"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_vjc4n")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_jlfc7"]
+material = SubResource("StandardMaterial3D_bagro")
+size = Vector2(0.08, 0.14)
+
+[sub_resource type="Gradient" id="Gradient_bagro"]
+offsets = PackedFloat32Array(0, 0.3188119, 0.6910891, 1)
+colors = PackedColorArray(0.18, 0.18, 0.18, 0, 0.12, 0.12, 0.12, 0.06666667, 0.27, 0.27, 0.27, 0.09019608, 0.82, 0.82, 0.82, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uxjde"]
+gradient = SubResource("Gradient_bagro")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_djr8f"]
+emission_shape = 1
+emission_sphere_radius = 0.05
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 0.14999999
+initial_velocity_max = 0.35
+gravity = Vector3(0, 0.1, 0)
+scale_min = 0.39999998
+scale_max = 0.7
+color_ramp = SubResource("GradientTexture1D_uxjde")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilxst"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_vjc4n")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_tevxf"]
+material = SubResource("StandardMaterial3D_ilxst")
+size = Vector2(0.15, 0.15)
+
+[node name="BurnSpot" type="Node3D" unique_id=195735690]
+
+[node name="FlameParticles" type="GPUParticles3D" parent="." unique_id=834574169]
+amount = 24
+lifetime = 0.6
+randomness = 0.4
+visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_vjc4n")
+draw_pass_1 = SubResource("QuadMesh_jlfc7")
+
+[node name="SmokeParticles" type="GPUParticles3D" parent="." unique_id=312721936]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08709341, 0)
+amount = 14
+lifetime = 1.5
+randomness = 0.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_djr8f")
+draw_pass_1 = SubResource("QuadMesh_tevxf")

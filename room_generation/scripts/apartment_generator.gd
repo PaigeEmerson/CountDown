@@ -5,6 +5,7 @@ signal generation_started
 signal room_placed(room: RoomModule)
 signal generation_completed(rooms: Array[RoomModule])
 signal generation_failed
+signal evidence_spawned(evidence: Evidence, room: RoomModule)
 
 @export_group("Rooms")
 @export var starting_room_scene: PackedScene
@@ -14,6 +15,9 @@ signal generation_failed
 @export_group("Generation")
 @export var generation_seed := 0
 @export_range(1, 500, 1) var maximum_placement_attempts := 100
+
+@export_group("Evidence")
+@export var evidence_scenes: Array[PackedScene]
 
 var generated_rooms: Array[RoomModule] = []
 var blocked_connectors: Array[RoomConnector] = []
@@ -61,6 +65,8 @@ func generate_apartment() -> bool:
 
 		if layout_meets_requirements():
 			await finalize_unused_connectors()
+			spawn_apartment_evidence()
+			await get_tree().process_frame
 
 			print("Generated valid apartment with ", generated_rooms.size(), " rooms.")
 			generation_completed.emit(generated_rooms)
@@ -427,3 +433,107 @@ func clear_generated_rooms() -> void:
 	placement_attempts = 0
 
 	await get_tree().physics_frame
+	
+	
+func spawn_apartment_evidence() -> void:
+	if evidence_scenes.is_empty():
+		push_warning("ApartmentGenerator has no evidence scenes assigned.")
+		return
+
+	var total_spawned := 0
+
+	for room in generated_rooms:
+		total_spawned += spawn_evidence_in_room(room)
+
+	print("Spawned ", total_spawned, " evidence object(s).")
+
+
+func spawn_evidence_in_room(room: RoomModule) -> int:
+	var spawn_points := room.get_evidence_spawn_points()
+
+	if spawn_points.is_empty():
+		if room.minimum_crimes > 0:
+			push_warning("%s requires crimes but has no evidence spawn points." % room.room_name)
+
+		return 0
+
+	shuffle_evidence_spawn_points(spawn_points)
+
+	var lowest_count: int = min(room.minimum_crimes, room.maximum_crimes)
+	var highest_count: int = max(room.minimum_crimes, room.maximum_crimes)
+	var desired_count := random.randi_range(lowest_count, highest_count)
+	desired_count = min(desired_count, spawn_points.size())
+
+	var spawned_count := 0
+
+	for spawn_point in spawn_points:
+		if spawned_count >= desired_count:
+			break
+
+		var selected_scene := choose_evidence_scene_for_point(spawn_point)
+
+		if not selected_scene:
+			continue
+
+		var evidence_instance := selected_scene.instantiate() as Evidence
+
+		if not evidence_instance:
+			push_warning("Evidence scene root must inherit from Evidence.")
+			continue
+
+		print(
+			"Spawning evidence: ", evidence_instance.evidence_name,
+			" | scene: ", selected_scene.resource_path,
+			" | script: ", evidence_instance.get_script().resource_path,
+			" | carryable: ", evidence_instance is CarryableEvidence
+		)
+
+		spawn_point.add_child(evidence_instance)
+		evidence_instance.transform = Transform3D.IDENTITY
+
+		spawn_point.mark_used()
+		spawned_count += 1
+		evidence_spawned.emit(evidence_instance, room)
+
+	if spawned_count < room.minimum_crimes:
+		push_warning(
+			"%s spawned only %d of its required %d crimes."
+			% [room.room_name, spawned_count, room.minimum_crimes]
+		)
+
+	return spawned_count
+
+
+func choose_evidence_scene_for_point(spawn_point: EvidenceSpawnPoint) -> PackedScene:
+	var compatible_scenes: Array[PackedScene] = []
+	var compatible_weights: Array[float] = []
+
+	for evidence_scene in evidence_scenes:
+		if not evidence_scene:
+			continue
+
+		var preview := evidence_scene.instantiate() as Evidence
+
+		if not preview:
+			push_warning("Skipped an evidence scene whose root does not inherit from Evidence.")
+			continue
+
+		if spawn_point.can_spawn_evidence(preview):
+			compatible_scenes.append(evidence_scene)
+			compatible_weights.append(max(preview.generation_weight, 0.01))
+
+		preview.free()
+
+	if compatible_scenes.is_empty():
+		return null
+
+	var selected_index := choose_weighted_index(compatible_weights)
+	return compatible_scenes[selected_index]
+
+
+func shuffle_evidence_spawn_points(points: Array[EvidenceSpawnPoint]) -> void:
+	for index in range(points.size() - 1, 0, -1):
+		var random_index := random.randi_range(0, index)
+		var temporary := points[index]
+		points[index] = points[random_index]
+		points[random_index] = temporary

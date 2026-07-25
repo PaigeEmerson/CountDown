@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CrimeTypeData" format=3 uid="uid://ca3k73rl43it0"]
+
+[ext_resource type="Script" uid="uid://carrdf8llca0h" path="res://evidence/scripts/crime_type_data.gd" id="1_yr2s8"]
+
+[resource]
+script = ExtResource("1_yr2s8")
+crime_id = &"cybercrime"
+display_name = "Cyber Crime"
+legal_charge_name = "Unauthorized Computer Access"
+metadata/_custom_type_script = "uid://carrdf8llca0h"

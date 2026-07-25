@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://cukewuy3ggf44"]
+
+[ext_resource type="Script" uid="uid://df54jm6ujb7e5" path="res://game/scripts/newspaper_ui.gd" id="1_k207d"]
+[ext_resource type="Texture2D" uid="uid://bvgnr3axlu0j" path="res://2D/NewspaperUIBackground.png" id="2_p0kt0"]
+[ext_resource type="PackedScene" uid="uid://x2c5o85eff05" path="res://game/scenes/case_count_entry.tscn" id="2_q6xdr"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="3_p0kt0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0r8uf"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl3o6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cm4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpgei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6xdr"]
+
+[node name="NewspaperUI" type="CanvasLayer" unique_id=1743531193]
+process_mode = 3
+layer = 100
+script = ExtResource("1_k207d")
+slide_duration = 1.0
+case_count_entry_scene = ExtResource("2_q6xdr")
+
+[node name="ScreenMask" type="Control" parent="." unique_id=2112109735]
+clip_contents = true
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4096.0
+offset_bottom = 4096.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="NewspaperCanvas" type="Control" parent="ScreenMask" unique_id=600778930]
+layout_mode = 1
+offset_right = 3849.0
+offset_bottom = 2220.0
+mouse_filter = 2
+
+[node name="NewspaperTexture" type="TextureRect" parent="ScreenMask/NewspaperCanvas" unique_id=1007498259]
+layout_mode = 0
+offset_right = 3849.0
+offset_bottom = 2220.0
+mouse_filter = 2
+texture = ExtResource("2_p0kt0")
+expand_mode = 1
+
+[node name="MainMenuControls" type="Control" parent="ScreenMask/NewspaperCanvas" unique_id=617033603]
+anchors_preset = 0
+offset_left = 439.0
+offset_top = 346.0
+offset_right = 1439.0
+offset_bottom = 1046.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMask/NewspaperCanvas/MainMenuControls" unique_id=1361075968]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1100146665]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1084368407]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1218731224]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Quit"
+
+[node name="LoadingControls" type="Control" parent="ScreenMask/NewspaperCanvas" unique_id=131798197]
+anchors_preset = 0
+offset_left = 597.0
+offset_top = 1324.0
+offset_right = 1297.0
+offset_bottom = 2024.0
+mouse_filter = 2
+
+[node name="LoadingLabel" type="Label" parent="ScreenMask/NewspaperCanvas/LoadingControls" unique_id=58078184]
+custom_minimum_size = Vector2(500, 0)
+custom_maximum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -20.5
+offset_right = 169.5
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 40
+text = "Commiting Crimes..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PauseControls" type="Control" parent="ScreenMask/NewspaperCanvas" unique_id=345250967]
+anchors_preset = 0
+offset_left = 2395.0
+offset_top = 1300.0
+offset_right = 3395.0
+offset_bottom = 2000.0
+mouse_filter = 2
+
+[node name="PauseTitle" type="Label" parent="ScreenMask/NewspaperCanvas/PauseControls" unique_id=1031957255]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_top = 54.23
+offset_right = 113.0
+offset_bottom = 135.23001
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 80
+text = "Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMask/NewspaperCanvas/PauseControls" unique_id=498207632]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -168.115
+offset_right = 193.0
+offset_bottom = 287.8853
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=803394399]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=177387561]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Restart"
+
+[node name="MainMenuButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=942964227]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=691434211]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+text = "Quit to Desktop
+"
+
+[node name="ResultsControls" type="Control" parent="ScreenMask/NewspaperCanvas" unique_id=1279155687]
+anchors_preset = 0
+offset_left = 2488.0
+offset_top = 168.0
+offset_right = 3288.0
+offset_bottom = 868.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenMask/NewspaperCanvas/ResultsControls" unique_id=433339526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="HeadlineLabel" type="Label" parent="ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer" unique_id=1241188977]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 40
+text = "HEAD LINE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubheadlineLabel" type="Label" parent="ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer" unique_id=596000606]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 40
+text = "SUBHEADLINE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CaseScroll" type="ScrollContainer" parent="ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer" unique_id=454027174]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="CountList" type="VBoxContainer" parent="ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer/CaseScroll" unique_id=397614589]
+layout_mode = 2
+
+[node name="SummaryLabel" type="Label" parent="ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer" unique_id=1063059755]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 20
+text = "Summary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer" unique_id=1551619885]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
+theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_fonts/font = ExtResource("3_p0kt0")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pl3o6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1cm4r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xpgei")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q6xdr")
+text = "Continue"

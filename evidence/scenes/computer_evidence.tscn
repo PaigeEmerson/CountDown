@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://mlvgfd06owe1"]
+
+[ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_dvrmd"]
+[ext_resource type="Resource" uid="uid://ca3k73rl43it0" path="res://evidence/data/cybercrime.tres" id="2_gg68h"]
+[ext_resource type="PackedScene" uid="uid://dpomgqj0srh1k" path="res://cleanup_tasks/scenes/cybercrime_cleanup_task.tscn" id="3_gaxj3"]
+[ext_resource type="PackedScene" uid="uid://da402oytpacs5" path="res://GLB/Computer.glb" id="4_8jdjj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gmpk6"]
+
+[node name="ComputerEvidence" type="Area3D" unique_id=1234622824]
+collision_layer = 2
+script = ExtResource("1_dvrmd")
+evidence_name = "Computer"
+crime_type = ExtResource("2_gg68h")
+cleanup_task_scene = ExtResource("3_gaxj3")
+remove_when_cleaned = false
+allowed_spawn_surfaces = 2
+interaction_prompt = "Wipe Computer"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1897943410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18701991, 0)
+shape = SubResource("SphereShape3D_gmpk6")
+
+[node name="Computer" parent="." unique_id=1800782755 instance=ExtResource("4_8jdjj")]
+
+[node name="UIAnchor" type="Marker3D" parent="." unique_id=503193994]
+transform = Transform3D(-0.2, 0, 3.019916e-08, 0, 0.2, 0, -3.019916e-08, 0, -0.2, 0, 0.36223578, -0.2024509)
+
+[node name="CleanupView" type="Marker3D" parent="." unique_id=2032812850]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.5347783e-08, 0.36223578, -0.4257337)

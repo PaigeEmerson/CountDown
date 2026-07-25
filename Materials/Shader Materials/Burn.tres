@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://32vbh42k48et"]
+
+[ext_resource type="Shader" uid="uid://bdngsfyribsn3" path="res://Materials/Shader Materials/counterfeit_burn.gdshader" id="1_kspmn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vop4m"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_kspmn")
+shader_parameter/burn_noise = SubResource("NoiseTexture2D_vop4m")
+shader_parameter/burn_progress = 0.0
+shader_parameter/burn_edge_width = 0.08
+shader_parameter/burned_color = Color(0.03, 0.015, 0.005, 1)
+shader_parameter/ember_color = Color(1, 0.18, 0.01, 1)

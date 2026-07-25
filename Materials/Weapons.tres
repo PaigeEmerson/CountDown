@@ -1,4 +1,19 @@
-[gd_resource type="ORMMaterial3D" format=3 uid="uid://47gom17nhw5f"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://47gom17nhw5f"]
+
+[ext_resource type="Texture2D" uid="uid://cwfgvmo8ugjra" path="res://Materials/Textures/Weapons/DefaultMaterial_Base_color.png" id="1_yd5hc"]
+[ext_resource type="Texture2D" uid="uid://bhrq2oo5vqif6" path="res://Materials/Textures/Weapons/DefaultMaterial_Mixed_AO.png" id="2_jhbhm"]
+[ext_resource type="Texture2D" uid="uid://cterblxiiysk1" path="res://Materials/Textures/Weapons/DefaultMaterial_Height.png" id="3_7th8t"]
+[ext_resource type="Texture2D" uid="uid://cnaew6wnnlwal" path="res://Materials/Textures/Weapons/DefaultMaterial_Base_metalness.png" id="4_mjn27"]
+[ext_resource type="Texture2D" uid="uid://ctbt0dlpjoaqy" path="res://Materials/Textures/Weapons/DefaultMaterial_Normal_OpenGL.png" id="5_hugii"]
+[ext_resource type="Texture2D" uid="uid://jodk762b5y5d" path="res://Materials/Textures/Weapons/DefaultMaterial_Specular_roughness.png" id="6_k54bk"]
 
 [resource]
+albedo_texture = ExtResource("1_yd5hc")
+metallic = 1.0
+metallic_texture = ExtResource("4_mjn27")
+roughness_texture = ExtResource("6_k54bk")
 normal_enabled = true
+normal_texture = ExtResource("5_hugii")
+ao_enabled = true
+ao_texture = ExtResource("2_jhbhm")
+heightmap_texture = ExtResource("3_7th8t")

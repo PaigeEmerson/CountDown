@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://eb0ffyquwq5r" path="res://game/scripts/apartment_level.gd" id="1_5i0fi"]
 [ext_resource type="PackedScene" uid="uid://dhcv2yeqgnx7p" path="res://evidence/scenes/blood_evidence.tscn" id="3_cprli"]
 [ext_resource type="PackedScene" uid="uid://lss2p3mh5ssf" path="res://game/scenes/hud.tscn" id="4_n3drr"]
-[ext_resource type="PackedScene" uid="uid://dttutxuv8ryyl" path="res://game/scenes/results_ui.tscn" id="6_5i0fi"]
 [ext_resource type="Script" uid="uid://ca5skcm60cf1w" path="res://room_generation/scripts/apartment_generator.gd" id="7_rjcyg"]
 [ext_resource type="PackedScene" uid="uid://3xbtu8f1vv0k" path="res://room_generation/scenes/rooms/entryway.tscn" id="8_mkbt2"]
 [ext_resource type="PackedScene" uid="uid://dfd1xpf0xkcti" path="res://room_generation/scenes/rooms/large_room_1.tscn" id="9_57odh"]
@@ -21,13 +20,22 @@
 [ext_resource type="PackedScene" uid="uid://b007j0ij1k4g8" path="res://room_generation/scenes/rooms/small_room_3.tscn" id="20_mtg30"]
 [ext_resource type="PackedScene" uid="uid://c117wb1ds7i3e" path="res://room_generation/scenes/rooms/small_room_4.tscn" id="21_iy6jy"]
 [ext_resource type="Resource" uid="uid://kchklk4lto4f" path="res://room_generation/profiles/default_apartment_profile.tres" id="22_5fqxa"]
+[ext_resource type="PackedScene" uid="uid://beheuql4vwp6a" path="res://evidence/scenes/axe.tscn" id="22_ofarm"]
 [ext_resource type="Script" uid="uid://dag8e03nff540" path="res://room_generation/scripts/storm_controller.gd" id="23_75kwt"]
 [ext_resource type="Material" uid="uid://bdtsa3qqipnxc" path="res://Materials/Shader Materials/CanvasOverlay.tres" id="23_tlp5u"]
+[ext_resource type="PackedScene" uid="uid://mlvgfd06owe1" path="res://evidence/scenes/computer_evidence.tscn" id="23_up574"]
 [ext_resource type="AudioStream" uid="uid://da8tc4jd26hhe" path="res://audio/universfield-thunder-strike-124463.mp3" id="24_qpo4r"]
+[ext_resource type="PackedScene" uid="uid://b85ogabdw3473" path="res://evidence/scenes/counterfeit_evidence.tscn" id="24_x3o54"]
 [ext_resource type="AudioStream" uid="uid://d1ljmd3riew12" path="res://audio/RainMuffled.mp3" id="25_75kwt"]
+[ext_resource type="PackedScene" uid="uid://c0fp48ef0nbd3" path="res://evidence/scenes/drugs.tscn" id="25_j0ttu"]
 [ext_resource type="AudioStream" uid="uid://dfcf5x57rewrn" path="res://audio/ThunderMuffled.mp3" id="25_qpo4r"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_gmpk6"]
+[ext_resource type="PackedScene" uid="uid://4ij8hd40c8ec" path="res://evidence/scenes/gun.tscn" id="26_es843"]
+[ext_resource type="PackedScene" uid="uid://dd7ssj8eqv1qn" path="res://evidence/scenes/knife.tscn" id="27_52hc2"]
+[ext_resource type="PackedScene" uid="uid://diklbqlcjxunu" path="res://evidence/scenes/money_laundering_evidence.tscn" id="28_kvlbs"]
+[ext_resource type="PackedScene" uid="uid://bh2dbd1topy4h" path="res://evidence/scenes/noise_evidence.tscn" id="29_6ayqt"]
+[ext_resource type="PackedScene" uid="uid://br7f8cr7wid7" path="res://evidence/scenes/rifle.tscn" id="30_b3bg7"]
+[ext_resource type="PackedScene" uid="uid://du40h3cgd7w2m" path="res://evidence/scenes/rocket_launcher.tscn" id="31_s0751"]
+[ext_resource type="Script" uid="uid://brsjxsulf2jop" path="res://game/scripts/run_results_ui.gd" id="36_ofarm"]
 
 [sub_resource type="Environment" id="Environment_5fqxa"]
 background_mode = 1
@@ -45,30 +53,16 @@ adjustment_contrast = 1.085
 
 [node name="GameScene" type="Node3D" unique_id=1323025451]
 script = ExtResource("1_5i0fi")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=44449394]
-transform = Transform3D(1, 0, 0, 0, 0.61442626, 0.7889743, 0, -0.7889743, 0.61442626, 0, 0, 0)
-visible = false
-
-[node name="BloodEvidence" parent="." unique_id=1274024004 instance=ExtResource("3_cprli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.905171, 0.01, -5.3237867)
-
-[node name="BloodEvidence2" parent="." unique_id=429226327 instance=ExtResource("3_cprli")]
-transform = Transform3D(0.7368376, 0.4059211, 0.5406462, -1.2907407e-08, 0.7996903, -0.6004131, -0.67606974, 0.4424071, 0.58924186, -3.8006492, 0.20606315, -7.2632837)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=405255694]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.106944, 0.44148922, -7.8003755)
-mesh = SubResource("BoxMesh_gmpk6")
+run_duration = 120.0
 
 [node name="HUD" parent="." unique_id=1042372199 instance=ExtResource("4_n3drr")]
-
-[node name="CanvasLayer" parent="." unique_id=760183893 instance=ExtResource("6_5i0fi")]
 
 [node name="ApartmentGenerator" type="Node3D" parent="." unique_id=1675905059]
 script = ExtResource("7_rjcyg")
 starting_room_scene = ExtResource("8_mkbt2")
 room_scenes = Array[PackedScene]([ExtResource("9_i4cm7"), ExtResource("10_5fqxa"), ExtResource("11_tlp5u"), ExtResource("12_db0un"), ExtResource("9_57odh"), ExtResource("11_1ohwy"), ExtResource("14_75kwt"), ExtResource("15_qpo4r"), ExtResource("11_57odh"), ExtResource("17_i7ckm"), ExtResource("10_1ohwy"), ExtResource("19_lxfhx"), ExtResource("20_mtg30"), ExtResource("21_iy6jy")])
 generation_profile = ExtResource("22_5fqxa")
+evidence_scenes = Array[PackedScene]([ExtResource("22_ofarm"), ExtResource("3_cprli"), ExtResource("23_up574"), ExtResource("24_x3o54"), ExtResource("26_es843"), ExtResource("27_52hc2"), ExtResource("28_kvlbs"), ExtResource("29_6ayqt"), ExtResource("30_b3bg7"), ExtResource("31_s0751"), ExtResource("25_j0ttu")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1151213710]
 environment = SubResource("Environment_5fqxa")
@@ -106,3 +100,6 @@ volume_db = -12.838
 stream = ExtResource("25_75kwt")
 volume_db = -3.054
 autoplay = true
+
+[node name="RunResultsController" type="Node" parent="." unique_id=1893932546]
+script = ExtResource("36_ofarm")

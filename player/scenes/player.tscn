@@ -5,7 +5,10 @@
 [ext_resource type="Script" uid="uid://1qm13t4xymfo" path="res://player/scripts/player_interaction_controller.gd" id="2_t0cpu"]
 [ext_resource type="Script" uid="uid://dlq6s3oeeiym8" path="res://player/scenes/FlashlightToggle.gd" id="3_87uja"]
 [ext_resource type="PackedScene" uid="uid://b1epxsmg7kc61" path="res://Materials/Textures/Flashlight/flashlight_sp.glb" id="4_rclgo"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="6_4qt65"]
 [ext_resource type="Texture2D" uid="uid://bvgnr3axlu0j" path="res://2D/NewspaperUIBackground.png" id="6_tn8gd"]
+[ext_resource type="Script" uid="uid://c7jgx07hiqvv4" path="res://player/scripts/carry_inventory.gd" id="7_okfwm"]
+[ext_resource type="Script" uid="uid://bndwa4hn30tu7" path="res://player/scripts/player_status_effects.gd" id="9_kaefl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmpk6"]
 radius = 0.25
@@ -54,6 +57,9 @@ shadow_enabled = true
 spot_range = 10.049993
 spot_angle = 34.70695
 
+[node name="HeldItemAnchor" type="Marker3D" parent="Head/Camera3D" unique_id=1540510854]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.285, -0.193, -0.275)
+
 [node name="InteractionController" type="Node" parent="." unique_id=1915549538 node_paths=PackedStringArray("interaction_ray", "prompt_label")]
 script = ExtResource("2_t0cpu")
 interaction_ray = NodePath("../Head/Camera3D/InteractionRay")
@@ -68,6 +74,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_4qt65")
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -84,6 +91,7 @@ offset_right = 20.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_4qt65")
 text = "[E]"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -101,3 +109,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_tn8gd")
 expand_mode = 1
+
+[node name="Inventory" type="Node" parent="." unique_id=749414850 node_paths=PackedStringArray("held_item_anchor")]
+script = ExtResource("7_okfwm")
+capacity = null
+held_item_anchor = NodePath("../Head/Camera3D/HeldItemAnchor")
+
+[node name="PlayerEffects" type="Node" parent="." unique_id=387856898 node_paths=PackedStringArray("player_controller", "player_camera", "inventory")]
+script = ExtResource("9_kaefl")
+player_controller = NodePath("..")
+player_camera = NodePath("../Head/Camera3D")
+inventory = NodePath("../Inventory")

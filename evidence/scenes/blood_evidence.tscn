@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dhcv2yeqgnx7p"]
 
 [ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_kjbqm"]
+[ext_resource type="Resource" uid="uid://dbt2qmamvrdfh" path="res://evidence/data/blood.tres" id="2_0t68t"]
 [ext_resource type="PackedScene" uid="uid://bglhy2ufynr2d" path="res://cleanup_tasks/scenes/blood_srub_task.tscn" id="2_jk7hm"]
 [ext_resource type="Texture2D" uid="uid://ds7rnan55lq1d" path="res://cleanup_tasks/materials/textures/blood_splatter_1.webp" id="3_2on2e"]
 
@@ -12,6 +13,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_kjbqm")
 evidence_name = "Blood Stain"
+crime_type = ExtResource("2_0t68t")
 cleanup_task_scene = ExtResource("2_jk7hm")
 
 [node name="StainSurface" type="Decal" parent="." unique_id=669078734]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://br7f8cr7wid7"]
+
+[ext_resource type="Script" uid="uid://cocwmiwl71kl3" path="res://evidence/scripts/carryable_evidence.gd" id="1_wrcwg"]
+[ext_resource type="Resource" uid="uid://bakdta0171e2f" path="res://evidence/data/weapon.tres" id="2_qcfbu"]
+[ext_resource type="PackedScene" uid="uid://b6gnmkayskqtr" path="res://GLB/Rifle.glb" id="3_wrcwg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4ewe"]
+size = Vector3(0.14453125, 0.12207031, 0.7988281)
+
+[node name="Rifle" type="Area3D" unique_id=963932795 node_paths=PackedStringArray("held_visual")]
+collision_layer = 2
+script = ExtResource("1_wrcwg")
+held_visual = NodePath("Visuals")
+held_rotation_degrees = Vector3(0, 0, -90)
+evidence_name = "Unregistered Rifle"
+crime_type = ExtResource("2_qcfbu")
+allowed_spawn_surfaces = 3
+interaction_prompt = "Pick up"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2017042760]
+shape = SubResource("BoxShape3D_x4ewe")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1165357235]
+
+[node name="Rifle" parent="Visuals" unique_id=1797099206 instance=ExtResource("3_wrcwg")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.01372508, 0)

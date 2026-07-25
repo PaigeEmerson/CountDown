@@ -48,11 +48,7 @@ func start_cleanup(evidence: Evidence) -> bool:
 	
 func _on_task_completed() -> void:
 	var completed_evidence := active_evidence
-	
-	if completed_evidence and is_instance_valid(completed_evidence):
-		completed_evidence.complete_cleanup()
-		
-	cleanup_completed.emit(completed_evidence)
+	complete_evidence(completed_evidence)
 	close_active_task()
 	
 	
@@ -79,3 +75,14 @@ func close_active_task() -> void:
 	
 func has_active_task() -> bool:
 	return active_task != null
+	
+	
+func complete_evidence(evidence: Evidence) -> void:
+	if not evidence or not is_instance_valid(evidence):
+		return
+
+	if evidence.is_cleaned:
+		return
+
+	evidence.complete_cleanup()
+	cleanup_completed.emit(evidence)

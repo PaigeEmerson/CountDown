@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0fp48ef0nbd3"]
+
+[ext_resource type="Script" uid="uid://c617xti2ggr58" path="res://evidence/scripts/drug_evidence.gd" id="1_167ha"]
+[ext_resource type="Resource" uid="uid://b4j7thmuc1xr5" path="res://evidence/data/drugs.tres" id="2_q1npx"]
+[ext_resource type="PackedScene" uid="uid://chi50neqjjcar" path="res://GLB/Drugz.glb" id="3_ibl0t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ovck5"]
+radius = 0.16439402
+
+[node name="Drugs" type="Area3D" unique_id=963932795]
+collision_layer = 2
+script = ExtResource("1_167ha")
+evidence_name = "Drugs"
+crime_type = ExtResource("2_q1npx")
+allowed_spawn_surfaces = 3
+interaction_prompt = "Drugs"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2017042760]
+shape = SubResource("SphereShape3D_ovck5")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1165357235]
+
+[node name="Drugz" parent="Visuals" unique_id=445702664 instance=ExtResource("3_ibl0t")]
+transform = Transform3D(2.0874949, 0, 0, 0, 2.0874949, 0, 0, 0, 2.0874949, 0, 0.047535934, 0)

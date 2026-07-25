@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://dpomgqj0srh1k"]
+
+[ext_resource type="Texture2D" uid="uid://crdyrpxmir8mt" path="res://2D/DesktopBackground.png" id="1_4rrrm"]
+[ext_resource type="Script" uid="uid://dsr4mw15itb0c" path="res://cleanup_tasks/scripts/cybercrime_cleanup_task.gd" id="1_phxv5"]
+[ext_resource type="PackedScene" uid="uid://r0h42eu1xpp6" path="res://evidence/scenes/folder.tscn" id="2_f4qap"]
+[ext_resource type="FontFile" uid="uid://irdth4dcpi0j" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="2_lmhn3"]
+[ext_resource type="PackedScene" uid="uid://s83g48374158" path="res://evidence/scenes/recycle_bin.tscn" id="3_phxv5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_gmpk6"]
+size = Vector2(1.365, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uer82"]
+viewport_path = NodePath("ComputerViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0r8uf"]
+resource_local_to_scene = true
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_uer82")
+
+[node name="CybercrimeCleanupTask" type="Node3D" unique_id=570168349]
+script = ExtResource("1_phxv5")
+folder_scene = ExtResource("2_f4qap")
+maximum_folder_rotation = 0.0
+
+[node name="ComputerViewport" type="SubViewport" parent="." unique_id=1695837971]
+size = Vector2i(830, 640)
+
+[node name="Interface" type="Control" parent="ComputerViewport" unique_id=1648575303]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="ComputerViewport/Interface" unique_id=1441723347]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_4rrrm")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="DestopFrame" type="PanelContainer" parent="ComputerViewport/Interface/Background" unique_id=889233719]
+custom_minimum_size = Vector2(260, 580)
+propagate_maximum_size = false
+layout_mode = 0
+offset_left = 550.0
+offset_top = 48.0
+offset_right = 810.0
+offset_bottom = 628.0
+size_flags_horizontal = 3
+
+[node name="FolderDesktop" type="Control" parent="ComputerViewport/Interface/Background/DestopFrame" unique_id=1401878619]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="RecycleBin" parent="ComputerViewport/Interface/Background" unique_id=507763021 instance=ExtResource("3_phxv5")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 49.0
+offset_right = 266.0
+offset_bottom = 305.0
+scale = Vector2(0.3, 0.3)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ComputerViewport/Interface/Background" unique_id=561053686]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 55.0
+offset_top = 265.0
+offset_right = 555.0
+offset_bottom = 361.0
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="ComputerViewport/Interface/Background/VBoxContainer" unique_id=1207149345]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lmhn3")
+text = "Suspicious Activity Detected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionLabel" type="Label" parent="ComputerViewport/Interface/Background/VBoxContainer" unique_id=885980571]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lmhn3")
+text = "Drag suspicious folders into the recycle bin."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelLabel" type="Label" parent="ComputerViewport/Interface/Background/VBoxContainer" unique_id=2010190241]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_lmhn3")
+text = "[Escape] Exit Computer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RemainingLabel" type="Label" parent="ComputerViewport/Interface/Background" unique_id=1003981453]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 410.0
+offset_right = 555.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("2_lmhn3")
+theme_override_font_sizes/font_size = 24
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorldDisplay" type="MeshInstance3D" parent="." unique_id=1749488129]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("QuadMesh_gmpk6")
+surface_material_override/0 = SubResource("StandardMaterial3D_0r8uf")

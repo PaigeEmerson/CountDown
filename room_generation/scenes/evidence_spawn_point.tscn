@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://blsbn1gvc1cwn"]
+
+[ext_resource type="Script" uid="uid://cg6rdkqulthpj" path="res://room_generation/scripts/evidence_spawn_point.gd" id="1_qybx6"]
+
+[node name="EvidenceSpawnPoint" type="Marker3D" unique_id=792907143]
+script = ExtResource("1_qybx6")

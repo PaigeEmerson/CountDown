@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://r0h42eu1xpp6"]
+
+[ext_resource type="Texture2D" uid="uid://byuukx4cucjn2" path="res://2D/FileFolder.png" id="1_l578v"]
+[ext_resource type="Script" uid="uid://pjt3bc5mu6q0" path="res://evidence/scripts/cyberfolder.gd" id="2_1b4d1"]
+[ext_resource type="FontFile" uid="uid://irdth4dcpi0j" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="2_j06fa"]
+
+[node name="Folder" type="TextureRect" unique_id=507763021]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 0
+texture = ExtResource("1_l578v")
+stretch_mode = 5
+script = ExtResource("2_1b4d1")
+
+[node name="FolderName" type="Label" parent="." unique_id=1589408596]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -23.0
+offset_right = 48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_j06fa")
+theme_override_font_sizes/font_size = 32
+text = "FolderName"

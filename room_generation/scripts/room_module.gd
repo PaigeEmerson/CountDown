@@ -66,3 +66,17 @@ func get_generation_bounds() -> Array[CollisionShape3D]:
 		bounds.append(child)
 
 	return bounds
+	
+	
+func get_evidence_spawn_points() -> Array[EvidenceSpawnPoint]:
+	var spawn_points: Array[EvidenceSpawnPoint] = []
+	var spawn_root := get_node_or_null("EvidenceSpawns")
+
+	if not spawn_root:
+		return spawn_points
+
+	for child in spawn_root.find_children("*", "Marker3D", true, false):
+		if child is EvidenceSpawnPoint:
+			spawn_points.append(child)
+
+	return spawn_points

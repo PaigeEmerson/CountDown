@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b85ogabdw3473"]
+
+[ext_resource type="Script" uid="uid://bov4727wqweuw" path="res://evidence/scripts/evidence.gd" id="1_ao86k"]
+[ext_resource type="Resource" uid="uid://01m11w5cuilk" path="res://evidence/data/counterfeit.tres" id="2_mypke"]
+[ext_resource type="PackedScene" uid="uid://d023qy3j3i6s1" path="res://cleanup_tasks/scenes/counterfeit_burn_task.tscn" id="3_mypke"]
+[ext_resource type="PackedScene" uid="uid://lglm4r2xemjh" path="res://evidence/scenes/TableCounterfit.tscn" id="3_wa655"]
+[ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="4_hlao0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0r8uf"]
+size = Vector3(1, 0.23083496, 0.618042)
+
+[node name="CounterfeitEvidence" type="Area3D" unique_id=1595671498]
+collision_layer = 2
+script = ExtResource("1_ao86k")
+evidence_name = "Counterfeit Documents"
+crime_type = ExtResource("2_mypke")
+cleanup_task_scene = ExtResource("3_mypke")
+remove_when_cleaned = false
+allowed_spawn_surfaces = 2
+interaction_prompt = "Destroy Documents"
+
+[node name="EvidenceVisual" parent="." unique_id=680182734 instance=ExtResource("3_wa655")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=783298506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08868408, 0.049743652)
+shape = SubResource("BoxShape3D_0r8uf")
+
+[node name="CleanupView" type="Marker3D" parent="." unique_id=361832291]
+transform = Transform3D(1, 0, 0, 0, 0.79758495, 0.6032066, 0, -0.6032066, 0.79758495, 0, 0.5553521, 0.72145915)
+
+[node name="InstructionLabel" type="Label3D" parent="." unique_id=920567033]
+transform = Transform3D(0.3841172, 0, 0, 0, 0.3841172, 0, 0, 0, 0.3841172, 0, 0.42250317, 0)
+visible = false
+outline_modulate = Color(0, 0, 0, 0)
+text = "Hold [LMB] and move lighter"
+font = ExtResource("4_hlao0")
+
+[node name="BurnSurface" type="Marker3D" parent="." unique_id=688933450]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="BurnEffects" type="Node3D" parent="." unique_id=1411928647]

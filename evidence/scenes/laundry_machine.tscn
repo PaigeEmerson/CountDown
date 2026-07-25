@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c4bfwb0i1ig2i"]
+
+[ext_resource type="PackedScene" uid="uid://d258myfofrh05" path="res://GLB/laundryMachine.glb" id="1_raqfv"]
+[ext_resource type="Material" uid="uid://un67ltkyxdtn" path="res://Materials/LaundryMachine.tres" id="2_1rrbg"]
+
+[node name="laundryMachine" unique_id=2026181004 instance=ExtResource("1_raqfv")]
+
+[node name="Cube_002" parent="." index="0" unique_id=500092510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.028474271)
+material_override = ExtResource("2_1rrbg")

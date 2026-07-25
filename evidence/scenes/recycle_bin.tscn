@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://s83g48374158"]
+
+[ext_resource type="Texture2D" uid="uid://joqrim08l7y7" path="res://2D/RecycleBin.png" id="1_iqv4k"]
+[ext_resource type="FontFile" uid="uid://irdth4dcpi0j" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="2_aew2n"]
+[ext_resource type="Script" uid="uid://dmdwb5c24t16x" path="res://evidence/scripts/cyber_recycle_bin.gd" id="2_ogwmd"]
+
+[node name="RecycleBin" type="TextureRect" unique_id=507763021]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+texture = ExtResource("1_iqv4k")
+stretch_mode = 5
+script = ExtResource("2_ogwmd")
+
+[node name="Label" type="Label" parent="." unique_id=1589408596]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -10.0
+offset_right = 84.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_aew2n")
+theme_override_font_sizes/font_size = 32
+text = "Recycle Bin"

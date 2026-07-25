@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://54ci1fniv8kl"]
+
+[ext_resource type="Script" uid="uid://dpqfghrvkiv5k" path="res://cleanup_tasks/scripts/noise_cleanup_task.gd" id="1_p83ra"]
+
+[node name="NoiseCleanupTask" type="Node" unique_id=675250744]
+script = ExtResource("1_p83ra")
+starting_angle_degrees = -135.0
+muted_angle_degrees = 135.0

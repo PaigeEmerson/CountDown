@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c8xn6bp7y1m68"]
+
+[ext_resource type="Script" uid="uid://c78bmemyapeg3" path="res://cleanup_tasks/scripts/laundering_cleanup_task.gd" id="1_d5g4n"]
+[ext_resource type="PackedScene" uid="uid://bvmy8a5cvhkp6" path="res://GLB/Bat.glb" id="2_pwrgg"]
+
+[node name="LaunderingCleanupTask" type="Node3D" unique_id=1899596129]
+script = ExtResource("1_d5g4n")
+
+[node name="BatPivot" type="Node3D" parent="." unique_id=65837017]
+
+[node name="BatVisual" parent="BatPivot" unique_id=883101129 instance=ExtResource("2_pwrgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31199747, 0)

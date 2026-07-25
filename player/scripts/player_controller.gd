@@ -17,10 +17,13 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var movement_enabled := true
 var camera_look_enabled := true
 var cleanup_active := false
+var movement_speed_multiplier := 1.0
 
 
 
 func _ready() -> void:
+	add_to_group("player")
+
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	CleanupManager.cleanup_started.connect(_on_cleanup_started)
 	CleanupManager.cleanup_ended.connect(_on_cleanup_ended)
@@ -40,7 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("release_mouse"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-	if event is InputEventMouseButton and event.pressed and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+	if event is InputEventMouseButton and event.pressed and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE and not get_tree().paused:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
@@ -68,7 +71,8 @@ func handle_jump() -> void:
 func handle_movement(delta: float) -> void:
 	var input_direction := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var movement_direction := (transform.basis * Vector3(input_direction.x, 0.0, input_direction.y)).normalized()
-	var target_speed := sprint_speed if Input.is_action_pressed("sprint") else walk_speed
+	var base_speed := sprint_speed if Input.is_action_pressed("sprint") else walk_speed
+	var target_speed := base_speed * movement_speed_multiplier
 	var current_acceleration := acceleration if is_on_floor() else air_acceleration
 	
 	if movement_direction:
@@ -110,3 +114,7 @@ func lock_for_results() -> void:
 	camera_look_enabled = false
 	velocity = Vector3.ZERO
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	
+func set_movement_speed_multiplier(value: float) -> void:
+	movement_speed_multiplier = max(value, 0.1)

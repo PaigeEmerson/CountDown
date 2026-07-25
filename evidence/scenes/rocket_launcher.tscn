@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://du40h3cgd7w2m"]
+
+[ext_resource type="Script" uid="uid://cocwmiwl71kl3" path="res://evidence/scripts/carryable_evidence.gd" id="1_x4ewe"]
+[ext_resource type="Resource" uid="uid://bakdta0171e2f" path="res://evidence/data/weapon.tres" id="2_ky527"]
+[ext_resource type="PackedScene" uid="uid://b0kboqkk3xjfy" path="res://GLB/Bazooka.glb" id="3_x4ewe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dq4ne"]
+size = Vector3(0.21328735, 0.13061523, 1.1175842)
+
+[node name="Bazooka" type="Area3D" unique_id=963932795 node_paths=PackedStringArray("held_visual")]
+collision_layer = 2
+script = ExtResource("1_x4ewe")
+held_visual = NodePath("Visuals")
+held_rotation_degrees = Vector3(180, 180, 90)
+evidence_name = "Rocket Launcher"
+crime_type = ExtResource("2_ky527")
+allowed_spawn_surfaces = 3
+interaction_prompt = "Pick up"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2017042760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022232056, 0.0010986328, -0.08909607)
+shape = SubResource("BoxShape3D_dq4ne")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1165357235]
+
+[node name="Bazooka" parent="Visuals" unique_id=869071725 instance=ExtResource("3_x4ewe")]
+transform = Transform3D(0.85678387, -1.7334176, 0, 1.7334176, 0.85678387, 0, 0, 0, 1.9336019, 0, 0.082678035, 0)
