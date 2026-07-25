@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bsg04yk0d4gjr"
+uid="uid://frg7xtqjv4np"
 path="res://.godot/imported/speaker_sp.gltf-fda8a64601a9ababae188055a48b4ef0.scn"
 
 [deps]
@@ -42,8 +42,4 @@ materials/extract_path=""
 _subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-<<<<<<< Updated upstream
-gltf/texture_map_mode=1
-=======
 gltf/texture_map_mode=0
->>>>>>> Stashed changes

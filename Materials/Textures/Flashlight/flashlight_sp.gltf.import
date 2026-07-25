@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bscgtkw7mqhmm"
+uid="uid://bnqne4e648nh8"
 path="res://.godot/imported/flashlight_sp.gltf-8e747a001c51dee28ffc772428102ddc.scn"
 
 [deps]
@@ -42,8 +42,4 @@ materials/extract_path=""
 _subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-<<<<<<< Updated upstream
-gltf/texture_map_mode=1
-=======
 gltf/texture_map_mode=0
->>>>>>> Stashed changes

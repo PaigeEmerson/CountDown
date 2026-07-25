@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dc0jdc0dp1wxs"
+uid="uid://d0ljtynhuepmv"
 path="res://.godot/imported/passport.glb-b8aa0bb2afc42291ca315c65e8ac8e9a.scn"
 
 [deps]
@@ -42,8 +42,4 @@ materials/extract_path=""
 _subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-<<<<<<< Updated upstream
-gltf/texture_map_mode=1
-=======
 gltf/texture_map_mode=0
->>>>>>> Stashed changes

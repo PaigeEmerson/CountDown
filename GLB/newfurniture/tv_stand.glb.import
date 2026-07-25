@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dx8qbr5hs786s"
+uid="uid://cfvmtlwgtuxcc"
 path="res://.godot/imported/tv_stand.glb-b2df434c2801451003944d4e1b7978aa.scn"
 
 [deps]
@@ -39,19 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"big_furniture": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/BigFurniture.tres",
-"use_external/path": "uid://dt83igfpi3s6t"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-<<<<<<< Updated upstream
-gltf/texture_map_mode=1
-=======
 gltf/texture_map_mode=0
->>>>>>> Stashed changes

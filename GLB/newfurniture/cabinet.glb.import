@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://x6w8sf5yhkkq"
+uid="uid://bc0qriflnc3fk"
 path="res://.godot/imported/cabinet.glb-67878815bccbdecf159b821bd64194f8.scn"
 
 [deps]
@@ -39,19 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"Cabinets": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/Cabinets.tres",
-"use_external/path": "uid://ct2vk3fmphwq8"
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
-<<<<<<< Updated upstream
-gltf/texture_map_mode=1
-=======
 gltf/texture_map_mode=0
->>>>>>> Stashed changes

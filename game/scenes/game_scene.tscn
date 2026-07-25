@@ -74,10 +74,8 @@ generation_profile = ExtResource("22_5fqxa")
 environment = SubResource("Environment_5fqxa")
 
 [node name="PixelShader" type="CanvasLayer" parent="." unique_id=1149251273]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="PixelShader" unique_id=1714345933]
-visible = false
 material = ExtResource("23_tlp5u")
 anchors_preset = 15
 anchor_right = 1.0
