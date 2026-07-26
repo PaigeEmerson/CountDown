@@ -45,6 +45,7 @@ stream = ExtResource("5_hpl00")
 volume_db = -30.936
 max_db = -10.0
 autoplay = true
+max_distance = 7.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1080894029]
 transform = Transform3D(-1.5206872e-08, 0, -0.34789267, 0, 0.34789267, 0, 0.34789267, 0, -1.5206872e-08, 0.006028603, 0.4401043, 0.031692743)
