@@ -57,6 +57,8 @@ size = Vector3(7.7334595, 2.5651855, 5.998535)
 script = ExtResource("1_yeqks")
 room_name = "Medium Room 1"
 room_role = 4
+minimum_crimes = 1
+maximum_crimes = 3
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -167,10 +169,10 @@ transform = Transform3D(0.060882162, 0, -0.998145, 0, 1, 0, 0.998145, 0, 0.06088
 [node name="FilingCabinet" parent="Geometry/TallLamp/ReflectionProbe" unique_id=133718449 instance=ExtResource("15_2cfy6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3100305, -1.2499915, 0.3940456)
 
-[node name="Cube_036" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" index="1" unique_id=649465553]
+[node name="Cube_036" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" index="1" unique_id=1895139432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0454911, 1.3439387, -0.00016105699)
 
-[node name="Cube_012" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" index="3" unique_id=1788787668]
+[node name="Cube_012" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" index="3" unique_id=764605728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12952316, 0.58315206, -0.00016105699)
 
 [node name="Lightswitch" parent="Geometry/TallLamp/ReflectionProbe/FilingCabinet" unique_id=1244461544 instance=ExtResource("16_2cfy6")]
@@ -195,7 +197,7 @@ shape = SubResource("BoxShape3D_3xsqf")
 [node name="rug_sp" parent="Geometry/StaticBody3D/CollisionShape3D" unique_id=865900915 instance=ExtResource("18_hvqg8")]
 transform = Transform3D(0.027453944, -1.5233368e-08, -0.16975579, -8.397329e-09, 0.17196146, -1.6789377e-08, 0.1697558, 1.0970075e-08, 0.027453944, -3.9557374, -0.88960403, 0.7563605)
 
-[node name="Plane_0122" parent="Geometry/StaticBody3D/CollisionShape3D/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1787430695) index="0" unique_id=1726373681]
+[node name="Plane_0122" parent="Geometry/StaticBody3D/CollisionShape3D/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1173471370) index="0" unique_id=502517446]
 material_override = SubResource("StandardMaterial3D_odata")
 
 [node name="Bed" parent="Geometry" unique_id=1430379862 instance=ExtResource("22_d5exj")]

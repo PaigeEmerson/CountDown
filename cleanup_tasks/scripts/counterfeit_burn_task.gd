@@ -336,3 +336,10 @@ func update_lighter_position(hit_position: Vector3, surface_normal: Vector3) -> 
 
 	lighter_pivot.global_transform = lighter_transform
 	lighter_pivot.show()
+	
+	
+func request_cancel() -> void:
+	if is_finishing:
+		return
+
+	finish_task(false)

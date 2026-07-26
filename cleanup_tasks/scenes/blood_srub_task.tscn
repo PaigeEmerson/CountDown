@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://bglhy2ufynr2d"]
 
 [ext_resource type="Script" uid="uid://dvha2kty1p8rh" path="res://cleanup_tasks/scripts/blood_scrub_task.gd" id="1_jj2wg"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_gmpk6"]
-size = Vector3(0.22, 0.03, 0.16)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0r8uf"]
-albedo_color = Color(1, 0.81666666, 0, 1)
+[ext_resource type="PackedScene" uid="uid://bhj7vfgay7xxq" path="res://GLB/Sponge.glb" id="2_1cbk2"]
 
 [node name="BloodSrubTask" type="Node" unique_id=2122523314]
 script = ExtResource("1_jj2wg")
 
-[node name="CleaningCloth" type="MeshInstance3D" parent="." unique_id=1542984512]
-mesh = SubResource("BoxMesh_gmpk6")
-surface_material_override/0 = SubResource("StandardMaterial3D_0r8uf")
+[node name="Sponge" parent="." unique_id=1032465623 instance=ExtResource("2_1cbk2")]
+transform = Transform3D(1.5213578, 0, 0, 0, 1.5213578, 0, 0, 0, 1.5213578, 0, 0, 0)

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2lxjk2dp7bx5" path="res://GLB/MoneyPile.glb" id="4_dx02r"]
 [ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="5_kkip6"]
 [ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="7_11q3b"]
-[ext_resource type="AudioStream" uid="uid://da8tc4jd26hhe" path="res://audio/universfield-thunder-strike-124463.mp3" id="7_dx02r"]
+[ext_resource type="AudioStream" uid="uid://crseibrjb75j4" path="res://audio/MetalHit.mp3" id="7_dx02r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmpk6"]
 size = Vector3(0.7595215, 1, 0.68981934)
@@ -59,6 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7100524, 0.7868951, -0.2591
 
 [node name="HitAudio" type="AudioStreamPlayer3D" parent="." unique_id=457243539]
 stream = ExtResource("7_dx02r")
+volume_db = -10.0
 
 [node name="InstructionLabel" type="Label3D" parent="." unique_id=265143891]
 transform = Transform3D(-1.3454615e-08, 0, 0.30780572, 0, 0.30780572, 0, -0.30780572, 0, -1.3454615e-08, 0.21154162, 0.9661621, 0)

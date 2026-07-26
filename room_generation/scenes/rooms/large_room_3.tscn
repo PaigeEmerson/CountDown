@@ -57,6 +57,8 @@ script = ExtResource("1_y30fl")
 room_name = "Large Room 3"
 room_size = 2
 room_role = 1
+minimum_crimes = 1
+maximum_crimes = 3
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -146,31 +148,31 @@ transform = Transform3D(-4.371139e-08, 0, -1.1734991, 0, 1, 0, 1, 0, -5.1295274e
 [node name="FilingCabinet" parent="Geometry" unique_id=101744667 instance=ExtResource("13_w2v2g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4740803, 0, -2.6445487)
 
-[node name="Cube_036" parent="Geometry/FilingCabinet" index="1" unique_id=649465553]
+[node name="Cube_036" parent="Geometry/FilingCabinet" index="1" unique_id=1895139432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27723396, 1.3439387, -0.00016105699)
 
-[node name="Cube_011" parent="Geometry/FilingCabinet" index="2" unique_id=1286434376]
+[node name="Cube_011" parent="Geometry/FilingCabinet" index="2" unique_id=1080007931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06942546, 0.9628101, -0.00016105699)
 
-[node name="Cube_012" parent="Geometry/FilingCabinet" index="3" unique_id=1788787668]
+[node name="Cube_012" parent="Geometry/FilingCabinet" index="3" unique_id=764605728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13297498, 0.58315206, -0.00016105699)
 
 [node name="FilingCabinet3" parent="Geometry" unique_id=1247238298 instance=ExtResource("13_w2v2g")]
 transform = Transform3D(0.99395645, 0, 0.10977535, 0, 1, 0, -0.10977535, 0, 0.99395645, 3.4740803, 0, -3.2398784)
 
-[node name="Cube_036" parent="Geometry/FilingCabinet3" index="1" unique_id=649465553]
+[node name="Cube_036" parent="Geometry/FilingCabinet3" index="1" unique_id=1895139432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11891924, 1.3439387, -0.00016105699)
 
-[node name="Cube_013" parent="Geometry/FilingCabinet3" index="4" unique_id=932255808]
+[node name="Cube_013" parent="Geometry/FilingCabinet3" index="4" unique_id=1176914848]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22813949, 0.20153573, -0.00016105699)
 
 [node name="FilingCabinet2" parent="Geometry" unique_id=283356627 instance=ExtResource("13_w2v2g")]
 transform = Transform3D(0.99779963, 0, -0.066301115, 0, 1, 0, 0.066301115, 0, 0.99779963, 3.4740803, 0, -0.41779187)
 
-[node name="Cube_036" parent="Geometry/FilingCabinet2" index="1" unique_id=649465553]
+[node name="Cube_036" parent="Geometry/FilingCabinet2" index="1" unique_id=1895139432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05366496, 1.3439387, -0.00016105745)
 
-[node name="Cube_013" parent="Geometry/FilingCabinet2" index="4" unique_id=932255808]
+[node name="Cube_013" parent="Geometry/FilingCabinet2" index="4" unique_id=1176914848]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.073998556, 0.20153573, -0.00016105699)
 
 [node name="Radiator" parent="Geometry/FilingCabinet2" unique_id=1421624761 instance=ExtResource("16_w2v2g")]
@@ -324,6 +326,16 @@ allow_window = false
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("41_foixc")]
+transform = Transform3D(0.76087034, 0, -0.64890397, 0, 1, 0, 0.64890397, 0, 0.76087034, 4.626133, 0.0069556236, -9.65357)
+
+[node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=193839093 instance=ExtResource("41_foixc")]
+transform = Transform3D(-0.9454237, 0, -0.32584372, 0, 1, 0, 0.32584372, 0, -0.9454237, 1.5676339, 0.0069556236, -1.3508489)
+
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=1533363879 instance=ExtResource("41_foixc")]
+transform = Transform3D(0.28255802, 0, -0.9592502, 0, 1, 0, 0.9592502, 0, 0.28255802, 6.6203127, 0.679593, -9.099037)
+placement_type = 1
+
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
 [node name="MainBound" type="Area3D" parent="GenerationBounds" unique_id=264368544]
@@ -402,16 +414,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.92
 
 [node name="PowerOutlet2" parent="." unique_id=542960245 instance=ExtResource("28_2qilj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3602648, 0.4150039, -12.026981)
-
-[node name="EvidenceSpawnPoint" parent="." unique_id=792907143 instance=ExtResource("41_foixc")]
-transform = Transform3D(0.76087034, 0, -0.64890397, 0, 1, 0, 0.64890397, 0, 0.76087034, 4.626133, 0.0069556236, -9.65357)
-
-[node name="EvidenceSpawnPoint3" parent="." unique_id=193839093 instance=ExtResource("41_foixc")]
-transform = Transform3D(-0.9454237, 0, -0.32584372, 0, 1, 0, 0.32584372, 0, -0.9454237, 1.5676339, 0.0069556236, -1.3508489)
-
-[node name="EvidenceSpawnPoint2" parent="." unique_id=1533363879 instance=ExtResource("41_foixc")]
-transform = Transform3D(0.28255802, 0, -0.9592502, 0, 1, 0, 0.9592502, 0, 0.28255802, 6.6203127, 0.679593, -9.099037)
-placement_type = 1
 
 [node name="Paper3" parent="." unique_id=353287643 instance=ExtResource("20_7dews")]
 transform = Transform3D(0.21796738, 0, 0.9759561, 0, 1, 0, -0.9759561, 0, 0.21796738, 0.21101594, 0.0089780865, -5.6865444)

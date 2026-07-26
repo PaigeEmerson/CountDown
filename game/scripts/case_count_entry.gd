@@ -17,9 +17,9 @@ func setup(record: Dictionary, unresolved_disposition: String) -> void:
 	evidence_label.text = "Supporting exhibit: %s" % evidence_name
 
 	if dismissed:
-		charge_label.text = "[s]%s[/s]" % charge_name.to_upper()
+		charge_label.text = "[color=#7A1717][s]%s[/s][/color]" % charge_name.to_upper()
 		disposition_label.text = "DISMISSED — INSUFFICIENT EVIDENCE"
-		modulate = Color(0.5, 0.5, 0.5, 1.0)
+		#modulate = Color(0.5, 0.5, 0.5, 1.0)
 	else:
 		charge_label.text = charge_name.to_upper()
 		disposition_label.text = unresolved_disposition

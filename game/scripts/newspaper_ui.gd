@@ -25,13 +25,15 @@ enum NewspaperState {
 @onready var pause_controls: Control = $ScreenMask/NewspaperCanvas/PauseControls
 @onready var results_controls: Control = $ScreenMask/NewspaperCanvas/ResultsControls
 @onready var start_button: Button = $ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer/StartButton
-@onready var settings_button: Button = $ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer/SettingsButton
 @onready var main_quit_button: Button = $ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer/QuitButton
 @onready var loading_label: Label = $ScreenMask/NewspaperCanvas/LoadingControls/LoadingLabel
 @onready var resume_button: Button = $ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer/ResumeButton
 @onready var restart_button: Button = $ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer/RestartButton
 @onready var pause_main_menu_button: Button = $ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer/MainMenuButton
 @onready var pause_quit_button: Button = $ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer/QuitButton
+@onready var tape_audio: AudioStreamPlayer = $PhoneCallPlayer
+
+var tape_pending_for_game_start := true
 
 signal results_continue_requested
 
@@ -42,6 +44,7 @@ signal results_continue_requested
 @onready var count_list: VBoxContainer = $ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer/CaseScroll/CountList
 @onready var results_summary: Label = $ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer/SummaryLabel
 @onready var results_continue_button: Button = $ScreenMask/NewspaperCanvas/ResultsControls/VBoxContainer/ContinueButton
+@onready var menu_click_audio: AudioStreamPlayer = $MenuClickAudio
 
 var current_state := NewspaperState.MAIN_MENU
 var active_tween: Tween
@@ -53,15 +56,16 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_controls_enabled(false)
 
+	connect_menu_button_sounds()
+
 	start_button.pressed.connect(_on_start_pressed)
-	settings_button.pressed.connect(_on_settings_pressed)
 	main_quit_button.pressed.connect(_on_quit_pressed)
-	
+
 	resume_button.pressed.connect(_on_resume_pressed)
 	restart_button.pressed.connect(_on_restart_pressed)
 	pause_main_menu_button.pressed.connect(_on_pause_main_menu_pressed)
 	pause_quit_button.pressed.connect(_on_quit_pressed)
-	
+
 	results_continue_button.pressed.connect(_on_results_continue_pressed)
 
 	await get_tree().process_frame
@@ -142,7 +146,7 @@ func show_from_game(state: NewspaperState) -> void:
 	set_controls_enabled(true)
 
 
-func hide_to_game() -> void:
+func hide_to_game(play_pending_tape := false) -> void:
 	if is_animating or not is_open:
 		return
 
@@ -150,14 +154,26 @@ func hide_to_game() -> void:
 	set_controls_enabled(false)
 
 	var viewport_height := get_viewport().get_visible_rect().size.y
-	var hidden_position := newspaper_canvas.position + Vector2(0.0, viewport_height)
+	var hidden_position := newspaper_canvas.position + Vector2(
+		0.0,
+		viewport_height
+	)
 
 	kill_active_tween()
 	active_tween = create_tween()
 	active_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	active_tween.set_trans(Tween.TRANS_QUART)
 	active_tween.set_ease(Tween.EASE_IN)
-	active_tween.tween_property(newspaper_canvas, "position", hidden_position, slide_duration)
+	active_tween.tween_property(
+		newspaper_canvas,
+		"position",
+		hidden_position,
+		slide_duration
+	)
+
+	if play_pending_tape and tape_pending_for_game_start:
+		tape_pending_for_game_start = false
+		play_tape()
 
 	await active_tween.finished
 
@@ -253,12 +269,13 @@ func _on_start_pressed() -> void:
 		return
 
 	start_button.disabled = true
-	settings_button.disabled = true
 	main_quit_button.disabled = true
 
 	await move_to_state(NewspaperState.LOADING)
 
-	var error := get_tree().change_scene_to_file("res://game/scenes/game_scene.tscn")
+	var error := get_tree().change_scene_to_file(
+		"res://game/scenes/game_scene.tscn"
+	)
 
 	if error != OK:
 		push_error("Could not load game_scene.tscn. Error: %s" % error)
@@ -266,23 +283,22 @@ func _on_start_pressed() -> void:
 		enable_main_menu_buttons()
 
 
-func _on_settings_pressed() -> void:
-	if is_animating:
-		return
-
-	print("Settings menu has not been implemented yet.")
-
-
 func _on_quit_pressed() -> void:
 	if is_animating:
 		return
+
+	await get_tree().create_timer(
+		0.1,
+		true,
+		false,
+		true
+	).timeout
 
 	get_tree().quit()
 
 
 func enable_main_menu_buttons() -> void:
 	start_button.disabled = false
-	settings_button.disabled = false
 	main_quit_button.disabled = false
 	
 	
@@ -394,3 +410,34 @@ func _on_results_continue_pressed() -> void:
 		return
 
 	results_continue_requested.emit()
+	
+	
+func connect_menu_button_sounds() -> void:
+	for node in newspaper_canvas.find_children("*", "BaseButton", true, false):
+		var button := node as BaseButton
+
+		if not button:
+			continue
+
+		if not button.pressed.is_connected(_play_menu_click):
+			button.pressed.connect(_play_menu_click)
+
+
+func _play_menu_click() -> void:
+	if not menu_click_audio.stream:
+		return
+
+	menu_click_audio.play()
+	
+	
+func play_tape() -> void:
+	if not tape_audio.stream:
+		push_warning("TapeAudio does not have an audio stream.")
+		return
+
+	tape_audio.stop()
+	tape_audio.play()
+	
+	
+func queue_tape_for_next_game_start() -> void:
+	tape_pending_for_game_start = true

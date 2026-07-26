@@ -75,3 +75,7 @@ func get_safe_camera_transform(camera: Camera3D, desired_transform: Transform3D,
 		safe_transform = safe_transform.looking_at(focus_position, Vector3.UP)
 
 	return safe_transform
+	
+	
+func request_cancel() -> void:
+	cancel()

@@ -94,9 +94,14 @@ func _on_cleanup_started(task: CleanupTask) -> void:
 	
 func _on_cleanup_ended() -> void:
 	cleanup_active = false
+	velocity = Vector3.ZERO
+
+	if CampaignManager.game_over:
+		lock_for_results()
+		return
+
 	movement_enabled = true
 	camera_look_enabled = true
-	velocity = Vector3.ZERO
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	

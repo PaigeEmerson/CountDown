@@ -71,7 +71,7 @@ func finish_loading() -> void:
 	NewspaperInterface.set_loading_message("Apartment ready")
 
 	await get_tree().create_timer(0.35).timeout
-	await NewspaperInterface.hide_to_game()
+	await NewspaperInterface.hide_to_game(true)
 
 	player.process_mode = Node.PROCESS_MODE_INHERIT
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

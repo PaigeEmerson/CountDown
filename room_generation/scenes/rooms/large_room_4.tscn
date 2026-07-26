@@ -23,6 +23,8 @@ script = ExtResource("1_soljo")
 room_name = "Large Room 4"
 room_size = 2
 room_role = 1
+minimum_crimes = 1
+maximum_crimes = 3
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -60,6 +62,16 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.0
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
+
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("12_2488j")]
+transform = Transform3D(0.9529858, 0, 0.30301493, 0, 1, 0, -0.30301493, 0, 0.9529858, -0.15512162, 0.0052574873, -7.8070474)
+
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=1371611957 instance=ExtResource("12_2488j")]
+transform = Transform3D(-0.15154079, 0, -0.988451, 0, 1, 0, 0.988451, 0, -0.15154079, 4.6848793, 0.0052574873, -4.416424)
+
+[node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=2002667424 instance=ExtResource("12_2488j")]
+transform = Transform3D(0.08116747, 0, 0.9967004, 0, 1, 0, -0.9967004, 0, 0.08116747, -6.095455, 0.0052574873, -8.602226)
+placement_type = 1
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -229,16 +241,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013348222, 0)
 stream = ExtResource("12_1kgrs")
 autoplay = true
 max_distance = 10.0
-
-[node name="EvidenceSpawnPoint" parent="." unique_id=792907143 instance=ExtResource("12_2488j")]
-transform = Transform3D(0.9529858, 0, 0.30301493, 0, 1, 0, -0.30301493, 0, 0.9529858, -0.15512162, 0.0052574873, -7.8070474)
-
-[node name="EvidenceSpawnPoint2" parent="." unique_id=1371611957 instance=ExtResource("12_2488j")]
-transform = Transform3D(-0.15154079, 0, -0.988451, 0, 1, 0, 0.988451, 0, -0.15154079, 4.6848793, 0.0052574873, -4.416424)
-
-[node name="EvidenceSpawnPoint3" parent="." unique_id=2002667424 instance=ExtResource("12_2488j")]
-transform = Transform3D(0.08116747, 0, 0.9967004, 0, 1, 0, -0.9967004, 0, 0.08116747, -6.095455, 0.0052574873, -8.602226)
-placement_type = 1
 
 [node name="StainDecal" parent="." unique_id=422961019 instance=ExtResource("13_1kgrs")]
 transform = Transform3D(2.263053, 1.4547906e-07, 1.6640865, 0, -2.8090198, 2.4557232e-07, 1.6640865, -1.9784238e-07, -2.263053, 0.6565993, 1.4090927, -6.840593)

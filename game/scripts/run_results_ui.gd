@@ -46,6 +46,12 @@ func _on_run_escaped(remaining_crimes: int, cleaned_crimes: int) -> void:
 func _on_campaign_ended(caught_by_police: bool) -> void:
 	campaign_has_ended = true
 
+	if CleanupManager.has_active_task():
+		CleanupManager.cancel_active_cleanup()
+
+		while CleanupManager.has_active_task():
+			await get_tree().process_frame
+
 	var remaining := RunManager.get_conviction_count_for_run()
 	var dismissed := RunManager.get_dismissed_count()
 	var headline := ""
@@ -61,13 +67,15 @@ func _on_campaign_ended(caught_by_police: bool) -> void:
 		subheadline = "Repeat offender reaches conviction limit"
 		unresolved_disposition = "CONVICTION ENTERED"
 
+		NewspaperInterface.queue_tape_for_next_game_start()
+
 	var summary := create_summary(
 		RunManager.starting_crime_count,
 		dismissed,
 		remaining
 	)
 
-	NewspaperInterface.display_case_results(
+	await NewspaperInterface.display_case_results(
 		headline,
 		subheadline,
 		RunManager.get_case_counts(),
@@ -75,6 +83,7 @@ func _on_campaign_ended(caught_by_police: bool) -> void:
 		unresolved_disposition,
 		"NEW RECORD"
 	)
+
 
 
 func create_summary(total: int, dismissed: int, convictions: int) -> String:

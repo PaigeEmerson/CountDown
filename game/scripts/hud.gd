@@ -3,6 +3,16 @@ extends CanvasLayer
 
 @export var crime_entry_scene: PackedScene
 
+@export_group("Timer Colors")
+@export var timer_normal_color := Color.WHITE
+@export var timer_warning_color := Color(1.0, 0.65, 0.15)
+@export var timer_critical_color := Color(0.9, 0.1, 0.1)
+@export var timer_warning_threshold := 60.0
+@export var timer_critical_threshold := 15.0
+
+@onready var timer_panel: MarginContainer = $TimerPanel
+@onready var timer_label: Label = $TimerPanel/TimerLabel
+
 @onready var crime_list: VBoxContainer = $CrimePanel/CrimeList
 @onready var inventory_panel: MarginContainer = $InventoryPanel
 @onready var inventory_label: Label = $InventoryPanel/InventoryLabel
@@ -10,6 +20,9 @@ extends CanvasLayer
 @onready var notification_label: Label = $NotificationPanel/NotificationLabel
 @onready var use_item_prompt: MarginContainer = $UseItemPrompt
 @onready var use_item_label: Label = $UseItemPrompt/UseItemLabel
+@onready var timer_warning_audio: AudioStreamPlayer = $TimerWarningAudio
+
+var critical_timer_warning_played := false
 
 var crime_entries := {}
 var notification_queue: Array[Dictionary] = []
@@ -22,19 +35,41 @@ func _ready() -> void:
 	notification_panel.hide()
 	inventory_panel.hide()
 	use_item_prompt.hide()
+	timer_panel.hide()
 
 	RunManager.crime_counts_changed.connect(_on_crime_counts_changed)
 	RunManager.notification_requested.connect(_on_notification_requested)
 
-	call_deferred("_connect_to_player_inventory")
+	RunManager.run_started.connect(_on_run_started)
+	RunManager.time_changed.connect(_on_time_changed)
+	RunManager.run_escaped.connect(_on_run_escaped)
+	CampaignManager.campaign_ended.connect(_on_campaign_ended)
+
+	get_tree().node_added.connect(_on_scene_node_added)
+	_connect_to_existing_inventory()
 
 
-func _connect_to_player_inventory() -> void:
-	player_inventory = get_tree().get_first_node_in_group("player_inventory") as CarryInventory
+func _connect_to_existing_inventory() -> void:
+	var existing_inventory := get_tree().get_first_node_in_group("player_inventory") as CarryInventory
 
-	if not player_inventory:
-		push_warning("HUD could not find the player's CarryInventory.")
+	if existing_inventory:
+		connect_to_inventory(existing_inventory)
+
+
+func _on_scene_node_added(node: Node) -> void:
+	if node is CarryInventory:
+		connect_to_inventory(node as CarryInventory)
+
+
+func connect_to_inventory(new_inventory: CarryInventory) -> void:
+	if not new_inventory:
 		return
+
+	if new_inventory == player_inventory:
+		return
+
+	disconnect_from_current_inventory()
+	player_inventory = new_inventory
 
 	player_inventory.inventory_changed.connect(_on_inventory_changed)
 	player_inventory.pickup_failed.connect(_on_inventory_pickup_failed)
@@ -42,9 +77,35 @@ func _connect_to_player_inventory() -> void:
 	player_inventory.active_item_changed.connect(_on_active_item_changed)
 	player_inventory.item_used.connect(_on_inventory_item_used)
 
-	_on_inventory_changed(player_inventory.get_item_count(), player_inventory.capacity)
-	_on_inventory_changed(player_inventory.get_item_count(), player_inventory.get_effective_capacity())
+	_on_inventory_changed(
+		player_inventory.get_item_count(),
+		player_inventory.get_effective_capacity()
+	)
+
 	_on_active_item_changed(player_inventory.get_active_item())
+
+
+func disconnect_from_current_inventory() -> void:
+	if not player_inventory or not is_instance_valid(player_inventory):
+		player_inventory = null
+		return
+
+	if player_inventory.inventory_changed.is_connected(_on_inventory_changed):
+		player_inventory.inventory_changed.disconnect(_on_inventory_changed)
+
+	if player_inventory.pickup_failed.is_connected(_on_inventory_pickup_failed):
+		player_inventory.pickup_failed.disconnect(_on_inventory_pickup_failed)
+
+	if player_inventory.inventory_cleared.is_connected(_on_inventory_cleared):
+		player_inventory.inventory_cleared.disconnect(_on_inventory_cleared)
+
+	if player_inventory.active_item_changed.is_connected(_on_active_item_changed):
+		player_inventory.active_item_changed.disconnect(_on_active_item_changed)
+
+	if player_inventory.item_used.is_connected(_on_inventory_item_used):
+		player_inventory.item_used.disconnect(_on_inventory_item_used)
+
+	player_inventory = null
 
 
 func _on_inventory_changed(current_count: int, maximum_count: int) -> void:
@@ -167,3 +228,54 @@ func _on_active_item_changed(item: CarryableEvidence) -> void:
 
 func _on_inventory_item_used(message: String) -> void:
 	_on_notification_requested(message, 2.5)
+	
+	
+func _on_run_started(_starting_crimes: int) -> void:
+	critical_timer_warning_played = false
+	timer_warning_audio.stop()
+	timer_panel.show()
+
+	update_timer_display(RunManager.time_remaining)
+
+
+func _on_time_changed(time_remaining: float) -> void:
+	update_timer_display(time_remaining)
+
+
+func update_timer_display(time_remaining: float) -> void:
+	var total_seconds := int(ceil(max(time_remaining, 0.0)))
+	var minutes := total_seconds / 60
+	var seconds := total_seconds % 60
+
+	timer_label.text = "POLICE ETA  %02d:%02d" % [minutes, seconds]
+
+	if time_remaining <= RunManager.critical_time_threshold:
+		timer_label.add_theme_color_override(
+			"font_color",
+			timer_critical_color
+		)
+
+		if not critical_timer_warning_played:
+			critical_timer_warning_played = true
+			timer_warning_audio.play()
+
+	elif time_remaining <= timer_warning_threshold:
+		timer_label.add_theme_color_override(
+			"font_color",
+			timer_warning_color
+		)
+	else:
+		timer_label.add_theme_color_override(
+			"font_color",
+			timer_normal_color
+		)
+
+
+func _on_run_escaped(_remaining_crimes: int, _cleaned_crimes: int) -> void:
+	timer_warning_audio.stop()
+	timer_panel.hide()
+
+
+func _on_campaign_ended(_caught_by_police: bool) -> void:
+	timer_warning_audio.stop()
+	timer_panel.hide()

@@ -58,6 +58,8 @@ size = Vector3(0.13275146, 2.6035767, 0.9904671)
 [node name="MediumRoom2" type="Node3D" unique_id=687311094]
 script = ExtResource("1_7k6ty")
 room_name = "Medium Room 2"
+minimum_crimes = 1
+maximum_crimes = 3
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -95,7 +97,7 @@ omni_range = 2.583108
 [node name="rug_sp" parent="Geometry/CielingFan/OmniLight3D5" unique_id=865900915 instance=ExtResource("10_r078k")]
 transform = Transform3D(0.03635929, 1.8412013e-08, -0.16807365, 2.8976324e-08, -0.17196146, -1.2569474e-08, -0.16807365, -2.5663535e-08, -0.03635929, 1.6263523, 1.0491781, 1.9639316)
 
-[node name="Plane_0122" parent="Geometry/CielingFan/OmniLight3D5/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1787430695) index="0" unique_id=1726373681]
+[node name="Plane_0122" parent="Geometry/CielingFan/OmniLight3D5/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1173471370) index="0" unique_id=502517446]
 material_override = SubResource("StandardMaterial3D_unau6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Geometry/CielingFan/OmniLight3D5" unique_id=1869446878]

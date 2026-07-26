@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://ovaeds2hic82" path="res://evidence/data/noise.tres" id="2_hpl00"]
 [ext_resource type="PackedScene" uid="uid://54ci1fniv8kl" path="res://cleanup_tasks/scenes/noise_cleanup_task.tscn" id="3_hpl00"]
 [ext_resource type="PackedScene" uid="uid://b50ae7bgonbm4" path="res://evidence/scenes/speaker_geo.tscn" id="3_x8pr8"]
-[ext_resource type="AudioStream" uid="uid://cql7ar5548y04" path="res://audio/policesiren.mp3" id="4_v1ltw"]
+[ext_resource type="AudioStream" uid="uid://bulv5d57mnm1n" path="res://audio/speakerMusic (1).mp3" id="5_hpl00"]
 [ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="5_uej7v"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_gmpk6"]
@@ -41,7 +41,9 @@ mesh = SubResource("BoxMesh_0r8uf")
 
 [node name="SpeakerAudio" type="AudioStreamPlayer3D" parent="." unique_id=501304743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48856932, 0.37382388)
-stream = ExtResource("4_v1ltw")
+stream = ExtResource("5_hpl00")
+volume_db = -30.936
+max_db = -10.0
 autoplay = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1080894029]

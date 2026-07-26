@@ -3,14 +3,25 @@
 [ext_resource type="Script" uid="uid://cfnl1e5qqfarb" path="res://game/scripts/hud.gd" id="1_hj2jl"]
 [ext_resource type="PackedScene" uid="uid://b0fgvq7no5vyc" path="res://evidence/scenes/crime_list_entry.tscn" id="2_4edth"]
 [ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="3_0ymi1"]
+[ext_resource type="AudioStream" uid="uid://cql7ar5548y04" path="res://audio/policesiren.mp3" id="4_thuf2"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1042372199]
 script = ExtResource("1_hj2jl")
 crime_entry_scene = ExtResource("2_4edth")
 
+[node name="Label" type="Label" parent="." unique_id=2025111597]
+offset_left = 24.0
+offset_top = 40.0
+offset_right = 230.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_0ymi1")
+theme_override_font_sizes/font_size = 18
+text = "Remove Evidence of Crimes"
+
 [node name="CrimePanel" type="MarginContainer" parent="." unique_id=749413106]
-offset_right = 48.0
-offset_bottom = 48.0
+offset_top = 54.0
+offset_right = 254.0
+offset_bottom = 121.0
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
@@ -74,3 +85,24 @@ theme_override_fonts/font = ExtResource("3_0ymi1")
 text = "[F] Use Drug"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimerPanel" type="MarginContainer" parent="." unique_id=888144963]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 16.0
+offset_right = 48.5
+offset_bottom = 56.0
+grow_horizontal = 2
+
+[node name="TimerLabel" type="Label" parent="TimerPanel" unique_id=1031620611]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0ymi1")
+text = "Carrying: 0 / 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerWarningAudio" type="AudioStreamPlayer" parent="." unique_id=1202742757]
+stream = ExtResource("4_thuf2")
+volume_db = -7.855

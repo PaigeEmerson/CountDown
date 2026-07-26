@@ -8,7 +8,6 @@
 [ext_resource type="Material" uid="uid://d2ddx0tlggkjv" path="res://Materials/Black.tres" id="5_tn1h3"]
 [ext_resource type="Material" uid="uid://dgpp5eirj5yxs" path="res://Materials/Wall.tres" id="6_kxcff"]
 [ext_resource type="Script" uid="uid://bgxqogcxoppky" path="res://room_generation/scenes/WindowAudioPlayer.gd" id="8_tn1h3"]
-[ext_resource type="Script" uid="uid://bxeicwu8gre1n" path="res://room_generation/scenes/police_lights.gd" id="9_dbk3f"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yg3fg"]
 _surfaces = [{
@@ -248,23 +247,3 @@ mesh = SubResource("BoxMesh_kxcff")
 transform = Transform3D(0.99998325, 0, 0, 0, 0.99998325, 0, 0, 0, 0.99998325, 0.5080429, 0.24869275, -0.015400168)
 material_override = ExtResource("6_kxcff")
 mesh = SubResource("BoxMesh_ggiu2")
-
-[node name="PoliceLights" type="Node3D" parent="." unique_id=1882116467]
-visible = false
-script = ExtResource("9_dbk3f")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="PoliceLights" unique_id=2076371283]
-transform = Transform3D(1, 0, 0, 0, 0.9914263, 0.13066722, 0, -0.13066722, 0.9914263, 0, 1.5177563, 1.7128859)
-light_color = Color(0.906949, 0.09389234, 0, 1)
-light_energy = 30.0
-shadow_enabled = true
-spot_range = 9.887
-spot_angle = 42.864986
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="PoliceLights" unique_id=258739928]
-transform = Transform3D(0.9873989, 0.0031467692, -0.1582197, 0.014378775, 0.9938828, 0.109500326, 0.15759638, -0.110395506, 0.9813135, 0.14299387, 1.49518, 1.6854324)
-light_color = Color(0.054349855, 0.44898713, 0.99999994, 1)
-light_energy = 30.0
-shadow_enabled = true
-spot_range = 9.887
-spot_angle = 26.181744

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bgxqogcxoppky" path="res://room_generation/scenes/WindowAudioPlayer.gd" id="6_axkut"]
 [ext_resource type="Script" uid="uid://dvfbmc35pmyiw" path="res://room_generation/scripts/window_lightning_receiver.gd" id="6_dmw2y"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="7_bpyqd"]
+[ext_resource type="Script" uid="uid://bxeicwu8gre1n" path="res://room_generation/scenes/police_lights.gd" id="8_60uxl"]
 [ext_resource type="AudioStream" uid="uid://b6mpi58r2l5q2" path="res://audio/RainUnmuffled.mp3" id="9_60uxl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gmpk6"]
@@ -45,6 +46,26 @@ script = ExtResource("6_axkut")
 
 [node name="Window" parent="WindowSection" unique_id=215327719 instance=ExtResource("3_24toh")]
 script = null
+
+[node name="PoliceLights2" type="Node3D" parent="WindowSection" unique_id=922368055]
+visible = false
+script = ExtResource("8_60uxl")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WindowSection/PoliceLights2" unique_id=1111228385]
+transform = Transform3D(1, 0, 0, 0, 0.9914263, 0.13066722, 0, -0.13066722, 0.9914263, 0, 1.5177563, 1.7128859)
+light_color = Color(0.906949, 0.09389234, 0, 1)
+light_energy = 30.0
+shadow_enabled = true
+spot_range = 9.887
+spot_angle = 42.864986
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="WindowSection/PoliceLights2" unique_id=796692022]
+transform = Transform3D(0.9873989, 0.0031467692, -0.1582197, 0.014378775, 0.9938828, 0.109500326, 0.15759638, -0.110395506, 0.9813135, 0.14299387, 1.49518, 1.6854324)
+light_color = Color(0.054349855, 0.44898713, 0.99999994, 1)
+light_energy = 30.0
+shadow_enabled = true
+spot_range = 9.887
+spot_angle = 26.181744
 
 [node name="LightningReceiver" type="Node3D" parent="WindowSection" unique_id=280292552 node_paths=PackedStringArray("lightning_lights")]
 script = ExtResource("6_dmw2y")

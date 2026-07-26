@@ -286,3 +286,10 @@ func _cancel_after_camera_return() -> void:
 
 func _cancel_after_setup_error() -> void:
 	cancel()
+	
+	
+func request_cancel() -> void:
+	if task_finishing:
+		return
+
+	finish_task(false)

@@ -86,3 +86,10 @@ func complete_evidence(evidence: Evidence) -> void:
 
 	evidence.complete_cleanup()
 	cleanup_completed.emit(evidence)
+	
+	
+func cancel_active_cleanup() -> void:
+	if not active_task or not is_instance_valid(active_task):
+		return
+
+	active_task.request_cancel()

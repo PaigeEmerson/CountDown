@@ -49,6 +49,8 @@ script = ExtResource("1_m3wir")
 room_name = "Large Room 2"
 room_size = 2
 room_role = 1
+minimum_crimes = 1
+maximum_crimes = 4
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -271,10 +273,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, -0.16744758, 0.985881, -7.3193664e-
 transform = Transform3D(1, 0, 0, 0, 0.79482853, 0, 0, 0, 1, 1.8184643, 0.2850263, -7.3633924)
 
 [node name="Chair2" parent="Geometry" unique_id=1390874284 instance=ExtResource("34_vnbj1")]
-transform = Transform3D(-0.76410395, 0, 0.645093, 0, 0.7948285, 0, -0.645093, 0, -0.76410395, 0.8778606, 0.27942097, -5.118484)
+transform = Transform3D(-0.76410395, 0, 0.645093, 0, 0.7948285, 0, -0.645093, 0, -0.76410395, 1.5041065, 0.2794211, -5.031507)
 
 [node name="Chair3" parent="Geometry" unique_id=268630189 instance=ExtResource("34_vnbj1")]
-transform = Transform3D(0.44711077, 0, -0.89447856, 0, 0.7948286, 0, 0.89447856, 0, 0.44711077, 2.5643227, 0.27942097, -6.7959304)
+transform = Transform3D(0.44711077, 0, -0.89447856, 0, 0.7948286, 0, 0.89447856, 0, 0.44711077, 2.1872249, 0.27942085, -6.241453)
 
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 

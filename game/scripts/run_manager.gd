@@ -12,6 +12,7 @@ signal police_arrived
 @export_group("Notifications")
 @export var time_warning_thresholds: Array[float] = [60.0, 30.0, 10.0]
 @export var notification_duration := 3.5
+@export var critical_time_threshold := 15.0
 
 var run_duration := 15.0
 var time_remaining := 0.0

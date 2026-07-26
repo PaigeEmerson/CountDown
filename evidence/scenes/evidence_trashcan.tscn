@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://8efipodywshf" path="res://evidence/scripts/evidence_trashcan.gd" id="1_qcujo"]
 [ext_resource type="PackedScene" uid="uid://dlrwk0h6dexr2" path="res://GLB/Trash.glb" id="2_rd1gf"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gmpk6"]
+height = 1.1074219
+
 [node name="EvidenceTrashcan" type="Area3D" unique_id=68159153]
 collision_layer = 2
 script = ExtResource("1_qcujo")
 
 [node name="Trash" parent="." unique_id=343560990 instance=ExtResource("2_rd1gf")]
-transform = Transform3D(1.355, 0, 0, 0, 1.355, 0, 0, 0, 1.355, 0.015462875, 0.49527395, 0.051805735)
+transform = Transform3D(1.355, 0, 0, 0, 1.355, 0, 0, 0, 1.355, 0, 0.495, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=857606514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5625, 0)
+shape = SubResource("CylinderShape3D_gmpk6")

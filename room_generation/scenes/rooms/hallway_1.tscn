@@ -19,6 +19,7 @@ script = ExtResource("1_fmsol")
 room_name = "Hallway 1"
 room_size = 3
 room_role = 2
+maximum_crimes = 1
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 
@@ -97,10 +98,10 @@ transform = Transform3D(-1, 0, 5.9043276e-07, 0, 1, 0, -8.742278e-08, 0, -6.7537
 [node name="FilingCabinet" parent="." unique_id=133718449 instance=ExtResource("5_tabr6")]
 transform = Transform3D(-0.08293423, 0, 0.996555, 0, 1, 0, -0.996555, 0, -0.08293423, -0.9799588, 4.7683716e-07, -11.645102)
 
-[node name="Cube_011" parent="FilingCabinet" index="2" unique_id=1286434376]
+[node name="Cube_011" parent="FilingCabinet" index="2" unique_id=1080007931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10383383, 0.9628101, -0.00016105606)
 
-[node name="Cube_012" parent="FilingCabinet" index="3" unique_id=1788787668]
+[node name="Cube_012" parent="FilingCabinet" index="3" unique_id=764605728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33804485, 0.58315206, -0.00016105513)
 
 [node name="Radiator" parent="FilingCabinet" unique_id=1421624761 instance=ExtResource("6_su1rm")]

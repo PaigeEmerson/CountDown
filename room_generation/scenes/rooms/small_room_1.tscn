@@ -21,6 +21,7 @@ script = ExtResource("1_0s4nv")
 room_name = "Small Room 1"
 room_size = 0
 room_role = 4
+maximum_crimes = 1
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 

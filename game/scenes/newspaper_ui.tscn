@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://df54jm6ujb7e5" path="res://game/scripts/newspaper_ui.gd" id="1_k207d"]
 [ext_resource type="Texture2D" uid="uid://bvgnr3axlu0j" path="res://2D/NewspaperUIBackground.png" id="2_p0kt0"]
 [ext_resource type="PackedScene" uid="uid://x2c5o85eff05" path="res://game/scenes/case_count_entry.tscn" id="2_q6xdr"]
+[ext_resource type="AudioStream" uid="uid://o8502e4jlnxy" path="res://audio/VoiceOverCombined.mp3" id="3_1cm4r"]
 [ext_resource type="FontFile" uid="uid://b4xr87cg4occ" path="res://Fonts/Newsreader-VariableFont_opsz,wght.ttf" id="3_p0kt0"]
+[ext_resource type="AudioStream" uid="uid://b48bfyivav3xi" path="res://audio/PaperButton.mp3" id="3_pl3o6"]
+[ext_resource type="Material" uid="uid://bdtsa3qqipnxc" path="res://Materials/Shader Materials/CanvasOverlay.tres" id="7_xpgei"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0r8uf"]
 content_margin_left = 30.0
@@ -15,12 +18,6 @@ content_margin_bottom = 30.0
 bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl3o6"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h3ag"]
-bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6xdr"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8rbk"]
@@ -71,6 +68,13 @@ layer = 100
 script = ExtResource("1_k207d")
 slide_duration = 1.0
 case_count_entry_scene = ExtResource("2_q6xdr")
+
+[node name="PhoneCallPlayer" type="AudioStreamPlayer" parent="." unique_id=1457727706]
+stream = ExtResource("3_1cm4r")
+volume_db = -12.48
+
+[node name="MenuClickAudio" type="AudioStreamPlayer" parent="." unique_id=1505443848]
+stream = ExtResource("3_pl3o6")
 
 [node name="ScreenMask" type="Control" parent="." unique_id=2112109735]
 clip_contents = true
@@ -134,18 +138,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xpgei")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pl3o6")
 text = "START"
-
-[node name="SettingsButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1084368407]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_p0kt0")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3h3ag")
-theme_override_styles/hover = SubResource("StyleBoxFlat_q6xdr")
-text = "SETTINGS"
 
 [node name="QuitButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1218731224]
 layout_mode = 2
@@ -313,7 +305,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "SUMMARY"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -332,3 +324,12 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_1cm4r")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_xpgei")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q6xdr")
 text = "CONTINUE"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=808817682]
+material = ExtResource("7_xpgei")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

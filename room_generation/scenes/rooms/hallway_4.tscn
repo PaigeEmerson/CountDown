@@ -27,6 +27,7 @@ script = ExtResource("1_ctwjm")
 room_name = "Hallway 4"
 room_size = 3
 room_role = 2
+maximum_crimes = 1
 
 [node name="Geometry" type="Node3D" parent="." unique_id=868621653]
 

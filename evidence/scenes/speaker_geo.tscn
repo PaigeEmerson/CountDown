@@ -36,6 +36,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u1d6x")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c7qwy"]
+size = Vector3(1.3651377, 2.6196215, 1.3651377)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_cf2l5"]
 resource_name = "speaker_Cube_007"
 _surfaces = [{
@@ -113,6 +116,12 @@ shadow_mesh = SubResource("ArrayMesh_4fluo")
 [node name="Speaker_002" type="MeshInstance3D" parent="." unique_id=1789012967]
 transform = Transform3D(1, 0, -0.0001976937, 0, 1, 0, 0.0001976937, 0, 1, 0.32513794, 0.55441093, 0.07680869)
 mesh = SubResource("ArrayMesh_p4ij8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Speaker_002" unique_id=428847059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6272419, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Speaker_002/StaticBody3D" unique_id=28936123]
+shape = SubResource("BoxShape3D_c7qwy")
 
 [node name="SpeakerDiaphram1_002" type="MeshInstance3D" parent="." unique_id=1355976212]
 transform = Transform3D(0, 1, -0.00019769373, -1, 0, -7.275958e-12, -7.275958e-12, 0.00019769373, 1, 0.9876772, 1.7931147, 0.08087623)

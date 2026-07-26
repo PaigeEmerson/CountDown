@@ -8,7 +8,7 @@ extends CleanupTask
 @export_group("Camera")
 @export var camera_move_duration := 0.5
 
-@onready var cleaning_cloth: MeshInstance3D = $CleaningCloth
+@onready var cleaning_cloth: Node3D = $Sponge
 
 var player_camera: Camera3D
 var stain_surface: Decal
@@ -172,3 +172,11 @@ func _cancel_after_camera_return() -> void:
 
 func _cancel_after_setup_error() -> void:
 	cancel()
+
+
+
+func request_cancel() -> void:
+	if is_finishing:
+		return
+
+	finish_task(false)

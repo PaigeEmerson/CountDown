@@ -17,7 +17,7 @@ func update_count(count: int) -> void:
 		return
 
 	if count <= 0:
-		crime_name.text = "[s]%s[/s]" % crime_type.display_name
+		crime_name.text = "[color=#7A1717][s]%s[/s][/color]" % crime_type.display_name
 		count_label.text = "0"
 		count_label.modulate.a = 0.45
 	else:
