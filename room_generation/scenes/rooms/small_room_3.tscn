@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_yxfuc"]
 [ext_resource type="PackedScene" uid="uid://krqwhucyx0us" path="res://GLB/CielingBulb.glb" id="5_wjdec"]
 [ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="6_gw14q"]
+[ext_resource type="PackedScene" uid="uid://dl56isalmuyek" path="res://GLB/Bed.glb" id="6_yfg45"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="7_3fu1m"]
 [ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="7_guom5"]
 [ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="8_yfg45"]
 [ext_resource type="PackedScene" uid="uid://cyyf80vhopqhk" path="res://GLB/Paper1.glb" id="9_3fu1m"]
@@ -46,6 +48,12 @@ transform = Transform3D(-0.9976346, 0, -0.068739295, 0, 1, 0, 0.068739295, 0, -0
 [node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=459311063 instance=ExtResource("13_guom5")]
 transform = Transform3D(0.981432, 0, -0.19180988, 0, 1, 0, 0.19180988, 0, 0.981432, 2.3256462, 0.013742924, 0.597754)
 placement_type = 1
+
+[node name="Bed" parent="EvidenceSpawns" unique_id=1430379862 instance=ExtResource("6_yfg45")]
+transform = Transform3D(0.21942212, 0, -0.97563004, 0, 1, 0, 0.97563004, 0, 0.21942212, 2.0523725, -0.035173208, 2.175989)
+
+[node name="StainDecal" parent="EvidenceSpawns" unique_id=422961019 instance=ExtResource("7_3fu1m")]
+transform = Transform3D(2.8090198, 0, 0, 0, 2.8090198, 0, 0, 0, 2.8090198, 2.040544, 0.1553325, 2.1097846)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 

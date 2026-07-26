@@ -23,8 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://dtkay5h3d0ke0" path="res://Materials/Textures/Rug/rug_sp_02.png" id="19_vmudj"]
 [ext_resource type="PackedScene" uid="uid://eatpye844pwx" path="res://GLB/ClosetShelf2.glb" id="20_fk72o"]
 [ext_resource type="PackedScene" uid="uid://b4dpf2sc5ovpx" path="res://GLB/PowerOutlet.glb" id="21_fk72o"]
+[ext_resource type="PackedScene" uid="uid://dl56isalmuyek" path="res://GLB/Bed.glb" id="22_d5exj"]
 [ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="22_xb3vy"]
 [ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="23_d5exj"]
+[ext_resource type="PackedScene" uid="uid://dr85ul41i2ntl" path="res://GLB/Chair.glb" id="23_iyiw5"]
 [ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="24_vmudj"]
 [ext_resource type="PackedScene" uid="uid://qs3w7261j047" path="res://GLB/StickNote3.glb" id="25_v5xir"]
 [ext_resource type="PackedScene" uid="uid://c0e4pr7w7qifu" path="res://GLB/StickNote7.glb" id="26_ru25u"]
@@ -195,6 +197,12 @@ transform = Transform3D(0.027453944, -1.5233368e-08, -0.16975579, -8.397329e-09,
 
 [node name="Plane_0122" parent="Geometry/StaticBody3D/CollisionShape3D/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1787430695) index="0" unique_id=1726373681]
 material_override = SubResource("StandardMaterial3D_odata")
+
+[node name="Bed" parent="Geometry" unique_id=1430379862 instance=ExtResource("22_d5exj")]
+transform = Transform3D(0.045501485, 0, -0.9989643, 0, 1, 0, 0.9989643, 0, 0.045501485, 2.2947567, 0.38882026, 0.85969067)
+
+[node name="Chair" parent="Geometry" unique_id=124471344 instance=ExtResource("23_iyiw5")]
+transform = Transform3D(-0.7002979, 0, 0.71385074, 0, 1, 0, -0.71385074, 0, -0.7002979, 5.1794467, 0.4901502, 5.211798)
 
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 

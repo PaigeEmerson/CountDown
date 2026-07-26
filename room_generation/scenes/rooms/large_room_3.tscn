@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="31_idfx6"]
 [ext_resource type="PackedScene" uid="uid://da8h3y17wwk6o" path="res://GLB/poster_2.tscn" id="32_idfx6"]
 [ext_resource type="Script" uid="uid://d21g0uxxvxvwe" path="res://spot_light_3dtv_static.gd" id="32_kx6ob"]
+[ext_resource type="PackedScene" uid="uid://dr85ul41i2ntl" path="res://GLB/Chair.glb" id="33_gehsa"]
 [ext_resource type="PackedScene" uid="uid://cwu5iwing3qst" path="res://GLB/StickNote2.glb" id="34_albmm"]
 [ext_resource type="AudioStream" uid="uid://spo68w72oepm" path="res://audio/tvstatic.mp3" id="34_p1q44"]
 [ext_resource type="PackedScene" uid="uid://c0e4pr7w7qifu" path="res://GLB/StickNote7.glb" id="35_83ine"]
@@ -289,6 +290,18 @@ transform = Transform3D(2.7639953e-07, 2.1077616, -9.213318e-08, 8.926717e-22, -
 [node name="Poster1" parent="Geometry" unique_id=2029403104 instance=ExtResource("32_idfx6")]
 transform = Transform3D(0.9895142, -0.14443561, 0, 0.14443561, 0.9895142, 0, 0, 0, 1, 1.2161744, 1.3689399, -12.026979)
 
+[node name="Chair" parent="Geometry" unique_id=865571670 instance=ExtResource("33_gehsa")]
+transform = Transform3D(-0.4277001, 0, 0.90392065, 0, 0.674105, 0, -0.90392065, 0, -0.4277001, 2.4598095, 0.27849078, -0.80407906)
+
+[node name="Chair2" parent="Geometry" unique_id=523526184 instance=ExtResource("33_gehsa")]
+transform = Transform3D(0.8310869, 0, 0.5561426, 0, 0.79393077, 0, -0.5561426, 0, 0.8310869, 6.459438, 0.3237831, -9.909904)
+
+[node name="Chair3" parent="Geometry" unique_id=491042820 instance=ExtResource("33_gehsa")]
+transform = Transform3D(0.14444697, 0, -0.9895127, 0, 0.79393077, 0, 0.9895127, 0, 0.14444697, 7.2069044, 0.3237831, -9.194723)
+
+[node name="Chair4" parent="Geometry" unique_id=332094028 instance=ExtResource("33_gehsa")]
+transform = Transform3D(-0.99170285, 0, -0.12855253, 0, 0.79393077, 0, 0.12855253, 0, -0.99170285, 6.64973, 0.3237831, -8.319992)
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
 [node name="Connector" parent="." unique_id=272012754 instance=ExtResource("3_p4sr8")]
@@ -397,7 +410,7 @@ transform = Transform3D(0.76087034, 0, -0.64890397, 0, 1, 0, 0.64890397, 0, 0.76
 transform = Transform3D(-0.9454237, 0, -0.32584372, 0, 1, 0, 0.32584372, 0, -0.9454237, 1.5676339, 0.0069556236, -1.3508489)
 
 [node name="EvidenceSpawnPoint2" parent="." unique_id=1533363879 instance=ExtResource("41_foixc")]
-transform = Transform3D(0.76087034, 0, -0.64890397, 0, 1, 0, 0.64890397, 0, 0.76087034, 6.6203127, 0.679593, -9.099037)
+transform = Transform3D(0.28255802, 0, -0.9592502, 0, 1, 0, 0.9592502, 0, 0.28255802, 6.6203127, 0.679593, -9.099037)
 placement_type = 1
 
 [node name="Paper3" parent="." unique_id=353287643 instance=ExtResource("20_7dews")]

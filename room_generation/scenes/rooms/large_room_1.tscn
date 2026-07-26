@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://dde58cuf6o56v" path="res://GLB/StickNote8.glb" id="42_s813q"]
 [ext_resource type="PackedScene" uid="uid://3fctxbtvlk0q" path="res://GLB/Poster1.tscn" id="43_dtxnr"]
 [ext_resource type="PackedScene" uid="uid://da8h3y17wwk6o" path="res://GLB/poster_2.tscn" id="44_l3i3j"]
+[ext_resource type="PackedScene" uid="uid://dr85ul41i2ntl" path="res://GLB/Chair.glb" id="45_l3i3j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wlyld"]
 size = Vector3(8.338806, 2.5405273, 6.0407715)
@@ -456,3 +457,12 @@ transform = Transform3D(0.9919348, -0.12674935, 0, 0.12674935, 0.9919348, 0, 0, 
 
 [node name="Poster2" parent="." unique_id=1969812824 instance=ExtResource("44_l3i3j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0.220927, 0.97529036, 9.657026e-09, -0.97529036, 0.220927, -4.2631296e-08, -1.6985836, 1.4945135, -0.77523804)
+
+[node name="Chair" parent="." unique_id=865571670 instance=ExtResource("45_l3i3j")]
+transform = Transform3D(0.26588082, 0, 0.9640058, 0, 0.86412424, 0, -0.9640058, 0, 0.26588082, 3.0642262, 0.34069645, -4.369996)
+
+[node name="Chair2" parent="." unique_id=1018096224 instance=ExtResource("45_l3i3j")]
+transform = Transform3D(-0.033748463, 0, -0.9994302, 0, 0.8641241, 0, 0.9994302, 0, -0.033748463, 5.6603055, 0.34069645, -4.381494)
+
+[node name="Chair3" parent="." unique_id=960972823 instance=ExtResource("45_l3i3j")]
+transform = Transform3D(-0.88718784, 0, -0.46140805, 0, 0.8641241, 0, 0.46140805, 0, -0.88718784, 5.014391, 0.34069633, -3.6545496)

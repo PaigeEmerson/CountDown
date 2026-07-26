@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="12_1kgrs"]
 [ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="12_2488j"]
 [ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="13_1kgrs"]
+[ext_resource type="PackedScene" uid="uid://dr85ul41i2ntl" path="res://GLB/Chair.glb" id="14_0np7r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m0jc6"]
 size = Vector3(17.891449, 2.4950562, 11.972656)
@@ -230,7 +231,7 @@ autoplay = true
 max_distance = 10.0
 
 [node name="EvidenceSpawnPoint" parent="." unique_id=792907143 instance=ExtResource("12_2488j")]
-transform = Transform3D(0.9529858, 0, 0.30301493, 0, 1, 0, -0.30301493, 0, 0.9529858, 0.284944, 0.0052574873, -7.662508)
+transform = Transform3D(0.9529858, 0, 0.30301493, 0, 1, 0, -0.30301493, 0, 0.9529858, -0.15512162, 0.0052574873, -7.8070474)
 
 [node name="EvidenceSpawnPoint2" parent="." unique_id=1371611957 instance=ExtResource("12_2488j")]
 transform = Transform3D(-0.15154079, 0, -0.988451, 0, 1, 0, 0.988451, 0, -0.15154079, 4.6848793, 0.0052574873, -4.416424)
@@ -241,3 +242,6 @@ placement_type = 1
 
 [node name="StainDecal" parent="." unique_id=422961019 instance=ExtResource("13_1kgrs")]
 transform = Transform3D(2.263053, 1.4547906e-07, 1.6640865, 0, -2.8090198, 2.4557232e-07, 1.6640865, -1.9784238e-07, -2.263053, 0.6565993, 1.4090927, -6.840593)
+
+[node name="Chair" parent="." unique_id=865571670 instance=ExtResource("14_0np7r")]
+transform = Transform3D(-0.9948431, 0, -0.10142663, 0, 0.77248204, 0, 0.10142663, 0, -0.9948431, 1.0575832, 0.3238791, -6.9779596)

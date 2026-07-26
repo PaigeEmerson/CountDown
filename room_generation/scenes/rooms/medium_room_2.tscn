@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://bb7510exwefm8" path="res://room_generation/meshes/DoorFrame.glb" id="10_xmsoq"]
 [ext_resource type="Texture2D" uid="uid://dtkay5h3d0ke0" path="res://Materials/Textures/Rug/rug_sp_02.png" id="11_s17cq"]
 [ext_resource type="PackedScene" uid="uid://871pw7gp3etg" path="res://GLB/TrimCorner.glb" id="11_t8hd2"]
+[ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="12_s6f6y"]
+[ext_resource type="PackedScene" uid="uid://dl56isalmuyek" path="res://GLB/Bed.glb" id="14_mlp4j"]
+[ext_resource type="PackedScene" uid="uid://dr85ul41i2ntl" path="res://GLB/Chair.glb" id="15_s6f6y"]
 [ext_resource type="PackedScene" uid="uid://cmdrl8f52b5yf" path="res://GLB/ClosetShelf1.glb" id="18_j3irx"]
 [ext_resource type="PackedScene" uid="uid://eatpye844pwx" path="res://GLB/ClosetShelf2.glb" id="19_7u8wb"]
 [ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="20_lah4p"]
@@ -95,6 +98,12 @@ transform = Transform3D(0.03635929, 1.8412013e-08, -0.16807365, 2.8976324e-08, -
 [node name="Plane_0122" parent="Geometry/CielingFan/OmniLight3D5/rug_sp/RootNode/Plane_012" parent_id_path=PackedInt32Array(865900915, 1787430695) index="0" unique_id=1726373681]
 material_override = SubResource("StandardMaterial3D_unau6")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Geometry/CielingFan/OmniLight3D5" unique_id=1869446878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.051075935, 0)
+stream = ExtResource("12_s6f6y")
+autoplay = true
+max_distance = 10.0
+
 [node name="SpotLight3D" type="SpotLight3D" parent="Geometry/CielingFan" unique_id=1383468317]
 transform = Transform3D(-1, -1.1464112e-14, 8.742278e-08, 8.742278e-08, -1.3113416e-07, 1, 0, 1, 1.3113416e-07, 0.032690197, -0.22342396, -0.027192116)
 light_color = Color(0.965565, 0.94872636, 0.70800334, 1)
@@ -135,6 +144,12 @@ transform = Transform3D(0.60411453, 0, 0.79689753, 0, 1, 0, -0.79689753, 0, 0.60
 
 [node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=393701062 instance=ExtResource("25_s17cq")]
 transform = Transform3D(-0.0170317, 0, -0.999855, 0, 1, 0, 0.999855, 0, -0.0170317, -1.6933997, 0.0038707256, 1.6268332)
+
+[node name="Bed" parent="EvidenceSpawns" unique_id=1430379862 instance=ExtResource("14_mlp4j")]
+transform = Transform3D(0.12332773, 0, -0.992366, 0, 1, 0, 0.992366, 0, 0.12332773, -0.7292824, 0.38882026, 3.3894393)
+
+[node name="Chair" parent="EvidenceSpawns" unique_id=865571670 instance=ExtResource("15_s6f6y")]
+transform = Transform3D(0.88832057, 0, 0.45922393, 0, 0.8272177, 0, -0.45922393, 0, 0.88832057, -4.337846, 0.34616762, 4.7864475)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
