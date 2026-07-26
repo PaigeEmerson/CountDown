@@ -23,6 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://dtkay5h3d0ke0" path="res://Materials/Textures/Rug/rug_sp_02.png" id="19_vmudj"]
 [ext_resource type="PackedScene" uid="uid://eatpye844pwx" path="res://GLB/ClosetShelf2.glb" id="20_fk72o"]
 [ext_resource type="PackedScene" uid="uid://b4dpf2sc5ovpx" path="res://GLB/PowerOutlet.glb" id="21_fk72o"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="22_xb3vy"]
+[ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="23_d5exj"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="24_vmudj"]
+[ext_resource type="PackedScene" uid="uid://qs3w7261j047" path="res://GLB/StickNote3.glb" id="25_v5xir"]
+[ext_resource type="PackedScene" uid="uid://c0e4pr7w7qifu" path="res://GLB/StickNote7.glb" id="26_ru25u"]
+[ext_resource type="PackedScene" uid="uid://rryb5mtgqr7k" path="res://GLB/Paper3.glb" id="27_xb3vy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3xsqf"]
 size = Vector3(0.13275146, 0.37231445, 3.068592)
@@ -171,6 +177,13 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.4
 [node name="SmokeAlarm" parent="Geometry" unique_id=448665216 instance=ExtResource("19_3hqgc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2669048, 2.4407828, 2.8287902)
 
+[node name="StainDecal" parent="Geometry" unique_id=422961019 instance=ExtResource("22_xb3vy")]
+transform = Transform3D(2.8090198, 0, 0, 0, -1.2278616e-07, -2.8090198, 0, 2.8090198, -1.2278616e-07, 5.025633, 0.9681854, 0.48716974)
+
+[node name="DamageDecal" parent="Geometry" unique_id=1272242019 instance=ExtResource("23_d5exj")]
+transform = Transform3D(0.7815147, 1.8426638e-07, 1.9575224, -1.9575224, 9.213319e-08, 0.7815147, -1.7243806e-08, -2.1077616, 2.0529313e-07, 4.32268, 0.9151048, 6.0762186)
+size = Vector3(2, 0.3076172, 2)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Geometry" unique_id=497664198]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/StaticBody3D" unique_id=657595300]
@@ -192,14 +205,15 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("24_vmudj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.3866034, 0.6790967, 4.5696917)
+placement_type = 1
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=122577873 instance=ExtResource("24_vmudj")]
+transform = Transform3D(-0.90444916, 0, -0.4265814, 0, 1, 0, 0.4265814, 0, -0.90444916, 3.839614, 0.0058965683, 4.5696917)
 
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=308020904 instance=ExtResource("24_vmudj")]
+transform = Transform3D(0.18677837, 0, 0.9824021, 0, 1, 0, -0.9824021, 0, 0.18677837, -0.22788453, 0.00589633, 2.913875)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -222,6 +236,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7190795, 0.37455916, 0.0507
 
 [node name="PowerOutlet2" parent="." unique_id=1947803767 instance=ExtResource("21_fk72o")]
 transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0.4346468, 0.36211836, 5.983074)
+
+[node name="StickNote3" parent="." unique_id=1604552352 instance=ExtResource("25_v5xir")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.8771925, 0.78867954, 3.3028169)
+
+[node name="StickNote7" parent="." unique_id=753571381 instance=ExtResource("26_ru25u")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.960126, 1.5397518, 3.2690217)
+
+[node name="Paper3" parent="." unique_id=570092864 instance=ExtResource("27_xb3vy")]
+transform = Transform3D(-0.43111637, 0, 0.90229636, 0, 1, 0, -0.90229636, 0, -0.43111637, 5.7438684, 0.0012462735, 5.2490435)
 
 [editable path="Geometry/TallLamp/ReflectionProbe/FilingCabinet"]
 [editable path="Geometry/StaticBody3D/CollisionShape3D/rug_sp"]

@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://br7f8cr7wid7" path="res://evidence/scenes/rifle.tscn" id="30_b3bg7"]
 [ext_resource type="PackedScene" uid="uid://du40h3cgd7w2m" path="res://evidence/scenes/rocket_launcher.tscn" id="31_s0751"]
 [ext_resource type="Script" uid="uid://brsjxsulf2jop" path="res://game/scripts/run_results_ui.gd" id="36_ofarm"]
+[ext_resource type="AudioStream" uid="uid://o8502e4jlnxy" path="res://audio/VoiceOverCombined.mp3" id="37_up574"]
 
 [sub_resource type="Environment" id="Environment_5fqxa"]
 background_mode = 1
@@ -103,3 +104,11 @@ autoplay = true
 
 [node name="RunResultsController" type="Node" parent="." unique_id=1893932546]
 script = ExtResource("36_ofarm")
+
+[node name="PhoneCallPlayer" type="Node" parent="." unique_id=569865125]
+
+[node name="PhoneCallPlayer" type="AudioStreamPlayer" parent="PhoneCallPlayer" unique_id=879232233]
+stream = ExtResource("37_up574")
+volume_db = -12.48
+autoplay = true
+stream_paused = true

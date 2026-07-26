@@ -1,0 +1,13 @@
+[gd_resource type="ORMMaterial3D" format=3 uid="uid://b0lqnwsbaql3x"]
+
+[ext_resource type="Texture2D" uid="uid://c5e821iu5ou42" path="res://Materials/Textures/BathroomAssets/Bathroom Assets_baseColor.png" id="1_iguc5"]
+[ext_resource type="Texture2D" uid="uid://8nqa664tucin" path="res://Materials/Textures/BathroomAssets/Bathroom Assets_Normal 1.png" id="2_fva8m"]
+[ext_resource type="Texture2D" uid="uid://dqebkt1x7e33h" path="res://Materials/Textures/BathroomAssets/Bathroom Assets_occlusionRoughnessMetallic.png" id="3_b6e2l"]
+
+[resource]
+albedo_texture = ExtResource("1_iguc5")
+orm_texture = ExtResource("3_b6e2l")
+normal_enabled = true
+normal_texture = ExtResource("2_fva8m")
+ao_enabled = true
+ao_light_affect = 1.0

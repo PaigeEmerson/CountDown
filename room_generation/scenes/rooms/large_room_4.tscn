@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="7_wkyqb"]
 [ext_resource type="PackedScene" uid="uid://krqwhucyx0us" path="res://GLB/CielingBulb.glb" id="10_1u5v1"]
 [ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="12_1kgrs"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="12_2488j"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="13_1kgrs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m0jc6"]
 size = Vector3(17.891449, 2.4950562, 11.972656)
@@ -57,15 +59,6 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.0
 [node name="PropSpawns" type="Node3D" parent="." unique_id=662859781]
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
-
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
-
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
-
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -235,3 +228,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013348222, 0)
 stream = ExtResource("12_1kgrs")
 autoplay = true
 max_distance = 10.0
+
+[node name="EvidenceSpawnPoint" parent="." unique_id=792907143 instance=ExtResource("12_2488j")]
+transform = Transform3D(0.9529858, 0, 0.30301493, 0, 1, 0, -0.30301493, 0, 0.9529858, 0.284944, 0.0052574873, -7.662508)
+
+[node name="EvidenceSpawnPoint2" parent="." unique_id=1371611957 instance=ExtResource("12_2488j")]
+transform = Transform3D(-0.15154079, 0, -0.988451, 0, 1, 0, 0.988451, 0, -0.15154079, 4.6848793, 0.0052574873, -4.416424)
+
+[node name="EvidenceSpawnPoint3" parent="." unique_id=2002667424 instance=ExtResource("12_2488j")]
+transform = Transform3D(0.08116747, 0, 0.9967004, 0, 1, 0, -0.9967004, 0, 0.08116747, -6.095455, 0.0052574873, -8.602226)
+placement_type = 1
+
+[node name="StainDecal" parent="." unique_id=422961019 instance=ExtResource("13_1kgrs")]
+transform = Transform3D(2.263053, 1.4547906e-07, 1.6640865, 0, -2.8090198, 2.4557232e-07, 1.6640865, -1.9784238e-07, -2.263053, 0.6565993, 1.4090927, -6.840593)

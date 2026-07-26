@@ -28,8 +28,17 @@
 [ext_resource type="PackedScene" uid="uid://cq0y74icxn4ed" path="res://Materials/Textures/Rug/rug_sp.glb" id="21_31fkd"]
 [ext_resource type="Script" uid="uid://d21g0uxxvxvwe" path="res://spot_light_3dtv_static.gd" id="21_c5vo7"]
 [ext_resource type="Texture2D" uid="uid://cllb8qk082umn" path="res://2D/cookie.png" id="22_47667"]
+[ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="22_f5ohd"]
 [ext_resource type="PackedScene" uid="uid://cpl4fmmcush1x" path="res://GLB/Lamp.glb" id="22_j63y1"]
 [ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="23_c5vo7"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="27_j63y1"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="27_up42n"]
+[ext_resource type="PackedScene" uid="uid://qs3w7261j047" path="res://GLB/StickNote3.glb" id="28_lirwl"]
+[ext_resource type="PackedScene" uid="uid://sj04x4s76bk7" path="res://GLB/StickNote4.glb" id="29_ly4k2"]
+[ext_resource type="PackedScene" uid="uid://db26iq8d8p0p3" path="res://GLB/StickNote5.glb" id="30_vnbj1"]
+[ext_resource type="PackedScene" uid="uid://b3dymccg8iyne" path="res://GLB/StickNote6.glb" id="31_la3dy"]
+[ext_resource type="PackedScene" uid="uid://btbiixxvaj1qs" path="res://GLB/Paper2.glb" id="32_vi7i3"]
+[ext_resource type="PackedScene" uid="uid://3fctxbtvlk0q" path="res://GLB/Poster1.tscn" id="33_ly4k2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c4u1r"]
 size = Vector3(7.7042847, 2.550537, 12.035767)
@@ -174,6 +183,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.679531, 0.0137524605, -9.53
 [node name="Trash2" parent="Geometry" unique_id=674108714 instance=ExtResource("20_8m26r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3266811, 0.010972828, -8.936729)
 
+[node name="DamageDecal" parent="Geometry" unique_id=1272242019 instance=ExtResource("22_f5ohd")]
+transform = Transform3D(2.5134806e-08, 2.1077616, -9.213318e-08, 0, -9.213318e-08, -2.1077616, -2.1077616, 2.5134806e-08, -1.0986772e-15, -3.7180698, 1.1688333, -4.8190117)
+
+[node name="DamageDecal2" parent="Geometry" unique_id=1866121145 instance=ExtResource("22_f5ohd")]
+transform = Transform3D(-2.1077616, -6.699838e-08, 2.9285919e-15, 1.1158396e-22, -9.213318e-08, -2.1077616, 6.699838e-08, -2.1077616, 9.213318e-08, -1.7004074, 2.3595452, -1.3135767)
+
+[node name="DamageDecal3" parent="Geometry" unique_id=346121304 instance=ExtResource("22_f5ohd")]
+transform = Transform3D(1.5913156e-07, -2.1077616, 9.213318e-08, -3.3475188e-22, -9.213318e-08, -2.1077616, 2.1077616, 1.5913156e-07, -6.9558612e-15, 3.8420625, 1.0690925, -9.0718)
+
 [node name="SpotLight3DTVStatic" type="SpotLight3D" parent="Geometry" unique_id=1539250929]
 transform = Transform3D(0.05581972, 0.8056864, -0.5897064, 0.09180221, 0.5839839, 0.80655766, 0.9942115, -0.09915818, -0.041365974, -2.9777775, 1.2399961, -6.715738)
 light_energy = 9.225
@@ -224,6 +242,30 @@ shadow_caster_mask = 4294967263
 [node name="Lamp" parent="Geometry" unique_id=2094503138 instance=ExtResource("22_j63y1")]
 transform = Transform3D(0.80150294, 0, 0, 0, 0.80150294, 0, 0, 0, 0.80150294, -0.24920118, 0.70865613, -8.112901)
 
+[node name="StainDecal" parent="Geometry" unique_id=422961019 instance=ExtResource("27_up42n")]
+transform = Transform3D(2.8090198, 0, 0, 0, -1.2278616e-07, -2.8090198, 0, 2.8090198, -1.2278616e-07, -2.4983783, 0.7832128, -12.477035)
+
+[node name="StainDecal2" parent="Geometry" unique_id=1988792813 instance=ExtResource("27_up42n")]
+transform = Transform3D(2.8090198, 0, 0, 0, 2.8090198, 0, 0, 0, 2.8090198, -1.4571685, -0.090759635, -3.897236)
+
+[node name="StickNote3" parent="Geometry" unique_id=1604552352 instance=ExtResource("28_lirwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7546959, 0.8936744, -3.2369952)
+
+[node name="StickNote4" parent="Geometry" unique_id=1751516108 instance=ExtResource("29_ly4k2")]
+transform = Transform3D(0.9370271, 0.34925672, 0, -0.34925672, 0.9370271, 0, 0, 0, 1, 1.0971639, 1.5570221, -0.9404716)
+
+[node name="StickNote5" parent="Geometry" unique_id=1358674234 instance=ExtResource("30_vnbj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8833578, 1.5034075, -0.9269233)
+
+[node name="StickNote6" parent="Geometry" unique_id=1089332335 instance=ExtResource("31_la3dy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.9637737, 1.3454436, -5.785377)
+
+[node name="Paper2" parent="Geometry" unique_id=1579376362 instance=ExtResource("32_vi7i3")]
+transform = Transform3D(0.5922973, 0, 0.8057195, 0, 1, 0, -0.8057195, 0, 0.5922973, 3.4510183, 0.9173029, -2.947231)
+
+[node name="Poster1" parent="Geometry" unique_id=2029403104 instance=ExtResource("33_ly4k2")]
+transform = Transform3D(-4.371139e-08, 0, 1, -0.16744758, 0.985881, -7.3193664e-09, -0.985881, -0.16744758, -4.3094225e-08, -3.772497, 1.3449206, -4.2195644)
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
 [node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_4e4wy")]
@@ -248,14 +290,19 @@ transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -3.7
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("27_j63y1")]
+transform = Transform3D(-0.99309397, 0, 0.117321596, 0, 1, 0, -0.117321596, 0, -0.99309397, 0.8159232, 0.92102575, -2.9569654)
+placement_type = 1
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=177660870 instance=ExtResource("27_j63y1")]
+transform = Transform3D(0.23323026, 0, 0.9724215, 0, 1, 0, -0.9724215, 0, 0.23323026, 1.780064, 0.6778551, -6.1404476)
+placement_type = 1
 
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=1076270217 instance=ExtResource("27_j63y1")]
+transform = Transform3D(0.23323026, 0, 0.9724215, 0, 1, 0, -0.9724215, 0, 0.23323026, 0.74185705, 0.0082755685, -9.905699)
+
+[node name="EvidenceSpawnPoint4" parent="EvidenceSpawns" unique_id=284622274 instance=ExtResource("27_j63y1")]
+transform = Transform3D(0.23323026, 0, 0.9724215, 0, 1, 0, -0.9724215, 0, 0.23323026, -2.5440824, 0.0082755685, -4.0987234)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 

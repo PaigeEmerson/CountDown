@@ -4,6 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://dta30w8v013rl" path="res://room_generation/scenes/geo/small_room_2-geo.tscn" id="2_dl4e4"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_dis5x"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_b0eh8"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="4_eposh"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="5_0e6b6"]
+[ext_resource type="PackedScene" uid="uid://dfkp7dxitdu8e" path="res://GLB/Sink.glb" id="5_njcrl"]
+[ext_resource type="PackedScene" uid="uid://clfbyuu5vlgvx" path="res://GLB/Tub.glb" id="6_eposh"]
+[ext_resource type="PackedScene" uid="uid://bpgrs5bnoync2" path="res://GLB/Curtain.glb" id="7_0e6b6"]
+[ext_resource type="PackedScene" uid="uid://bl30myiu37d06" path="res://GLB/toilet_sp.glb" id="8_bk5tl"]
+[ext_resource type="PackedScene" uid="uid://b3dymccg8iyne" path="res://GLB/StickNote6.glb" id="9_vl2xo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7k6ty"]
 size = Vector3(3.6827393, 2.4927063, 3.3457336)
@@ -27,14 +34,12 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.02
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("4_eposh")]
+transform = Transform3D(-0.29239407, 0, -0.95629793, 0, 1, 0, 0.95629793, 0, -0.29239407, 1.77258, 0, -0.28749856)
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
-
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="StainDecal" parent="EvidenceSpawns" unique_id=422961019 instance=ExtResource("5_0e6b6")]
+transform = Transform3D(2.8090198, 0, 0, 0, -1.2278616e-07, -2.8090198, 0, 2.8090198, -1.2278616e-07, 2.6567812, 0.9819238, -2.491981)
+size = Vector3(2, 0.1586914, 2)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -60,3 +65,18 @@ transform = Transform3D(1.3113416e-07, 0, 8.04638, 0, 1, 0, -1, 0, 1.0551553e-06
 
 [node name="Trim4" parent="." unique_id=283839488 instance=ExtResource("4_b0eh8")]
 transform = Transform3D(-1, 0, 6.29359e-07, 0, 1, 0, -8.742278e-08, 0, -7.1990285, 3.7023818, 2.3841858e-07, -0.8983639)
+
+[node name="Sink" parent="." unique_id=1830883319 instance=ExtResource("5_njcrl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.388709, 0.4568117, -0.5182395)
+
+[node name="Tub" parent="." unique_id=1600253288 instance=ExtResource("6_eposh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.2714393, 0.32285094, -1.9251724)
+
+[node name="Curtain" parent="." unique_id=1288479767 instance=ExtResource("7_0e6b6")]
+transform = Transform3D(-4.371139e-08, 0, -1.8079914, 0, 1, 0, 1, 0, -7.902982e-08, 1.523075, 0.33932406, -1.1994659)
+
+[node name="toilet_sp" parent="." unique_id=1968650058 instance=ExtResource("8_bk5tl")]
+transform = Transform3D(-0.32, 0, -2.797529e-08, 0, 0.32, 0, 2.797529e-08, 0, -0.32, 9.065283, 0.011000484, -24.888344)
+
+[node name="StickNote6" parent="." unique_id=1089332335 instance=ExtResource("9_vl2xo")]
+transform = Transform3D(-4.371139e-08, 0, 1, -0.19790152, 0.9802219, -8.6505505e-09, -0.9802219, -0.19790152, -4.284686e-08, 3.706405, 1.3093839, 0.3741444)

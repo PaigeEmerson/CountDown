@@ -32,8 +32,18 @@
 [ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="29_cnctk"]
 [ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="30_7hhag"]
 [ext_resource type="PackedScene" uid="uid://cq0y74icxn4ed" path="res://Materials/Textures/Rug/rug_sp.glb" id="30_cnctk"]
+[ext_resource type="PackedScene" uid="uid://sj04x4s76bk7" path="res://GLB/StickNote4.glb" id="31_243qg"]
 [ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="31_vh4y6"]
 [ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="32_0llod"]
+[ext_resource type="PackedScene" uid="uid://db26iq8d8p0p3" path="res://GLB/StickNote5.glb" id="32_u5vl0"]
+[ext_resource type="PackedScene" uid="uid://btbiixxvaj1qs" path="res://GLB/Paper2.glb" id="33_dtxnr"]
+[ext_resource type="PackedScene" uid="uid://cyyf80vhopqhk" path="res://GLB/Paper1.glb" id="34_l3i3j"]
+[ext_resource type="PackedScene" uid="uid://rryb5mtgqr7k" path="res://GLB/Paper3.glb" id="35_ml387"]
+[ext_resource type="PackedScene" uid="uid://dq6c41v55ei0k" path="res://GLB/StickNote1.glb" id="40_45fmj"]
+[ext_resource type="PackedScene" uid="uid://cwu5iwing3qst" path="res://GLB/StickNote2.glb" id="41_11cup"]
+[ext_resource type="PackedScene" uid="uid://dde58cuf6o56v" path="res://GLB/StickNote8.glb" id="42_s813q"]
+[ext_resource type="PackedScene" uid="uid://3fctxbtvlk0q" path="res://GLB/Poster1.tscn" id="43_dtxnr"]
+[ext_resource type="PackedScene" uid="uid://da8h3y17wwk6o" path="res://GLB/poster_2.tscn" id="44_l3i3j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wlyld"]
 size = Vector3(8.338806, 2.5405273, 6.0407715)
@@ -294,15 +304,33 @@ allow_window = false
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
 [node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("30_7hhag")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.364621, 0.66001123, -4.4626603)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.364621, 0.66174674, -4.4626603)
 placement_type = 1
 
 [node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=70008096 instance=ExtResource("30_7hhag")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1457725, 0.90545744, -4.1853914)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1457725, 0.9099055, -4.1853914)
 placement_type = 1
 
 [node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=1940533895 instance=ExtResource("30_7hhag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9732783, 0.003280729, -2.4937208)
+
+[node name="EvidenceSpawnPoint4" parent="EvidenceSpawns" unique_id=1855181299 instance=ExtResource("30_7hhag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6117997, 0.003280729, 4.3067036)
+
+[node name="StickNote4" parent="EvidenceSpawns" unique_id=1751516108 instance=ExtResource("31_243qg")]
+transform = Transform3D(0.10534853, 0, -0.99443537, 0, 1, 0, 0.99443537, 0, 0.10534853, -0.96442205, 1.3674049, -2.2490516)
+
+[node name="StickNote5" parent="EvidenceSpawns" unique_id=1358674234 instance=ExtResource("32_u5vl0")]
+transform = Transform3D(0.04639844, 0, -0.998923, 0, 1, 0, 0.998923, 0, 0.04639844, -0.9436565, 0.8749212, -2.0651448)
+
+[node name="Paper2" parent="EvidenceSpawns" unique_id=1579376362 instance=ExtResource("33_dtxnr")]
+transform = Transform3D(-0.9024335, 0, -0.43082914, 0, 1, 0, 0.43082914, 0, -0.9024335, 1.108398, 0.9233362, -3.7525797)
+
+[node name="Paper1" parent="EvidenceSpawns" unique_id=1893105728 instance=ExtResource("34_l3i3j")]
+transform = Transform3D(0.19913244, 0, -0.9799726, 0, 1, 0, 0.9799726, 0, 0.19913244, -1.3848104, 0.9194396, -3.1736553)
+
+[node name="Paper3" parent="EvidenceSpawns" unique_id=570092864 instance=ExtResource("35_ml387")]
+transform = Transform3D(-0.14612892, 0, -0.98926556, 0, 1, 0, 0.98926556, 0, -0.14612892, -1.3349544, 0.9351929, -3.1635442)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -410,3 +438,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.072054, 2.440083, 2.3898547
 
 [node name="SmokeAlarm2" parent="Lighting" unique_id=2010396566 instance=ExtResource("31_vh4y6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5719719, 2.440083, -4.313239)
+
+[node name="Paper1" parent="." unique_id=918526068 instance=ExtResource("34_l3i3j")]
+transform = Transform3D(0.26690578, 0, 0.96372265, 0, 1, 0, -0.96372265, 0, 0.26690578, 7.0949492, 0.008808809, 1.3678226)
+
+[node name="StickNote1" parent="." unique_id=1990630530 instance=ExtResource("40_45fmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1074443, 0.77847767, 1.7145805)
+
+[node name="StickNote2" parent="." unique_id=1667808978 instance=ExtResource("41_11cup")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.88244, 1.6645046, 0.31419218)
+
+[node name="StickNote8" parent="." unique_id=1209329255 instance=ExtResource("42_s813q")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 7.870595, 1.5452461, 0.45487025)
+
+[node name="Poster1" parent="." unique_id=2029403104 instance=ExtResource("43_dtxnr")]
+transform = Transform3D(0.9919348, -0.12674935, 0, 0.12674935, 0.9919348, 0, 0, 0, 1, 4.5474505, 1.2951417, -6.0502415)
+
+[node name="Poster2" parent="." unique_id=1969812824 instance=ExtResource("44_l3i3j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0.220927, 0.97529036, 9.657026e-09, -0.97529036, 0.220927, -4.2631296e-08, -1.6985836, 1.4945135, -0.77523804)

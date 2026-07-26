@@ -4,6 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://ddaorma4vqlx3" path="res://room_generation/scenes/geo/small_room_1_geo.tscn" id="2_0s4nv"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_3lq1u"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="3_vabbo"]
+[ext_resource type="PackedScene" uid="uid://da8h3y17wwk6o" path="res://GLB/poster_2.tscn" id="4_gdex6"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="5_pd5wj"]
+[ext_resource type="PackedScene" uid="uid://dfkp7dxitdu8e" path="res://GLB/Sink.glb" id="6_gdex6"]
+[ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="7_0o2m8"]
+[ext_resource type="PackedScene" uid="uid://clfbyuu5vlgvx" path="res://GLB/Tub.glb" id="8_njg63"]
+[ext_resource type="PackedScene" uid="uid://bpgrs5bnoync2" path="res://GLB/Curtain.glb" id="9_kmgnm"]
+[ext_resource type="PackedScene" uid="uid://bl30myiu37d06" path="res://GLB/toilet_sp.glb" id="10_x3ts1"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="11_rgrj3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y6x0q"]
 size = Vector3(3.8861694, 2.5535278, 2.752411)
@@ -33,6 +41,9 @@ transform = Transform3D(-1, 0, -9.1752895e-07, 0, 1, 0, 1.6093648e-07, 0, -5.701
 [node name="Trim4" parent="Geometry" unique_id=1551310885 instance=ExtResource("3_vabbo")]
 transform = Transform3D(-1.172251e-07, 0, 8.155344, 0, 1, 0, -1, 0, -9.56011e-07, -0.6634825, 0, 2.7262006)
 
+[node name="Poster1" parent="Geometry" unique_id=2029403104 instance=ExtResource("4_gdex6")]
+transform = Transform3D(-0.9955588, 0.09414176, 8.742278e-08, 0.09414176, 0.9955588, 0, -8.7034515e-08, 8.230134e-09, -1, -0.05450304, 1.4819653, 2.731894)
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
 [node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_3lq1u")]
@@ -42,14 +53,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
-
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
-
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("5_pd5wj")]
+transform = Transform3D(0.3784966, 0, 0.9256027, 0, 1, 0, -0.9256027, 0, 0.3784966, -0.66176844, 0.0037121773, 1.2182757)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -60,3 +65,26 @@ collision_mask = 524288
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GenerationBounds/MainBound" unique_id=464136080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66708374, 1.22109, 1.3952484)
 shape = SubResource("BoxShape3D_y6x0q")
+
+[node name="Sink" parent="." unique_id=526672024 instance=ExtResource("6_gdex6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.49689624, 0.45681122, 2.4354246)
+
+[node name="SmokeAlarm" parent="." unique_id=448665216 instance=ExtResource("7_0o2m8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65638644, 2.4383998, 1.333523)
+
+[node name="Tub" parent="." unique_id=1417855166 instance=ExtResource("8_njg63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0040698, 0.3386675, 1.3528185)
+
+[node name="Curtain" parent="." unique_id=2016216468 instance=ExtResource("9_kmgnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2040588, -1.2783629, 0.3045083, 1.6891681)
+
+[node name="toilet_sp" parent="." unique_id=1968650058 instance=ExtResource("10_x3ts1")]
+transform = Transform3D(-1.3987644e-08, 0, 0.32, 0, 0.32, 0, -0.32, 0, -1.3987644e-08, 24.867, 0.011, 8.112)
+
+[node name="StainDecal" parent="." unique_id=422961019 instance=ExtResource("11_rgrj3")]
+transform = Transform3D(-2.8090198, 2.4557232e-07, 8.4703295e-22, 1.0734308e-14, 1.2278616e-07, -2.8090198, -2.4557232e-07, -2.8090198, -1.2278616e-07, -0.79515433, 1.0925893, 2.578321)
+size = Vector3(2, 0.40515137, 2)
+
+[node name="StainDecal2" parent="." unique_id=668710047 instance=ExtResource("11_rgrj3")]
+transform = Transform3D(3.6835849e-07, 2.8090198, 0, 1.2278616e-07, -1.4210855e-14, -2.8090198, -2.8090198, 3.6835849e-07, -1.2278616e-07, -2.5022583, 1.5953171, 1.948028)
+size = Vector3(2, 0.40515137, 2)

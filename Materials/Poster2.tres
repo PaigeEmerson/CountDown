@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bfru3s1h2q7vd"]
+
+[ext_resource type="Texture2D" uid="uid://boph2qod8j1th" path="res://Materials/Textures/Posters/poster2.png" id="1_7gf7r"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_7gf7r")

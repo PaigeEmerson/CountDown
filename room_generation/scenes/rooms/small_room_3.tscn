@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_b73qv"]
 [ext_resource type="PackedScene" uid="uid://dnqksoq34b0ul" path="res://room_generation/scenes/geo/small_room_3_geo.tscn" id="2_b73qv"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_fec5t"]
+[ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="3_gw14q"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_yxfuc"]
+[ext_resource type="PackedScene" uid="uid://krqwhucyx0us" path="res://GLB/CielingBulb.glb" id="5_wjdec"]
+[ext_resource type="AudioStream" uid="uid://ya4txhjyrjqb" path="res://audio/LightHum.mp3" id="6_gw14q"]
+[ext_resource type="PackedScene" uid="uid://cvbk1501f82bq" path="res://GLB/Trash1.glb" id="7_guom5"]
+[ext_resource type="PackedScene" uid="uid://ccyg6m2s1uws1" path="res://GLB/Trash2.glb" id="8_yfg45"]
+[ext_resource type="PackedScene" uid="uid://cyyf80vhopqhk" path="res://GLB/Paper1.glb" id="9_3fu1m"]
+[ext_resource type="PackedScene" uid="uid://rryb5mtgqr7k" path="res://GLB/Paper3.glb" id="10_tbrk7"]
+[ext_resource type="PackedScene" uid="uid://btbiixxvaj1qs" path="res://GLB/Paper2.glb" id="11_3bm0n"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="13_guom5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dl4e4"]
 size = Vector3(4.820923, 2.5310364, 4.4677124)
@@ -18,6 +27,10 @@ room_role = 4
 
 [node name="Small_Room_3" parent="Geometry" unique_id=1091295880 instance=ExtResource("2_b73qv")]
 
+[node name="DamageDecal" parent="Geometry" unique_id=1272242019 instance=ExtResource("3_gw14q")]
+transform = Transform3D(-9.2133185e-08, -2.1077616, 9.213318e-08, 0, -9.213318e-08, -2.1077616, 2.1077616, -9.2133185e-08, 4.0272694e-15, 4.205436, 1.0045549, 2.7584584)
+size = Vector3(2, 0.5600586, 2)
+
 [node name="Connections" type="Node3D" parent="." unique_id=1110784071]
 
 [node name="Connector" parent="Connections" unique_id=272012754 instance=ExtResource("3_fec5t")]
@@ -27,14 +40,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.00
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("13_guom5")]
+transform = Transform3D(-0.9976346, 0, -0.068739295, 0, 1, 0, 0.068739295, 0, -0.9976346, 2.3256462, 0.013742924, 3.7947934)
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
-
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=459311063 instance=ExtResource("13_guom5")]
+transform = Transform3D(0.981432, 0, -0.19180988, 0, 1, 0, 0.19180988, 0, 0.981432, 2.3256462, 0.013742924, 0.597754)
+placement_type = 1
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -57,3 +68,41 @@ transform = Transform3D(-1, 0, 8.253538e-07, 0, 1, 0, -8.742278e-08, 0, -9.44094
 
 [node name="Trim3" parent="." unique_id=1382419815 instance=ExtResource("4_yxfuc")]
 transform = Transform3D(-4.371137e-08, 0, 10.320957, 0, 1, 0, -0.9999996, 0, -4.511434e-07, 1.8107245, 0, 4.4585285)
+
+[node name="CielingBulb" parent="." unique_id=226772852 instance=ExtResource("5_wjdec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.433608, 2.6119714, 2.346561)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=357941615]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 2.4275703, 1.6522367, 2.383541)
+light_color = Color(0.9411765, 0.83137256, 0.61960787, 1)
+light_energy = 0.92
+shadow_enabled = true
+shadow_caster_mask = 4294967263
+omni_range = 2.823
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="OmniLight3D5" unique_id=626107938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.051075935, 0)
+stream = ExtResource("6_gw14q")
+autoplay = true
+max_distance = 10.0
+
+[node name="Trash1" parent="." unique_id=2024417263 instance=ExtResource("7_guom5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5672884, 0.01375258, 3.8506703)
+
+[node name="Trash2" parent="." unique_id=1994135252 instance=ExtResource("8_yfg45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03600683, 0.010972947, 3.7120388)
+
+[node name="Trash3" parent="." unique_id=1644511709 instance=ExtResource("7_guom5")]
+transform = Transform3D(-0.77433664, 0, -0.6327739, 0, 1, 0, 0.6327739, 0, -0.77433664, 0.82813734, 0.013752341, 3.9878566)
+
+[node name="Paper1" parent="." unique_id=1893105728 instance=ExtResource("9_3fu1m")]
+transform = Transform3D(0.91082406, 0, -0.4127948, 0, 1, 0, 0.4127948, 0, 0.91082406, 1.1166761, 0.004323083, 3.691731)
+
+[node name="Paper3" parent="." unique_id=570092864 instance=ExtResource("10_tbrk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11251, 0.021045167, 3.6327846)
+
+[node name="Paper2" parent="." unique_id=1579376362 instance=ExtResource("11_3bm0n")]
+transform = Transform3D(0.8732803, 0, -0.4872181, 0, 1, 0, 0.4872181, 0, 0.8732803, 0.40179846, 0.011604923, 3.2333314)
+
+[node name="Paper4" parent="." unique_id=939642137 instance=ExtResource("9_3fu1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72182363, 0.0146392165, 3.144039)

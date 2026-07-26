@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dmsv7g8usot4"]
+
+[ext_resource type="Texture2D" uid="uid://c8gayjk076riw" path="res://Materials/Textures/DoorProps/DefaultMaterial_baseColor.png" id="1_yjfj5"]
+[ext_resource type="Texture2D" uid="uid://bg4v2vfkl2shr" path="res://Materials/Textures/DoorProps/DefaultMaterial_occlusionRoughnessMetallic.png" id="2_5ep53"]
+[ext_resource type="Texture2D" uid="uid://dig3ve1xa5c62" path="res://Materials/Textures/DoorProps/DefaultMaterial_emissive.png" id="3_y5wrr"]
+[ext_resource type="Texture2D" uid="uid://cnmklyi2nxrjj" path="res://Materials/Textures/DoorProps/DefaultMaterial_normal.png" id="4_8dyru"]
+
+[resource]
+albedo_color = Color(0.39, 0.304005, 0.19889998, 1)
+albedo_texture = ExtResource("1_yjfj5")
+metallic = 1.0
+metallic_texture = ExtResource("2_5ep53")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_5ep53")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("3_y5wrr")
+normal_enabled = true
+normal_texture = ExtResource("4_8dyru")
+ao_enabled = true
+ao_texture = ExtResource("2_5ep53")

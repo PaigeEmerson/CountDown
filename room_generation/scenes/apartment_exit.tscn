@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bku2ypafmstms" path="res://game/scripts/apartment_exit.gd" id="1_qc4we"]
 [ext_resource type="PackedScene" uid="uid://khkp8lsy0n8r" path="res://GLB/Door.glb" id="3_0yo6b"]
+[ext_resource type="Material" uid="uid://dmsv7g8usot4" path="res://Materials/EntranceDoor.tres" id="3_8nqg2"]
 [ext_resource type="PackedScene" uid="uid://bb7510exwefm8" path="res://room_generation/meshes/DoorFrame.glb" id="4_8nqg2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0r8uf"]
@@ -19,5 +20,10 @@ shape = SubResource("BoxShape3D_0r8uf")
 [node name="Door" parent="." unique_id=1816557618 instance=ExtResource("3_0yo6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029616773, 0, 0)
 
+[node name="Cube_101" parent="Door" index="0" unique_id=1585821453]
+surface_material_override/0 = ExtResource("3_8nqg2")
+
 [node name="DoorFrame" parent="." unique_id=1094472715 instance=ExtResource("4_8nqg2")]
 transform = Transform3D(1, 0, 0, 0, 1.009, 0, 0, 0, 0.983, 0, 0, 0)
+
+[editable path="Door"]

@@ -11,6 +11,52 @@ content_margin_top = 30.0
 content_margin_right = 30.0
 content_margin_bottom = 30.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpgei"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pl3o6"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h3ag"]
+bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6xdr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8rbk"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cm4r"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndisg"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3se2"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljegl"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8v7a"]
+content_margin_left = 30.0
+content_margin_top = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pl3o6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cm4r"]
@@ -29,6 +75,7 @@ case_count_entry_scene = ExtResource("2_q6xdr")
 [node name="ScreenMask" type="Control" parent="." unique_id=2112109735]
 clip_contents = true
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 4096.0
@@ -39,6 +86,7 @@ mouse_filter = 2
 
 [node name="NewspaperCanvas" type="Control" parent="ScreenMask" unique_id=600778930]
 layout_mode = 1
+anchors_preset = 0
 offset_right = 3849.0
 offset_bottom = 2220.0
 mouse_filter = 2
@@ -77,31 +125,39 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
-theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Start"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xpgei")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pl3o6")
+text = "START"
 
 [node name="SettingsButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1084368407]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
-theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Settings"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3h3ag")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xdr")
+text = "SETTINGS"
 
 [node name="QuitButton" type="Button" parent="ScreenMask/NewspaperCanvas/MainMenuControls/VBoxContainer" unique_id=1218731224]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
-theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Quit"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s8rbk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1cm4r")
+text = "QUIT"
 
 [node name="LoadingControls" type="Control" parent="ScreenMask/NewspaperCanvas" unique_id=131798197]
 anchors_preset = 0
@@ -129,7 +185,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 40
-text = "Commiting Crimes..."
+text = "COMMITING CRIMES..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -155,7 +211,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 80
-text = "Paused"
+text = "PAUSED"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScreenMask/NewspaperCanvas/PauseControls" unique_id=498207632]
 layout_mode = 1
@@ -164,53 +220,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
+offset_left = -250.5
 offset_top = -168.115
-offset_right = 193.0
+offset_right = 250.50012
 offset_bottom = 287.8853
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ResumeButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=803394399]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
 theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Resume"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndisg")
+text = "RESUME"
 
 [node name="RestartButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=177387561]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
 theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Restart"
+theme_override_styles/normal = SubResource("StyleBoxFlat_p3se2")
+text = "RESTART"
 
 [node name="MainMenuButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=942964227]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
 theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Main Menu"
+theme_override_styles/normal = SubResource("StyleBoxFlat_ljegl")
+text = "MAIN MENU"
 
 [node name="QuitButton" type="Button" parent="ScreenMask/NewspaperCanvas/PauseControls/VBoxContainer" unique_id=691434211]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.45, 0.45, 0.45, 1)
 theme_override_colors/font_hover_color = Color(0.29, 0.29, 0.29, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0r8uf")
-text = "Quit to Desktop
-"
+theme_override_styles/normal = SubResource("StyleBoxFlat_x8v7a")
+text = "QUIT TO DESKTOP"
 
 [node name="ResultsControls" type="Control" parent="ScreenMask/NewspaperCanvas" unique_id=1279155687]
 anchors_preset = 0
@@ -259,7 +314,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_p0kt0")
 theme_override_font_sizes/font_size = 20
-text = "Summary"
+text = "SUMMARY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -276,4 +331,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_pl3o6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1cm4r")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_xpgei")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q6xdr")
-text = "Continue"
+text = "CONTINUE"

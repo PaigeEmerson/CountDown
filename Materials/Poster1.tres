@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://byxnqctb65luc"]
+
+[ext_resource type="Texture2D" uid="uid://xjb44f4ng5iw" path="res://Materials/Textures/Posters/poster1.png" id="1_coytp"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_coytp")
+roughness = 0.54

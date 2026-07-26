@@ -24,6 +24,12 @@
 [ext_resource type="PackedScene" uid="uid://ct37lk7qtm0b8" path="res://GLB/SmokeAlarm.glb" id="20_lah4p"]
 [ext_resource type="PackedScene" uid="uid://b4dpf2sc5ovpx" path="res://GLB/PowerOutlet.glb" id="21_qakvs"]
 [ext_resource type="PackedScene" uid="uid://b2emiti55t3av" path="res://GLB/Lightswitch.glb" id="22_qakvs"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="25_s17cq"]
+[ext_resource type="PackedScene" uid="uid://ch2bofael1cy6" path="res://Decals/stain_decal.tscn" id="26_kea5t"]
+[ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="27_gnaqb"]
+[ext_resource type="PackedScene" uid="uid://dde58cuf6o56v" path="res://GLB/StickNote8.glb" id="28_mlp4j"]
+[ext_resource type="PackedScene" uid="uid://c0e4pr7w7qifu" path="res://GLB/StickNote7.glb" id="29_s6f6y"]
+[ext_resource type="PackedScene" uid="uid://db26iq8d8p0p3" path="res://GLB/StickNote5.glb" id="30_0cwin"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unau6"]
 albedo_texture = ExtResource("11_s17cq")
@@ -64,7 +70,7 @@ transform = Transform3D(0.9944351, 0, 0.10535135, 0, 1, 0, -0.10535135, 0, 0.994
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.4705935, 0.0036599012, 3.9940064)
 
 [node name="LampShadeless" parent="Geometry" unique_id=1919800754 instance=ExtResource("6_7u8wb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4620483, 0.6645823, 5.5157375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1178846, 0.6645823, 5.6109138)
 
 [node name="Trash2" parent="Geometry" unique_id=674108714 instance=ExtResource("6_oacbo")]
 transform = Transform3D(0.764855, 0, 0, 0, 0.764855, 0, 0, 0, 0.764855, -2.66859, 0.010972828, 5.202713)
@@ -76,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.291039, 0.013752699, 5.708
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48173094, 2.4427724, 2.775805)
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Geometry/CielingFan" unique_id=465448641]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, -2.9780579, -1.3159126, 2.7435708)
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, -2.6350803, -1.3159126, 2.837503)
 light_color = Color(0.9411765, 0.83137256, 0.61960787, 1)
 light_energy = 0.13
 shadow_enabled = true
@@ -120,14 +126,15 @@ transform = Transform3D(0.49278933, 0, 0, 0, 0.49278933, 0, 0, 0, 0.49278933, -3
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("25_s17cq")]
+transform = Transform3D(-0.9935642, 0, -0.113270715, 0, 1, 0, 0.113270715, 0, -0.9935642, -3.7393897, 0.7842902, 5.3279705)
+placement_type = 1
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
+[node name="EvidenceSpawnPoint2" parent="EvidenceSpawns" unique_id=2080593721 instance=ExtResource("25_s17cq")]
+transform = Transform3D(0.60411453, 0, 0.79689753, 0, 1, 0, -0.79689753, 0, 0.60411453, -5.6786346, 0.0038707256, 3.132231)
 
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="EvidenceSpawnPoint3" parent="EvidenceSpawns" unique_id=393701062 instance=ExtResource("25_s17cq")]
+transform = Transform3D(-0.0170317, 0, -0.999855, 0, 1, 0, 0.999855, 0, -0.0170317, -1.6933997, 0.0038707256, 1.6268332)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -241,5 +248,23 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.8
 
 [node name="Lightswitch2" parent="." unique_id=593961485 instance=ExtResource("22_qakvs")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.6605427, 1.1146162, 0.041383088)
+
+[node name="StainDecal" parent="." unique_id=422961019 instance=ExtResource("26_kea5t")]
+transform = Transform3D(2.8090198, 0, 0, 0, -1.2278616e-07, -2.8090198, 0, 2.8090198, -1.2278616e-07, -4.2377934, 0.34862053, 0.20001054)
+
+[node name="DamageDecal" parent="." unique_id=1272242019 instance=ExtResource("27_gnaqb")]
+transform = Transform3D(-9.2133185e-08, -2.1077616, 9.213318e-08, 0, -9.213318e-08, -2.1077616, 2.1077616, -9.2133185e-08, 4.0272694e-15, 0.7041671, 1.229875, 3.246767)
+
+[node name="DamageDecal2" parent="." unique_id=1126352967 instance=ExtResource("27_gnaqb")]
+transform = Transform3D(1.4904125, -6.5147994e-08, 1.4904125, -1.4904125, 1.9544399e-07, 1.4904125, -1.8426636e-07, -2.1077616, 9.213318e-08, -3.7706325, 1.3710142, 4.888395)
+
+[node name="StickNote8" parent="." unique_id=1209329255 instance=ExtResource("28_mlp4j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0794716, 1.7391258, 2.1654823)
+
+[node name="StickNote7" parent="." unique_id=753571381 instance=ExtResource("29_s6f6y")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0827793, 1.558874, 1.9007443)
+
+[node name="StickNote5" parent="." unique_id=1358674234 instance=ExtResource("30_0cwin")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0.46895012, 0.88322467, 2.0498462e-08, -0.88322467, 0.46895012, -3.8606977e-08, 1.0815163, 1.6642538, 2.3609354)
 
 [editable path="Geometry/CielingFan/OmniLight3D5/rug_sp"]

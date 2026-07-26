@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://bu0lfsfq71r37" path="res://room_generation/scripts/room_module.gd" id="1_fmsol"]
 [ext_resource type="PackedScene" uid="uid://bp22el74ie0aa" path="res://room_generation/scenes/geo/hallway_1_geo.tscn" id="2_fmsol"]
 [ext_resource type="PackedScene" uid="uid://dra42c58wwr10" path="res://room_generation/scenes/connector.tscn" id="3_pd54x"]
+[ext_resource type="PackedScene" uid="uid://blsbn1gvc1cwn" path="res://room_generation/scenes/evidence_spawn_point.tscn" id="4_2nfaw"]
 [ext_resource type="PackedScene" uid="uid://b86ydm6eqwm6x" path="res://GLB/Trim.glb" id="4_3usrg"]
+[ext_resource type="PackedScene" uid="uid://bf03oe31n8182" path="res://Decals/damage_decal.tscn" id="5_id5ui"]
 [ext_resource type="PackedScene" uid="uid://imbapbimh102" path="res://GLB/FilingCabinet.glb" id="5_tabr6"]
 [ext_resource type="PackedScene" uid="uid://cdooj4iwe465h" path="res://GLB/Radiator.glb" id="6_su1rm"]
+[ext_resource type="PackedScene" uid="uid://db26iq8d8p0p3" path="res://GLB/StickNote5.glb" id="8_id5ui"]
+[ext_resource type="PackedScene" uid="uid://b3dymccg8iyne" path="res://GLB/StickNote6.glb" id="9_jia7a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_soljo"]
 size = Vector3(2.887024, 2.515442, 11.977173)
@@ -44,14 +48,11 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.44
 
 [node name="EvidenceSpawns" type="Node3D" parent="." unique_id=1885461599]
 
-[node name="Marker3D" type="Marker3D" parent="EvidenceSpawns" unique_id=1220204655]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5057728, 0, 2.1453035)
+[node name="EvidenceSpawnPoint" parent="EvidenceSpawns" unique_id=792907143 instance=ExtResource("4_2nfaw")]
+transform = Transform3D(-0.29359734, 0, -0.95592916, 0, 1, 0, 0.95592916, 0, -0.29359734, 0.5523709, -5.9604645e-08, -6.0233955)
 
-[node name="Marker3D2" type="Marker3D" parent="EvidenceSpawns" unique_id=180687420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9015386, 0, 2.3602574)
-
-[node name="Marker3D3" type="Marker3D" parent="EvidenceSpawns" unique_id=1808930641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71081686, 0, -3.009929)
+[node name="DamageDecal" parent="EvidenceSpawns" unique_id=1272242019 instance=ExtResource("5_id5ui")]
+transform = Transform3D(2.5134806e-08, 2.1077616, 0, 9.2133185e-08, 0, -2.1077616, -2.1077616, 2.5134806e-08, -9.2133185e-08, -1.3966877, 1.1282502, -6.023742)
 
 [node name="GenerationBounds" type="Node3D" parent="." unique_id=775566146]
 
@@ -96,10 +97,10 @@ transform = Transform3D(-1, 0, 5.9043276e-07, 0, 1, 0, -8.742278e-08, 0, -6.7537
 [node name="FilingCabinet" parent="." unique_id=133718449 instance=ExtResource("5_tabr6")]
 transform = Transform3D(-0.08293423, 0, 0.996555, 0, 1, 0, -0.996555, 0, -0.08293423, -0.9799588, 4.7683716e-07, -11.645102)
 
-[node name="Cube_011" parent="FilingCabinet" index="2" unique_id=611150335]
+[node name="Cube_011" parent="FilingCabinet" index="2" unique_id=1286434376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10383383, 0.9628101, -0.00016105606)
 
-[node name="Cube_012" parent="FilingCabinet" index="3" unique_id=494584550]
+[node name="Cube_012" parent="FilingCabinet" index="3" unique_id=1788787668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33804485, 0.58315206, -0.00016105513)
 
 [node name="Radiator" parent="FilingCabinet" unique_id=1421624761 instance=ExtResource("6_su1rm")]
@@ -109,5 +110,11 @@ transform = Transform3D(-0.9965551, 0, 0.08293428, 0, 1, 0, -0.08293428, 0, -0.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00033569336, 1.2703266, -6.100605)
 size = Vector3(5.0093384, 4.6116333, 14.294434)
 box_projection = true
+
+[node name="StickNote5" parent="." unique_id=1358674234 instance=ExtResource("8_id5ui")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.78823817, 1.1796129, -11.24374)
+
+[node name="StickNote6" parent="." unique_id=1089332335 instance=ExtResource("9_jia7a")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.1046349, 1.1203974, -11.214832)
 
 [editable path="FilingCabinet"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://da8h3y17wwk6o"]
+
+[ext_resource type="Material" uid="uid://bfru3s1h2q7vd" path="res://Materials/Poster2.tres" id="1_tl4ma"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3xsqf"]
+
+[node name="Poster1" type="Node3D" unique_id=2029403104]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=167204063]
+material_override = ExtResource("1_tl4ma")
+mesh = SubResource("QuadMesh_3xsqf")
